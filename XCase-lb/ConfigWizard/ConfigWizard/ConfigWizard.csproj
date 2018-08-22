@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BCF86736-E44C-4C7B-954C-D18F3DD175D5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ConfigWizard</RootNamespace>
+    <AssemblyName>ConfigWizard</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <SccProjectName>%24/xcase/XCase-lb/ConfigWizard/ConfigWizard</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <SccAuxPath>https://tfs.codeplex.com/tfs/tfs07</SccAuxPath>
+    <SccProvider>{4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}</SccProvider>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CompletePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CompletePage.Designer.cs">
+      <DependentUpon>CompletePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MidPage_DesignApproach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MidPage_DesignApproach.Designer.cs">
+      <DependentUpon>MidPage_DesignApproach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MidPage_FormattingOutput.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MidPage_FormattingOutput.Designer.cs">
+      <DependentUpon>MidPage_FormattingOutput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MidPage_Naming.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MidPage_Naming.Designer.cs">
+      <DependentUpon>MidPage_Naming.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MidPage_OtherOptions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MidPage_OtherOptions.Designer.cs">
+      <DependentUpon>MidPage_OtherOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MidPage_Redundancy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MidPage_Redundancy.Designer.cs">
+      <DependentUpon>MidPage_Redundancy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MidPage_SaveConfiguration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MidPage_SaveConfiguration.Designer.cs">
+      <DependentUpon>MidPage_SaveConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MidPage_UseNamespaces.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MidPage_UseNamespaces.Designer.cs">
+      <DependentUpon>MidPage_UseNamespaces.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MidPage_WarningError.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MidPage_WarningError.Designer.cs">
+      <DependentUpon>MidPage_WarningError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CompletePage.resx">
+      <DependentUpon>CompletePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MidPage_DesignApproach.resx">
+      <DependentUpon>MidPage_DesignApproach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MidPage_FormattingOutput.resx">
+      <DependentUpon>MidPage_FormattingOutput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MidPage_Naming.resx">
+      <DependentUpon>MidPage_Naming.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MidPage_OtherOptions.resx">
+      <DependentUpon>MidPage_OtherOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MidPage_Redundancy.resx">
+      <DependentUpon>MidPage_Redundancy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MidPage_SaveConfiguration.resx">
+      <DependentUpon>MidPage_SaveConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MidPage_UseNamespaces.resx">
+      <DependentUpon>MidPage_UseNamespaces.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MidPage_WarningError.resx">
+      <DependentUpon>MidPage_WarningError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WelcomePage.resx">
+      <DependentUpon>WelcomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="WelcomePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WelcomePage.Designer.cs">
+      <DependentUpon>WelcomePage.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ConfigWizard.UI\ConfigWizardUI.csproj">
+      <Project>{78BDF59A-A6D8-4968-8E24-3BAFD700419E}</Project>
+      <Name>ConfigWizardUI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

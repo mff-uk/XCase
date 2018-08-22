@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="XCase.View.Controls.DragThumb">
+    <Position X="1.25" Y="0.5" Width="2.25" />
+    <Members>
+      <Field Name="_fellowTravellers" Hidden="true" />
+      <Property Name="Bottom" Hidden="true" />
+      <Property Name="Canvas" Hidden="true" />
+      <Method Name="DraggingAllone" Hidden="true" />
+      <Property Name="DragStartPoint" Hidden="true" />
+      <Method Name="GetVisualAidsPoints" Hidden="true" />
+      <Method Name="InvokePositionChanged" Hidden="true" />
+      <Property Name="Left" Hidden="true" />
+      <Property Name="MousePoint" Hidden="true" />
+      <Method Name="OnMouseDown" Hidden="true" />
+      <Method Name="OnMouseMove" Hidden="true" />
+      <Method Name="OnMouseUp" Hidden="true" />
+      <Method Name="OnPreviewMouseDown" Hidden="true" />
+      <Field Name="parentControl" Hidden="true" />
+      <Method Name="parentControl_LayoutUpdated" Hidden="true" />
+      <Field Name="parentLastPos" Hidden="true" />
+      <Field Name="placement" Hidden="true" />
+      <Property Name="PrevPoint" Hidden="true" />
+      <Field Name="referentialElement" Hidden="true" />
+      <Property Name="ReferentialElement" Hidden="true" />
+      <Property Name="Right" Hidden="true" />
+      <Method Name="ShouldSnap" Hidden="true" />
+      <Property Name="SnapOffsetX" Hidden="true" />
+      <Property Name="SnapOffsetY" Hidden="true" />
+      <Field Name="startPositions" Hidden="true" />
+      <Property Name="Top" Hidden="true" />
+      <Method Name="UpdatePos" Hidden="true" />
+      <Field Name="visualAidsAdorner" Hidden="true" />
+      <Field Name="x" Hidden="true" />
+      <Property Name="XCaseCanvas" Hidden="true" />
+      <Field Name="y" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>BAAIAJQYAAloUEhgRcIQFAgABBCJABAAKYDgAAICYBI=</HashCode>
+      <FileName>Controls\Base\DragThumb.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

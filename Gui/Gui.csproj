@@ -1,0 +1,549 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{96DA42DB-DEB6-41FA-AD38-9F9FB446CFE5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XCase.Gui</RootNamespace>
+    <AssemblyName>XCase</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>XCase.Gui.App</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\XCase.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\XCase.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.AvalonEdit, Version=4.0.0.5287, Culture=neutral, PublicKeyToken=9cc39be672370310, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AvalonEdit\ICSharpCode.AvalonEdit.dll</HintPath>
+    </Reference>
+    <Reference Include="NUML.Uml2, Version=0.5.0.0, Culture=neutral, PublicKeyToken=234fa2e4c0d8bfa4">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\nUML\NUML.Uml2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Dialogs\ErrMsgBox.xaml.cs">
+      <DependentUpon>ErrMsgBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\InputBox.xaml.cs">
+      <DependentUpon>InputBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SelectPSMDiagramDialog.xaml.cs">
+      <DependentUpon>SelectPSMDiagramDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\XCaseYesNoBox.xaml.cs">
+      <DependentUpon>XCaseYesNoBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LogWindow\LogWindow.xaml.cs">
+      <DependentUpon>LogWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LogWindow\WindowTraceListener.cs" />
+    <Compile Include="MainMenuCommands\cmdCloseProject.cs" />
+    <Compile Include="MainMenuCommands\cmdComment.cs" />
+    <Compile Include="MainMenuCommands\cmdDeleteContainer.cs" />
+    <Compile Include="MainMenuCommands\cmdDeleteDiagram.cs" />
+    <Compile Include="MainMenuCommands\cmdDeleteFromDiagram.cs" />
+    <Compile Include="MainMenuCommands\cmdDeleteFromModel.cs" />
+    <Compile Include="MainMenuCommands\cmdDeleteFromPSMDiagram.cs" />
+    <Compile Include="MainMenuCommands\cmdLiftingXSLT.cs" />
+    <Compile Include="MainMenuCommands\cmdLoweringXSLT.cs" />
+    <Compile Include="MainMenuCommands\cmdNewPIMDiagram.cs" />
+    <Compile Include="MainMenuCommands\cmdNewProject.cs" />
+    <Compile Include="MainMenuCommands\cmdNewPSMDiagram.cs" />
+    <Compile Include="MainMenuCommands\cmdOpenProject.cs" />
+    <Compile Include="MainMenuCommands\cmdOWLtoPIM.cs" />
+    <Compile Include="MainMenuCommands\cmdPIMtoOWL.cs" />
+    <Compile Include="MainMenuCommands\cmdPSMtoPIM.cs" />
+    <Compile Include="MainMenuCommands\cmdSaveProject.cs" />
+    <Compile Include="MainMenuCommands\cmdSaveProjectAs.cs" />
+    <Compile Include="MainMenuCommands\cmdXSDtoPSM.cs" />
+    <Compile Include="MainMenuCommands\Evolution\cmdAutoMapping.cs" />
+    <Compile Include="MainMenuCommands\Evolution\cmdCreateVersionMapping.cs" />
+    <Compile Include="MainMenuCommands\Evolution\cmdCreateVersionMappingAttribute.cs" />
+    <Compile Include="MainMenuCommands\Evolution\cmdCreateVersionMappingDiagram.cs" />
+    <Compile Include="MainMenuCommands\Evolution\cmdEvolve.cs" />
+    <Compile Include="MainMenuCommands\Evolution\cmdFindChanges.cs" />
+    <Compile Include="MainMenuCommands\Evolution\cmdLocatePreviousVersion.cs" />
+    <Compile Include="MainMenuCommands\Evolution\cmdMapDirectly.cs" />
+    <Compile Include="MainMenuCommands\Evolution\cmdMultipleMapping.cs" />
+    <Compile Include="MainMenuCommands\Evolution\cmdRemoveVersionMapping.cs" />
+    <Compile Include="MainMenuCommands\MainMenuCommandBase.cs" />
+    <Compile Include="MainMenuCommands\PIM\cmdAddAttributes.cs" />
+    <Compile Include="MainMenuCommands\PIM\cmdAddOperation.cs" />
+    <Compile Include="MainMenuCommands\PIM\cmdAlign.cs" />
+    <Compile Include="MainMenuCommands\PIM\cmdAlignOne.cs" />
+    <Compile Include="MainMenuCommands\PIM\cmdAssociate.cs" />
+    <Compile Include="MainMenuCommands\PIM\cmdAssociationClass.cs" />
+    <Compile Include="MainMenuCommands\PIM\cmdDeriveExisting.cs" />
+    <Compile Include="MainMenuCommands\PIM\cmdDeriveNew.cs" />
+    <Compile Include="MainMenuCommands\PIM\cmdDragConnection.cs" />
+    <Compile Include="MainMenuCommands\PIM\cmdIncludeClass.cs" />
+    <Compile Include="MainMenuCommands\PIM\cmdInsertElement.cs" />
+    <Compile Include="MainMenuCommands\PIM\cmdNewClass.cs" />
+    <Compile Include="MainMenuCommands\PSM\cmdAddAttributes.cs" />
+    <Compile Include="MainMenuCommands\PSM\cmdAddChildren.cs" />
+    <Compile Include="MainMenuCommands\PSM\cmdAddPSMAttribute.cs" />
+    <Compile Include="MainMenuCommands\PSM\cmdAddPSMDiagramReference.cs" />
+    <Compile Include="MainMenuCommands\PSM\cmdAddSpecializations.cs" />
+    <Compile Include="MainMenuCommands\PSM\cmdIntroduceAttributeContainer.cs" />
+    <Compile Include="MainMenuCommands\PSM\cmdIntroduceClassUnion.cs" />
+    <Compile Include="MainMenuCommands\PSM\cmdIntroduceContentChoice.cs" />
+    <Compile Include="MainMenuCommands\PSM\cmdIntroduceContentContainer.cs" />
+    <Compile Include="MainMenuCommands\PSM\cmdMoveComponentOutOfContainer.cs" />
+    <Compile Include="MainMenuCommands\PSM\cmdMoveToLeft.cs" />
+    <Compile Include="MainMenuCommands\PSM\cmdMoveToRight.cs" />
+    <Compile Include="MainMenuCommands\PSM\cmdRemovePSMDiagramReference.cs" />
+    <Compile Include="MainMenuCommands\PSM\cmdSampleDocument.cs" />
+    <Compile Include="MainMenuCommands\PSM\cmdSelectChild.cs" />
+    <Compile Include="MainMenuCommands\PSM\cmdSelectLeftSibling.cs" />
+    <Compile Include="MainMenuCommands\PSM\cmdSelectParent.cs" />
+    <Compile Include="MainMenuCommands\PSM\cmdSelectRelatedElement.cs" />
+    <Compile Include="MainMenuCommands\PSM\cmdSelectRightSibling.cs" />
+    <Compile Include="MainMenuCommands\PSM\cmdXmlSchema.cs" />
+    <Compile Include="ProjectExtensions.cs" />
+    <Compile Include="ShortcutActionManager.cs" />
+    <Compile Include="UIExtensions.cs" />
+    <Compile Include="Windows\AboutWindow.xaml.cs">
+      <DependentUpon>AboutWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AvalonDockExt.cs" />
+    <Compile Include="Windows\BusyState.cs" />
+    <Compile Include="Windows\EvolutionChangesWindow.xaml.cs">
+      <DependentUpon>EvolutionChangesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ExceptionWindow.xaml.cs">
+      <DependentUpon>ExceptionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MainWindowDiagramTabManager.cs" />
+    <Compile Include="Windows\MappingDialog.xaml.cs">
+      <DependentUpon>MappingDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\NavigatorWindow.xaml.cs">
+      <DependentUpon>NavigatorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\PanelWindow.xaml.cs">
+      <DependentUpon>PanelWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ProjectsWindow.xaml.cs">
+      <DependentUpon>ProjectsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\PropertiesWindow.xaml.cs">
+      <DependentUpon>PropertiesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Properties\AppearanceGrid.xaml.cs">
+      <DependentUpon>AppearanceGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Properties\AssociationClassGrid.xaml.cs">
+      <DependentUpon>AssociationClassGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Properties\AssociationEndsGrid.xaml.cs">
+      <DependentUpon>AssociationEndsGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Properties\AssociationGrid.xaml.cs">
+      <DependentUpon>AssociationGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Properties\AttributeContainerGrid.xaml.cs">
+      <DependentUpon>AttributeContainerGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Properties\ClassGridBase.cs" />
+    <Compile Include="Windows\Properties\CommentGrid.xaml.cs">
+      <DependentUpon>CommentGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Properties\ContentContainerGrid.xaml.cs">
+      <DependentUpon>ContentContainerGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Properties\Converters.cs" />
+    <Compile Include="Windows\Properties\NestingJoinsGrid.xaml.cs">
+      <DependentUpon>NestingJoinsGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Properties\PIMClassGrid.xaml.cs">
+      <DependentUpon>PIMClassGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Properties\PSMAssociationGrid.xaml.cs">
+      <DependentUpon>PSMAssociationGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Properties\PSMClassGrid.xaml.cs">
+      <DependentUpon>PSMClassGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Properties\XCaseGridBase.cs" />
+    <Compile Include="Windows\SampleDocumentWindow.xaml.cs">
+      <DependentUpon>SampleDocumentWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\VersionedElementInfo.xaml.cs">
+      <DependentUpon>VersionedElementInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\XMLSchemaWindow.xaml.cs">
+      <DependentUpon>XMLSchemaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\XsltTestWindow.xaml.cs">
+      <DependentUpon>XsltTestWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Dialogs\ErrMsgBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\InputBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\SelectPSMDiagramDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\XCaseYesNoBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LogWindow\LogWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Styles\Shared.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\ToolBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\AboutWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\EvolutionChangesWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\ExceptionWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\MappingDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\NavigatorWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\PanelWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\ProjectsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\PropertiesWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Properties\AppearanceGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Properties\AssociationClassGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Properties\AssociationEndsGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Properties\AssociationGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Properties\AttributeContainerGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Properties\CommentGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Properties\ContentContainerGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Properties\NestingJoinsGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Properties\PIMClassGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Properties\PSMAssociationGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Properties\PSMClassGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\SampleDocumentWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\VersionedElementInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\XMLSchemaWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\XsltTestWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Resources\Documentation\XCaseProgrammersGuide.pdf" />
+    <None Include="Resources\Documentation\XCaseUsersGuide.pdf" />
+    <None Include="Resources\Examples\ABCCompany.XCase" />
+    <None Include="Resources\Examples\Purchase.XCase" />
+    <None Include="Resources\Examples\ReferencesProject - import\ReferencesProject.XCase" />
+    <None Include="Resources\Examples\ReferencesProject - include\references-include.XCase" />
+    <None Include="Resources\Examples\Shop.XCase" />
+    <None Include="Resources\Examples\Transport-specializations-abstract.XCase" />
+    <None Include="Resources\Examples\Transport-specializations-with-label.XCase" />
+    <None Include="Resources\Examples\Transport-specializations-without-label.XCase" />
+    <None Include="Resources\Examples\TransportContract.XCase" />
+    <None Include="Resources\XCaseSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Dialogs\error_button.png" />
+    <Resource Include="Dialogs\question_mark.png" />
+    <Resource Include="Resources\about2.png" />
+    <Resource Include="Resources\Autorun files\autorun.inf" />
+    <Resource Include="Resources\Autorun files\xcase.ico" />
+    <Resource Include="Resources\Template.xml" />
+    <Resource Include="Resources\XCase SplashScreen.png" />
+    <Resource Include="Resources\xcase.ico" />
+    <Resource Include="Resources\XCASE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AvalonDock\AvalonDock.csproj">
+      <Project>{87E61430-4243-45F2-B74E-0A4C096CEBF3}</Project>
+      <Name>AvalonDock</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Controller\Controller.csproj">
+      <Project>{2E66EF00-94BC-41D5-B7E0-132E08CF696C}</Project>
+      <Name>Controller</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Evolution\Evolution.csproj">
+      <Project>{C6073D3B-87E0-4C40-B8CC-C1E420A286F8}</Project>
+      <Name>Evolution</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EvoXExport\EvoXExport.csproj">
+      <Project>{681A1418-24E0-4A24-8EAA-7A7345131948}</Project>
+      <Name>EvoXExport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{70B8B1C4-E4F2-4EFA-A6FF-6AC7E3136BB2}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectConverter\ProjectConverter.csproj">
+      <Project>{0B483225-A6CB-4D60-822C-64E5A8288CB5}</Project>
+      <Name>ProjectConverter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ResourceLibrary\ResourceLibrary.csproj">
+      <Project>{278DB08B-33CD-4A02-8348-FA770DDBAEDF}</Project>
+      <Name>ResourceLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Reverse\Reverse.csproj">
+      <Project>{4D0E0E6A-0492-4988-B5FF-AFE9B5187F23}</Project>
+      <Name>Reverse</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SemanticWS\SemanticWS.csproj">
+      <Project>{77EDFD97-56D4-4DEC-B76B-DD20915B626E}</Project>
+      <Name>SemanticWS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tests\Tests.csproj">
+      <Project>{12DA3F43-3092-4CC6-AF95-73B123E6A225}</Project>
+      <Name>Tests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Translation\Translation.csproj">
+      <Project>{500C5CB0-0550-46A6-AC22-CB97A4A02742}</Project>
+      <Name>Translation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Updater\Updater.csproj">
+      <Project>{E33D7B88-43F7-4216-909E-22508E9E0618}</Project>
+      <Name>Updater</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\View\View.csproj">
+      <Project>{1406E3B9-661E-44C9-8A0D-C3E3DBABBD74}</Project>
+      <Name>View</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Themes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

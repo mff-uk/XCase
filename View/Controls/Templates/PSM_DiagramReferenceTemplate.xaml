@@ -1,0 +1,40 @@
+﻿<Grid x:Class="XCase.View.Controls.PSM_DiagramReferenceTemplate"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:c="clr-namespace:XCase.View.Controls"
+    Height="Auto" Width="Auto" MaxWidth="240">
+    <Grid.Resources>
+        <ResourceDictionary Source="pack://application:,,,/View;component/ControlTemplates.xaml" />
+    </Grid.Resources>
+    <Border Name="Border" BorderBrush="Black" BorderThickness="0.8" Opacity="0.8">
+        <StackPanel Name="classStackPanel">
+            <Border Name="headerBorder" Background="Green" BorderThickness="0" Padding="2" BorderBrush="Black">
+                <StackPanel Name="headerSection">
+                    <c:EditableTextBox x:Name="txtName" FontWeight="Bold" TextAlignment="Center" FontSize="15" Text="New PSM Class" ToolTip="Referenced diagram"/>
+                </StackPanel>
+            </Border>
+            <Border BorderBrush="Black" Background="LightGreen" >
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Vertical" Margin="5,0,0,0">
+                    	<Label Content="Referenced diagram:" FontSize="13" Margin="0" Padding="1"/>
+                    	<Label Content="Schema Location: " FontSize="13" Margin="0" Padding="1"/>
+                    	<Label Content="Namespace: " FontSize="13" Margin="0" Padding="1"/>
+                    	<Label Content="Namespace prefix: " FontSize="13" Margin="0" Padding="1"/>
+                    	<Label Content="Reference type: " FontSize="13" Margin="0" Padding="1"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="0">
+                        <c:EditableTextBox x:Name="tReferencedDiagram"  TextAlignment="Left" FontSize="13" Text="" />
+                    	<c:EditableTextBox x:Name="tSchemaLocation"  TextAlignment="Left" FontSize="13" Text="" />
+                    	<c:EditableTextBox x:Name="tNamespace"  TextAlignment="Left" FontSize="13" Text="" />
+                    	<c:EditableTextBox x:Name="tNamespacePrefix"  TextAlignment="Left" FontSize="13" Text="" />
+                    	<c:EditableTextBox x:Name="tLocal"  TextAlignment="Left" FontSize="13" Text="Local"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </Border>
+    <Control Name="ConnectorDecorator"
+                     Visibility="Visible"
+                     Template="{StaticResource ConnectorDecoratorTemplate}"/>
+
+</Grid>

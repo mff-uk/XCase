@@ -1,0 +1,582 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2E66EF00-94BC-41D5-B7E0-132E08CF696C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XCase.Controller</RootNamespace>
+    <AssemblyName>Controller</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <StartupObject>
+    </StartupObject>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseXML|AnyCPU' ">
+    <OutputPath>bin\ReleaseXML\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <DocumentationFile>bin\ReleaseXML\Controller.xml</DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseXML|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\ReleaseXML\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseXML|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\ReleaseXML\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NUML.Uml2, Version=0.5.0.0, Culture=neutral, PublicKeyToken=234fa2e4c0d8bfa4">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\nUML\NUML.Uml2.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.XML" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WpfCheckListBox, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WPFToolkit\WpfCheckListBox.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Binding\ModelPropertyMappingAttribute.cs" />
+    <Compile Include="Binding\ModelElementAttribute.cs" />
+    <Compile Include="Binding\PropertyMappingAttribute.cs" />
+    <Compile Include="Binding\ViewHelperElementAttribute.cs" />
+    <Compile Include="Binding\ViewHelperPropertyMappingAttribute.cs" />
+    <Compile Include="Commands\Base\CommandBase.cs" />
+    <Compile Include="Commands\Base\CommandFactoryBase.cs" />
+    <Compile Include="Commands\Base\ModelCommandBase.cs" />
+    <Compile Include="Commands\Base\DiagramCommandBase.cs" />
+    <Compile Include="Commands\CommandsAssociations\ChangeElementMultiplicityCommand.cs" />
+    <Compile Include="Commands\CommandsClasses\ChangeOntologyEquivalentCommand.cs" />
+    <Compile Include="Commands\CommandsClasses\RemoveAttributeCommand.cs" />
+    <Compile Include="Commands\CommandsClasses\NewModelClassToDiagramCommand.cs" />
+    <Compile Include="Commands\CommandsClasses\NewOperationCommand.cs" />
+    <Compile Include="Commands\CommandsClasses\RemoveOperationCommand.cs" />
+    <Compile Include="Commands\CommandsClasses\RenameElementCommand.cs" />
+    <Compile Include="Commands\CommandsClasses\NewAttributeCommand.cs" />
+    <Compile Include="Commands\CommandsDiagram\ChangePSMDiagramTargetNamespaceCommand.cs" />
+    <Compile Include="Commands\PSM Operations\Diagram references\AddPSMDiagramReferenceCommand.cs" />
+    <Compile Include="Commands\PSM Operations\Diagram references\PSMDiagramReferenceChangeLocalCommand.cs" />
+    <Compile Include="Commands\PSM Operations\Diagram references\PSMDiagramReferenceChangeNamespaceCommand.cs" />
+    <Compile Include="Commands\PSM Operations\Diagram references\PSMDiagramReferenceChangeNamespacePrefixCommand.cs" />
+    <Compile Include="Commands\PSM Operations\Diagram references\PSMDiagramReferenceChangeReferencedDiagramCommand.cs" />
+    <Compile Include="Commands\PSM Operations\Diagram references\PSMDiagramReferenceChangeSchemaLocationCommand.cs" />
+    <Compile Include="Commands\CommandsDiagram\RenameDiagramCommand.cs" />
+    <Compile Include="Commands\CommandsComments\NewModelCommentToDiagramCommand.cs" />
+    <Compile Include="Commands\CommandsCommon\NewPositionableElementMacroCommand.cs" />
+    <Compile Include="Commands\CommandsView\MoveElementCommand.cs" />
+    <Compile Include="Commands\CommandsView\ResizeElementCommand.cs" />
+    <Compile Include="Commands\Base\MacroCommand.cs" />
+    <Compile Include="Commands\Base\StackedCommandBase.cs" />
+    <Compile Include="Commands\Base\CommandStack.cs" />
+    <Compile Include="Commands\Helpers\ElementHolder.cs" />
+    <Compile Include="Commands\RedoCommand.cs" />
+    <Compile Include="Commands\UndoCommand.cs" />
+    <Compile Include="Commands\Base\ViewCommand.cs" />
+    <Compile Include="CommandControllers\ModelController.cs" />
+    <Compile Include="CommandControllers\DiagramController.cs" />
+    <Compile Include="Dialogs\DiagramReferenceDialog.xaml.cs">
+      <DependentUpon>DiagramReferenceDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControllers\PSM_DiagramReferenceController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{70B8B1C4-E4F2-4EFA-A6FF-6AC7E3136BB2}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Binding\DynamicMethodCompiler.cs" />
+    <Compile Include="Binding\IBindable.cs" />
+    <Compile Include="Binding\TypeBindingData.cs" />
+    <Compile Include="Commands\Base\CommandFactory.cs" />
+    <Compile Include="Commands\Base\CommandFieldsChecker.cs" />
+    <Compile Include="Commands\Base\CommandResultAttribute.cs" />
+    <Compile Include="Commands\Base\DiagramCommandFactory.cs" />
+    <Compile Include="Commands\Base\ICommandFactory.cs" />
+    <Compile Include="Commands\Base\IStackedCommand.cs" />
+    <Compile Include="Commands\Base\MandatoryArgumentAttribute.cs" />
+    <Compile Include="Commands\Base\ModelCommandFactory.cs" />
+    <Compile Include="Commands\CommandError.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommandError.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\CommandsAssociations\ChangeAssociationAggregationCommand.cs" />
+    <Compile Include="Commands\PSM Operations\Attributes\RemovePSMAttributeCommand.cs" />
+    <Compile Include="Commands\CommandsModel\MoveClassToPackageCommand.cs" />
+    <Compile Include="Commands\CommandsAssociations\NewModelAssociationClassToDiagramCommand.cs" />
+    <Compile Include="Commands\CommandsAssociations\NewModelAssociationToDiagramCommand.cs" />
+    <Compile Include="Commands\CommandsAssociations\NewModelGeneralizationToDiagramCommand.cs" />
+    <Compile Include="Commands\CommandsModel\NewModelPackageCommand.cs" />
+    <Compile Include="Commands\PSM Operations\Add PSM elements\NewPSMClassCommand.cs" />
+    <Compile Include="Commands\PSM Operations\Add PSM elements\NewPSMAttributeContainerCommand.cs" />
+    <Compile Include="Commands\PSM Operations\Add PSM elements\NewPSMContentChoiceCommand.cs" />
+    <Compile Include="Commands\PSM Operations\Add PSM elements\NewPSMContentContainerCommand.cs" />
+    <Compile Include="Commands\CommandsModel\ReconnectComponentsCommand.cs" />
+    <Compile Include="Commands\CommandsModel\RemovePackageCommand.cs" />
+    <Compile Include="Commands\CommandsModel\RemovePSMSuperordinateComponentCommand.cs" />
+    <Compile Include="Commands\CommandsView\JunctionPointCommand.cs" />
+    <Compile Include="Commands\Base\IMacroCommand.cs" />
+    <Compile Include="Commands\Helpers\CreationResult.cs" />
+    <Compile Include="Commands\Helpers\HolderBase.cs" />
+    <Compile Include="Commands\Helpers\ViewHelperHolder.cs" />
+    <Compile Include="Commands\CommandDescription.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommandDescription.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\IControlsOperations.cs" />
+    <Compile Include="Interfaces\IControlsPSMAttributes.cs" />
+    <Compile Include="Interfaces\IControlsAttributes.cs" />
+    <Compile Include="Dialogs\AssociationDialog.xaml.cs">
+      <DependentUpon>AssociationDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\AssociationEndEditor.xaml.cs">
+      <DependentUpon>AssociationEndEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ClassDialog.xaml.cs">
+      <DependentUpon>ClassDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\CommandCantExecuteDialog.cs">
+      <DependentUpon>CommandCantExecuteDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\HelperClasses\RememberingTextBox.cs">
+    </Compile>
+    <Compile Include="Dialogs\OperationDialog.xaml.cs">
+      <DependentUpon>OperationDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\AttributeDialog.xaml.cs">
+      <DependentUpon>AttributeDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementDependencies.cs" />
+    <Compile Include="SubpackagesGetter.cs" />
+    <Compile Include="CommandControllers\ViewController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Dialogs\AssociationDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\AssociationEndEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\ClassDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\CommandCantExecuteDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\DiagramReferenceDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\SelectItemsDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\PSMClassDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\GroupByDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\ErrDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\SimpleDataTypeDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\OkCancelDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\SelectRepresentedClassDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\SelectRepresentantDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\SelectPIMPathDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\DeleteDependentElementsDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\DependentElementsSelector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\ReferencingDiagramsDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\SelectAttributesDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\IncludeElementsDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\PackageDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\OperationDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\AttributeDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Dialogs\delete2.png">
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Commands\CommandError.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CommandError.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Commands\CommandDescription.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CommandDescription.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommandControllers\CommandControllerBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\CommandsAssociations\AddAnotherAssociationEndCommand.cs" />
+    <Compile Include="Commands\CommandsAssociations\ChangeElementMultiplicityMacroCommand.cs" />
+    <Compile Include="Commands\CommandsAssociations\NewModelAssociationClassCommand.cs" />
+    <Compile Include="Commands\CommandsAssociations\NewModelAssociationCommand.cs" />
+    <Compile Include="Commands\CommandsAssociations\NewModelGeneralizationCommand.cs" />
+    <Compile Include="Commands\CommandsAssociations\RemoveAssociationEndCommmand.cs" />
+    <Compile Include="Commands\CommandsClasses\ChangeAttributeDefaultValue.cs" />
+    <Compile Include="Commands\CommandsClasses\ChangeAttributeTypeCommand.cs" />
+    <Compile Include="Commands\CommandsClasses\RemoveAttributeMacroCommand.cs" />
+    <Compile Include="Commands\CommandsCommon\DeleteFromPSMDiagramCommand.cs" />
+    <Compile Include="Commands\CommandsCommon\DeleteFromDiagramMacroCommand.cs" />
+    <Compile Include="Commands\CommandsCommon\DeleteFromPSMDiagramConsideringRepresentativesMacroCommand.cs" />
+    <Compile Include="Commands\CommandsCommon\IncludeElementsCommand.cs" />
+    <Compile Include="Commands\CommandsDiagram\ActivateDiagramCommand.cs" />
+    <Compile Include="Commands\CommandsDiagram\DuplicateDiagramCommand.cs" />
+    <Compile Include="Commands\PSM Operations\Diagram references\RemovePSMDiagramMacroCommand.cs" />
+    <Compile Include="Commands\CommandsModel\AddSimpleTypeCommand.cs" />
+    <Compile Include="Commands\CommandsModel\AlterSimpleTypeCommand.cs" />
+    <Compile Include="Commands\CommandsModel\DeleteFromModelCommand.cs" />
+    <Compile Include="Commands\CommandsModel\DeleteFromModelMacroCommand.cs" />
+    <Compile Include="Commands\CommandsModel\RemovePackageMacroCommand.cs" />
+    <Compile Include="Commands\CommandsModel\RenameProjectNamespaceCommand.cs" />
+    <Compile Include="Commands\CommandsView\ChangeElementNameLabelAlignmentCommand.cs" />
+    <Compile Include="Commands\CommandsView\SectionVisibilityCommand.cs" />
+    <Compile Include="Commands\CommandsView\SwitchAssociationDiamondCommand.cs" />
+    <Compile Include="Commands\Helpers\HolderConvertorCommand.cs" />
+    <Compile Include="Commands\PSM Operations\Add PSM elements\AddPSMSpecializationMacroCommand.cs" />
+    <Compile Include="Commands\PSM Operations\Add PSM elements\NewPSMClassAsRootMacroCommand.cs" />
+    <Compile Include="Commands\PSM Operations\Add PSM elements\NewPSMSpecializationCommand.cs" />
+    <Compile Include="Commands\PSM Operations\AddPSMClassToRootsCommand.cs" />
+    <Compile Include="Commands\PSM Operations\Attributes\ChangeAllowAnyAttributeDefinitionCommand.cs" />
+    <Compile Include="Commands\PSM Operations\MoveComponentOutOfContainerCommand.cs" />
+    <Compile Include="Commands\PSM Operations\MoveClassToClassUnionCommand.cs" />
+    <Compile Include="Commands\PSM Operations\MoveClassToClassUnionMacroCommand.cs" />
+    <Compile Include="Commands\PSM Operations\MoveSubordinateToSuperordinateMacroCommand.cs" />
+    <Compile Include="Commands\PSM Operations\MoveSubordinateToContentContainerCommand.cs" />
+    <Compile Include="Commands\PSM Operations\Attributes\MoveAttributesFromClassToAttributeContainerMacroCommand.cs" />
+    <Compile Include="Commands\PSM Operations\ChangePSMClassAbstractCommand.cs" />
+    <Compile Include="Commands\PSM Operations\Attributes\AddPSMClassAttributeCommand.cs" />
+    <Compile Include="Commands\PSM Operations\Attributes\ModifyPSMClassAttributeCommand.cs" />
+    <Compile Include="Commands\PSM Operations\CutAssociationToRootCommand.cs" />
+    <Compile Include="Commands\PSM Operations\Attributes\MoveAttributesFromAttributeContainerBackToClassMacroCommand.cs" />
+    <Compile Include="Commands\PSM Operations\Attributes\MoveAttributesFromClassToAttributeContainerCommand.cs" />
+    <Compile Include="Commands\PSM Operations\RemovePSMClassFromRootsCommand.cs" />
+    <Compile Include="Commands\PSM Operations\Attributes\PropagatePIMLessCommandMacroCommand.cs" />
+    <Compile Include="Commands\PSM Operations\GroupByCommand.cs" />
+    <Compile Include="Commands\PSM Operations\LeaveOutAttributeContainerCommand.cs" />
+    <Compile Include="Commands\PSM Operations\LeaveOutClassUnionCommand.cs" />
+    <Compile Include="Commands\PSM Operations\PutClassesToUnionCommand.cs" />
+    <Compile Include="Commands\PSM Operations\LeaveOutStructuralElementsMacroCommand.cs" />
+    <Compile Include="Commands\PSM Operations\LeaveOutSuperordinateComponent.cs" />
+    <Compile Include="Commands\PSM Operations\Attributes\MoveAttributesFromAttributeContainerBackToClassCommand.cs" />
+    <Compile Include="Commands\PSM Operations\MoveClassUnionContentCommand.cs" />
+    <Compile Include="Commands\PSM Operations\Add PSM elements\NewPSMAssociation.cs" />
+    <Compile Include="Commands\PSM Operations\Add PSM elements\NewPSMClassUnionCommand.cs" />
+    <Compile Include="Commands\PSM Operations\Attributes\PropagatePIMLessCommand.cs" />
+    <Compile Include="Commands\PSM Operations\SetRepresentedPSMClassCommand.cs" />
+    <Compile Include="Commands\PSM Operations\AddPSMChildrenMacroCommand.cs" />
+    <Compile Include="Commands\PSM Operations\ComponentsReorderCommand.cs" />
+    <Compile Include="Commands\PSM Operations\CopyNestingJoinsCommand.cs" />
+    <Compile Include="Commands\PSM Operations\Derivation related\AddPSMClassToRoots_ModelCommand.cs" />
+    <Compile Include="Commands\CommandsClasses\NewModelClassCommand.cs" />
+    <Compile Include="Commands\CommandsComments\ChangeCommentCommand.cs" />
+    <Compile Include="Commands\CommandsComments\NewModelCommentCommand.cs" />
+    <Compile Include="Commands\CommandsCommon\DeleteFromDiagramCommand.cs" />
+    <Compile Include="Commands\CommandsCommon\ElementToDiagramCommand.cs" />
+    <Compile Include="Commands\CommandsDiagram\AddPIMDiagramCommand.cs" />
+    <Compile Include="Commands\CommandsDiagram\AddPSMDiagramCommand.cs" />
+    <Compile Include="Commands\CommandsDiagram\RemoveDiagramCommand.cs" />
+    <Compile Include="Commands\PSM Operations\Attributes\ChangeAttributeAliasCommand.cs" />
+    <Compile Include="Commands\PSM Operations\ChangePSMClassElementNameCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\PSM Operations\Derivation related\DerivePSMClassToDiagramCommand.cs" />
+    <Compile Include="Commands\PSM Operations\Derivation related\DerivePSMClassToNewDiagramCommand.cs" />
+    <Compile Include="Commands\PSM Operations\JoinAssociationsToClassUnionMacroCommand.cs" />
+    <Compile Include="Commands\PSM Operations\Derivation related\PSMClassToDiagram_ModelCommand.cs" />
+    <Compile Include="Commands\PSM Operations\AddSimpleNestingJoinCommand.cs" />
+    <Compile Include="Commands\RenameProjectCommand.cs" />
+    <Compile Include="Commands\CommandsModel\MovePackageCommand.cs" />
+    <Compile Include="Commands\CommandsView\ShowHideLabelCommand.cs" />
+    <Compile Include="Commands\RenameVersionCommand.cs" />
+    <Compile Include="Dialogs\SelectItemsDialog.xaml.cs">
+      <DependentUpon>SelectItemsDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\PSMClassDialog.xaml.cs">
+      <DependentUpon>PSMClassDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\HelperClasses\AccessKeyScoper.cs" />
+    <Compile Include="Dialogs\HelperClasses\GroupBySelectorData.cs" />
+    <Compile Include="Dialogs\GroupByDialog.xaml.cs">
+      <DependentUpon>GroupByDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ErrDialog.xaml.cs">
+      <DependentUpon>ErrDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SimpleDataTypeDialog.xaml.cs">
+      <DependentUpon>SimpleDataTypeDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\OkCancelDialog.xaml.cs">
+      <DependentUpon>OkCancelDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SelectRepresentedClassDialog.xaml.cs">
+      <DependentUpon>SelectRepresentedClassDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SelectRepresentantDialog.xaml.cs">
+      <DependentUpon>SelectRepresentantDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SelectPIMPathDialog.xaml.cs">
+      <DependentUpon>SelectPIMPathDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\DeleteDependentElementsDialog.xaml.cs">
+      <DependentUpon>DeleteDependentElementsDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\DependentElementsSelector.xaml.cs">
+      <DependentUpon>DependentElementsSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ReferencingDiagramsDialog.xaml.cs">
+      <DependentUpon>ReferencingDiagramsDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SelectAttributesDialog.xaml.cs">
+      <DependentUpon>SelectAttributesDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\IncludeElementsDialog.xaml.cs">
+      <DependentUpon>IncludeElementsDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\PackageDialog.xaml.cs">
+      <DependentUpon>PackageDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\HelperClasses\StructuralRepresentativeSelectorData.cs" />
+    <Compile Include="Dialogs\HelperClasses\TemplateHelper.cs" />
+    <Compile Include="Dialogs\HelperClasses\TreeViewClasses.cs" />
+    <Compile Include="ElementControllers\AssociationController.cs" />
+    <Compile Include="ElementControllers\ClassController.cs" />
+    <Compile Include="ElementControllers\CommentController.cs" />
+    <Compile Include="ElementControllers\ConnectionController.cs" />
+    <Compile Include="ElementControllers\ControlsPSMAttributes.cs" />
+    <Compile Include="ElementControllers\ElementController.cs" />
+    <Compile Include="ElementControllers\GeneralizationController.cs" />
+    <Compile Include="ElementControllers\MultiplicityElementController.cs" />
+    <Compile Include="ElementControllers\NamedElementController.cs" />
+    <Compile Include="ElementControllers\PSM_AssociationController.cs" />
+    <Compile Include="ElementControllers\PSM_AttributeContainerController.cs" />
+    <Compile Include="ElementControllers\PSM_ClassController.cs" />
+    <Compile Include="ElementControllers\PSM_ClassUnionController.cs" />
+    <Compile Include="ElementControllers\PSM_ContentChoiceController.cs" />
+    <Compile Include="ElementControllers\PSM_ContentContainerController.cs" />
+    <Compile Include="ElementDiagramDependencies.cs" />
+    <Compile Include="EReorderAction.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Diagrams\CommandFactoryInheritanceDiagram.cd" />
+    <None Include="Diagrams\ControllerInheritanceDiagram.cd" />
+    <None Include="Diagrams\CommandsInheritanceDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Dialogs\error_button.png">
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Dialogs\question_mark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,29 @@
+﻿<Grid x:Class="XCase.View.Controls.PIM_ClassTemplate"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:c="clr-namespace:XCase.View.Controls"
+    Height="Auto" Width="Auto">
+    <Grid.Resources>
+        <ResourceDictionary Source="pack://application:,,,/View;component/ControlTemplates.xaml" />
+    </Grid.Resources>
+    <Control Name="ResizeDecorator"
+                 Visibility="Collapsed"
+                 Template="{StaticResource ResizeDecoratorTemplate}"/>
+    <Control Name="ConnectorDecorator"
+                 Visibility="Visible"
+                 Template="{StaticResource ConnectorDecoratorTemplate}"/>
+        <Border BorderBrush="Black"  Name="classBorder" BorderThickness="0.8" Background="SeaShell" 
+                Opacity="0.8" VerticalAlignment="Stretch">
+            <StackPanel Name="classStackPanel">
+                <Border Name="headerBorder" Background="AntiqueWhite" BorderThickness="0" Padding="2" BorderBrush="Black">
+                    <c:EditableTextBox x:Name="txtClassName" FontWeight="Bold" TextAlignment="Center" FontSize="15" Text="New Class" ToolTip="Class name"/>                       
+                </Border>
+                <Border Name="AttributesBorder" BorderBrush="Black" Visibility="Collapsed" Background="SeaShell">
+                    <StackPanel Name="AttributesSection" Background="SeaShell" />
+                </Border>
+                <Border Name="OperationsBorder" BorderBrush="Black" Visibility="Collapsed" Background="SeaShell">
+                    <StackPanel Name="OperationsSection" Background="SeaShell" />
+                </Border>
+            </StackPanel>
+        </Border>
+</Grid>

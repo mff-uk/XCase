@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Various Diagram Command Factories">
+    <Position X="6.688" Y="4.853" Height="0.501" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Various Model Command Factories">
+    <Position X="9.701" Y="4.854" Height="0.501" Width="1.501" />
+  </Comment>
+  <Class Name="XCase.UMLController.Commands.CommandFactory&lt;ConcreteCommandFactory, ControllerType&gt;" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\Base\CommandFactory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.UMLController.Commands.CommandFactoryBase&lt;ConcreteCommandFactory&gt;" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\Base\CommandFactoryBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.UMLController.Commands.DiagramCommandFactory&lt;ConcreteCommandFactory&gt;" Collapsed="true">
+    <Position X="5" Y="3.25" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\Base\DiagramCommandFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.UMLController.Commands.ModelCommandFactory&lt;ConcreteCommandFactory&gt;" Collapsed="true">
+    <Position X="9.5" Y="3.25" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\Base\ModelCommandFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.UMLController.Commands.NewModelAssociationClassCommandFactory" Collapsed="true">
+    <Position X="11.5" Y="4.75" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\CommandsAssociations\NewModelAssociationClassCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.UMLController.Commands.DeleteFromDiagramCommandFactory" Collapsed="true">
+    <Position X="2.5" Y="4.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\CommandsCommon\DeleteFromDiagramCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.UMLController.Commands.MacroCommandFactory&lt;ControllerType&gt;" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\CommandsCommon\MacroCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

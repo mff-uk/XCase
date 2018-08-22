@@ -1,0 +1,105 @@
+﻿<Window x:Class="XCase.Reverse.PSMtoPIMWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="PSM to PIM Mapping" Height="704" Width="686" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <ScrollViewer Name="scrollViewer2" Margin="0,0,0,77" Height="122" VerticalAlignment="Bottom">
+            <TextBlock Name="textBlock" ScrollViewer.CanContentScroll="True" />
+        </ScrollViewer>
+        <Button Height="23" Margin="0,0,168,38" Name="btnStart" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="150">Start</Button>
+        <Button Height="23" HorizontalAlignment="Right" Margin="0,0,12,38" Name="btnClose" VerticalAlignment="Bottom" Width="150">Close</Button>
+        <GroupBox Header="Attribute Similarity" Name="groupBox1" Height="187" VerticalAlignment="Top">
+            <Grid>
+                <GroupBox Header="String Similarity" Name="groupBox2" Height="76" VerticalAlignment="Top" HorizontalAlignment="Left" Width="223">
+                    <Grid>
+                        <RadioButton Margin="6,6,0,0" Name="rbAS_SS_LCSq" IsChecked="True" Height="17.08" VerticalAlignment="Top" HorizontalAlignment="Left" Width="191">Longest Common Subsequence</RadioButton>
+                        <RadioButton Margin="6,0,0,6" Name="rbAS_SS_LCSt" Height="20.08" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="191">Longest Common Substring</RadioButton>
+                    </Grid>
+                </GroupBox>
+                <GroupBox Header="Type Similarity" Name="groupBox3" Height="76" VerticalAlignment="Top" Margin="453,0,0,0" HorizontalAlignment="Left" Width="199">
+                    <Grid>
+                        <RadioButton Height="16" Margin="6,6,0,0" Name="rbAS_TS_ID" VerticalAlignment="Top" IsChecked="True" HorizontalAlignment="Left" Width="121">Identity</RadioButton>
+                    </Grid>
+                </GroupBox>
+                <GroupBox Header="Type Name Similarity" Margin="229,0,0,0" Name="groupBox4" Height="76" VerticalAlignment="Top" HorizontalAlignment="Left" Width="224">
+                    <Grid>
+                        <RadioButton Height="16" Margin="6,6,0,0" Name="rbAS_TNS_LCSq" VerticalAlignment="Top" HorizontalAlignment="Left" Width="194" IsChecked="True">Longest Common Subsequence</RadioButton>
+                        <RadioButton Margin="6,0,0,5" Name="rbAS_TNS_LCSt" Height="19.04" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="200">Longest Common Substring</RadioButton>
+                    </Grid>
+                </GroupBox>
+                <Slider Margin="229,87,265,0" Name="sldAttrStringSim" SelectionEnd="0" Maximum="1" Height="33" VerticalAlignment="Top" TickFrequency="0.05" TickPlacement="Both" IsSnapToTickEnabled="True" />
+                <Label HorizontalAlignment="Left" Margin="127,85.96,0,0" Name="label1" Width="96" Height="31.04" VerticalAlignment="Top" HorizontalContentAlignment="Right">Type similarity</Label>
+                <Slider Margin="229,124.24,265,0" Maximum="1" Name="sldAttrStringAndTypeSim" SelectionEnd="0" Height="29.04" VerticalAlignment="Top" TickFrequency="0.05" TickPlacement="Both" IsSnapToTickEnabled="True" />
+                <Label Margin="74,122.96,0,0" Name="label2" Height="28.04" HorizontalAlignment="Left" VerticalAlignment="Top" Width="149" HorizontalContentAlignment="Right">Structural similarity</Label>
+                <Label HorizontalAlignment="Right" Margin="0,90,146.38,0" Name="label5" Width="120" Height="28.04" VerticalAlignment="Top">String similarity</Label>
+                <Label Height="28" HorizontalAlignment="Right" Margin="0,126.04,121.38,0" Name="label6" VerticalAlignment="Top" Width="145">String and type similarity</Label>
+                <TextBox HorizontalAlignment="Right" Margin="0,91.96,58,0" Name="txtAttrStringSim" Text="{Binding ElementName=sldAttrStringSim, Path=Value, Mode=TwoWay}" Width="40" MaxLength="4" MaxLines="1" Height="25.04" VerticalAlignment="Top" />
+                <TextBox HorizontalAlignment="Right" Margin="0,127.96,58,0" MaxLength="4" MaxLines="1" Name="txtAttrStringAndTypeSim" Text="{Binding ElementName=sldAttrStringAndTypeSim, Path=Value, Mode=TwoWay}" Width="40" Height="23.04" VerticalAlignment="Top" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Class Similarity" Margin="0,187,0,0" Name="groupBox5" Height="273" VerticalAlignment="Top">
+            <Grid>
+                <GroupBox Header="Class Name Similarity" Name="groupBox6" Height="78.04" VerticalAlignment="Top" HorizontalAlignment="Left" Width="223">
+                    <Grid>
+                        <RadioButton Height="16" IsChecked="True" Margin="5,2,0,0" Name="rbCS_NS_LCSq" VerticalAlignment="Top" HorizontalAlignment="Left" Width="199">Longest Common Subsequence</RadioButton>
+                        <RadioButton Margin="6,0,0,16" Name="rbCS_NS_LCSt" Height="20.08" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="200">Longest Common Substring</RadioButton>
+                        <CheckBox Content="Include SR names" Height="16" HorizontalAlignment="Left" IsChecked="True" Margin="6,37,0,0" Name="chkCS_NS_SR" VerticalAlignment="Top" />
+                    </Grid>
+                </GroupBox>
+                <GroupBox Header="Element Label Similarity" Margin="223,0,0,0" Name="groupBox7" Height="78.04" VerticalAlignment="Top" HorizontalAlignment="Left" Width="223">
+                    <Grid>
+                        <RadioButton Height="16" IsChecked="True" Margin="6,2,0,0" Name="rbCS_EL_LCSq" VerticalAlignment="Top" HorizontalAlignment="Left" Width="186">Longest Common Subsequence</RadioButton>
+                        <RadioButton Margin="6,0,0,16" Name="rbCS_EL_LCSt" Height="20.08" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="200">Longest Common Substring</RadioButton>
+                        <CheckBox Content="Include SR el. labels" Height="16" HorizontalAlignment="Left" IsChecked="True" Margin="5,37,0,0" Name="chkCS_EL_SR" VerticalAlignment="Top" />
+                    </Grid>
+                </GroupBox>
+                <Slider Height="33" Margin="229,90.04,265,0" Maximum="1" Name="sldClassStringSim" SelectionEnd="0" TickFrequency="0.05" TickPlacement="Both" VerticalAlignment="Top" IsSnapToTickEnabled="True" />
+                <Label Height="31.04" HorizontalAlignment="Left" Margin="112,89,0,0" Name="label3" VerticalAlignment="Top" Width="111" HorizontalContentAlignment="Right">Attribute similarity</Label>
+                <TextBox Height="25.04" HorizontalAlignment="Right" Margin="0,92.04,58,0" MaxLength="4" MaxLines="1" Name="textBox1" Text="{Binding ElementName=sldClassStringSim, Path=Value, Mode=TwoWay}" VerticalAlignment="Top" Width="40" />
+                <Slider Margin="229,129,265,0" Maximum="1" Name="sldClassStringAndAttrSim" SelectionEnd="0" TickFrequency="0.05" TickPlacement="Both" Height="29.04" VerticalAlignment="Top" IsSnapToTickEnabled="True" />
+                <Label Height="28.04" HorizontalAlignment="Left" Margin="59,126,0,0" Name="label4" VerticalAlignment="Top" Width="164" HorizontalContentAlignment="Right">Structural similarity</Label>
+                <TextBox HorizontalAlignment="Right" Margin="0,128.04,58,0" MaxLength="4" MaxLines="1" Name="textBox2" Text="{Binding ElementName=sldClassStringAndAttrSim, Path=Value, Mode=TwoWay}" Width="40" Height="23.04" VerticalAlignment="Top" />
+                <Label Height="28" HorizontalAlignment="Right" Margin="0,92.04,146.38,0" Name="label7" VerticalAlignment="Top" Width="120">String similarity</Label>
+                <Label Height="28" HorizontalAlignment="Right" Margin="0,126.04,102.38,0" Name="label8" VerticalAlignment="Top" Width="164">String and attribute similarity</Label>
+                <GroupBox Header="Structural Similarity Distance Method" Height="84" HorizontalAlignment="Left" Margin="0,160,0,0" Name="groupBox8" VerticalAlignment="Top" Width="223">
+                    <Grid>
+                        <RadioButton Content="Average" Height="16" HorizontalAlignment="Left" Margin="6,6,0,0" Name="rbSSDM_Avg" VerticalAlignment="Top" IsChecked="True" />
+                        <RadioButton Content="Minimum" Height="16" HorizontalAlignment="Left" Margin="6,42,0,0" Name="rbSSDM_Min" VerticalAlignment="Top" />
+                        <RadioButton Content="Maximum" Height="16" HorizontalAlignment="Left" Margin="6,24,0,0" Name="rbSSDM_Max" VerticalAlignment="Top" />
+                        <CheckBox Content="Sibling distance adj" Height="16" HorizontalAlignment="Left" Margin="87,6,0,0" Name="chkSibAdj" VerticalAlignment="Top" IsChecked="True" />
+                    </Grid>
+                </GroupBox>
+                <GroupBox Header="Structural Similarity Candidates" Height="84" HorizontalAlignment="Left" Margin="223,160,0,0" Name="groupBox9" VerticalAlignment="Top" Width="253">
+                    <Grid>
+                        <CheckBox Content="Direct children" Height="16" HorizontalAlignment="Left" Margin="6,6,0,0" Name="chkSSC_DC" VerticalAlignment="Top" IsChecked="True" />
+                        <CheckBox Content="Subtree leafs" Height="16" HorizontalAlignment="Left" Margin="120,6,0,0" Name="chkSSC_SL" VerticalAlignment="Top" />
+                        <CheckBox Content="Previous siblings" Height="16" HorizontalAlignment="Left" Margin="6,24,0,0" Name="chkSSC_PS" VerticalAlignment="Top" />
+                        <CheckBox Content="Mapped ancestors" Height="16" HorizontalAlignment="Left" Margin="120,24,0,0" Name="chkSSC_MA" VerticalAlignment="Top" />
+                        <CheckBox Content="Following siblings" Height="16" HorizontalAlignment="Left" Margin="6,42,0,0" Name="chkSSC_FS" VerticalAlignment="Top" />
+                        <CheckBox Content="Mapped parent" Height="16" HorizontalAlignment="Left" Margin="120,42,0,0" Name="chkSSC_MP" VerticalAlignment="Top" />
+                        <CheckBox Content="SR neighbors" FontStretch="Normal" FontStyle="Normal" Height="17" HorizontalAlignment="Left" IsChecked="True" Margin="-136,27,0,0" Name="chkSRneighbors" VerticalAlignment="Top" Width="117" />
+                    </Grid>
+                </GroupBox>
+                <CheckBox Content="Class Pre-mapping" Height="16" HorizontalAlignment="Left" Margin="482,177,0,0" Name="chkPreMap" VerticalAlignment="Top" IsChecked="False" />
+                <Slider Height="34" HorizontalAlignment="Left" Margin="482,198,0,0" Name="sldPreMapT" VerticalAlignment="Top" Width="104" TickPlacement="Both" TickFrequency="0.05" Maximum="1" IsEnabled="{Binding ElementName=chkPreMap, Path=IsChecked}" IsSnapToTickEnabled="True" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="600,198,0,0" Name="txtPreMapT" VerticalAlignment="Top" Width="46" Text="{Binding ElementName=sldPreMapT, Path=Value, Mode=TwoWay}" IsEnabled="{Binding ElementName=chkPreMap, Path=IsChecked}"/>
+                <CheckBox Content="Include SR attributes for attr sim" Height="17" HorizontalAlignment="Left" IsChecked="True" Margin="453,6,0,0" Name="chkCS_SR" VerticalAlignment="Top" Width="188" FontStretch="Normal" FontStyle="Normal" />
+            </Grid>
+        </GroupBox>
+        <CheckBox Height="16" HorizontalAlignment="Left" Margin="12,0,0,55" Name="chkLog1" VerticalAlignment="Bottom" Width="49" IsChecked="True">Log1</CheckBox>
+        <CheckBox Height="16" HorizontalAlignment="Left" IsChecked="False" Margin="12,0,0,33" Name="chkLog2" VerticalAlignment="Bottom" Width="49">Log2</CheckBox>
+        <CheckBox Height="16" HorizontalAlignment="Left" IsChecked="False" Margin="67,0,0,55" Name="chkLog3" VerticalAlignment="Bottom" Width="49">Log3</CheckBox>
+        <CheckBox Height="16" HorizontalAlignment="Left" IsChecked="False" Margin="67,0,0,33" Name="chkLogToFile" VerticalAlignment="Bottom" Width="83">Log To File</CheckBox>
+        <CheckBox Height="16" HorizontalAlignment="Left" Margin="152,0,0,55" Name="chkXSDtoPSM" VerticalAlignment="Bottom" Width="120" IsChecked="True" ToolTip="If checked, we assume the PIM contains a temporary PIM Class created during the XSD-&gt;PSM process, which should not be considered for statistics">From XSD-&gt;PSM</CheckBox>
+        <CheckBox Height="16" HorizontalAlignment="Left" Margin="152,0,0,33" Name="chkStat" VerticalAlignment="Bottom" Width="120">Statistics</CheckBox>
+        <CheckBox Content="Old" Height="16" HorizontalAlignment="Left" Margin="152,637,0,0" Name="chkStatOld" VerticalAlignment="Top" IsEnabled="{Binding ElementName=chkStat, Path=IsChecked}"/>
+        <CheckBox Content="GP" Height="16" HorizontalAlignment="Left" Margin="194,637,0,0" Name="chkStatGP" VerticalAlignment="Top"  IsEnabled="{Binding ElementName=chkStat, Path=IsChecked}" IsChecked="True" />
+        <CheckBox Content="LPL" Height="16" HorizontalAlignment="Left" Margin="390,637,0,0" Name="chkStatLPL" VerticalAlignment="Top"  IsEnabled="{Binding ElementName=chkStat, Path=IsChecked}"/>
+        <CheckBox Content="GPL" Height="16" HorizontalAlignment="Left" Margin="346,637,0,0" Name="chkStatGPL" VerticalAlignment="Top"  IsEnabled="{Binding ElementName=chkStat, Path=IsChecked}"/>
+        <CheckBox Content="LPI" Height="16" HorizontalAlignment="Left" Margin="308,637,0,0" Name="chkStatLPI" VerticalAlignment="Top"  IsEnabled="{Binding ElementName=chkStat, Path=IsChecked}"/>
+        <CheckBox Content="GPI" Height="16" HorizontalAlignment="Left" Margin="267,637,0,0" Name="chkStatGPI" VerticalAlignment="Top"  IsEnabled="{Binding ElementName=chkStat, Path=IsChecked}"/>
+        <CheckBox Content="LP" Height="16" HorizontalAlignment="Left" Margin="229,637,0,0" Name="chkStatLP" VerticalAlignment="Top"  IsEnabled="{Binding ElementName=chkStat, Path=IsChecked}" IsChecked="True" />
+        <RadioButton Content="CSV sep ," Height="16" HorizontalAlignment="Left" Margin="455,637,0,0" Name="rbCSVcomma" VerticalAlignment="Top" IsChecked="True" IsEnabled="{Binding ElementName=chkStat, Path=IsChecked}"/>
+        <RadioButton Content="CSV sep ;" Height="16" HorizontalAlignment="Left" Margin="527,637,0,0" Name="rbCSVsemicolon" VerticalAlignment="Top" IsEnabled="{Binding ElementName=chkStat, Path=IsChecked}"/>
+    </Grid>
+</Window>

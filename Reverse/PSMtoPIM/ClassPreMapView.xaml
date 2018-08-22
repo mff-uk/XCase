@@ -1,0 +1,36 @@
+﻿<Window x:Class="XCase.Reverse.ClassPreMapView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Class pre-mapping overview" Height="299" Width="755">
+    <Grid>
+        <Label Height="26" Name="lblLabel" VerticalAlignment="Top">Pre-mapping:</Label>
+        <ScrollViewer Name="scrollViewer1" Margin="0,40,0,50" VerticalAlignment="Top">
+            <ListBox Name="lbxMapping" SelectedValuePath="Key" ItemsSource="{Binding}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <CheckBox IsChecked="{Binding Value.Keep, Mode=TwoWay}" Margin="5"/>
+                            <StackPanel Orientation="Horizontal" MinWidth="200">
+                                <Label Content="{Binding Key.Name}" FontWeight="Bold" />
+                                <Label Content="("/>
+                                <Label Content="{Binding Key.ElementName}" FontWeight="Bold"/>
+                                <Label Content=")"/>
+                            </StackPanel>
+                            <Label Content="=>"/>
+                            <StackPanel Orientation="Horizontal" MinWidth="200">
+                                <Label Content="{Binding Value.Class.Name}" FontWeight="Bold"/>
+                                <Label Content="(" Padding="0,5,0,5"/>
+                                <Label Content="{Binding Value.Class.Package.Name}" FontWeight="Bold"/>
+                                <Label Content=")" Padding="0,5,0,5"/>
+                            </StackPanel>
+                            <Label Content="Similarity: " Padding="0,5,0,5"/>
+                            <Label Content="{Binding Value.Similarity_}" FontWeight="Bold"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </ScrollViewer>
+        <Button Height="23" Margin="77,0,0,12" Name="btnOK" VerticalAlignment="Bottom" IsDefault="True" HorizontalAlignment="Left" Width="108" Click="btnOK_Click">OK</Button>
+        <Button Content="Cancel" Height="23" Margin="552,0,0,12" Name="button1" VerticalAlignment="Bottom" IsCancel="True" HorizontalAlignment="Left" Width="126" />
+    </Grid>
+</Window>

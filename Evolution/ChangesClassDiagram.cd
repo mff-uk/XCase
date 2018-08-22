@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="XCase.Evolution.AssociationChange" Collapsed="true">
+    <Position X="1.5" Y="25.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAASAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Changes\Association\AssociationChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Evolution.AssociationMultiplicityChange" Collapsed="true">
+    <Position X="1" Y="27" Width="2.25" />
+    <InheritanceLine Type="XCase.Evolution.AssociationChange" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.188" Y="26.191" />
+        <Point X="2.188" Y="27" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAIQoEAAAAAAAAAAAAEAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Changes\Association\AssociationChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Evolution.AssociationChildChange" Collapsed="true">
+    <Position X="3" Y="20" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAkAAAAA=</HashCode>
+      <FileName>Changes\AssociationChild\AssociationChildChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Evolution.AssociationChildMovedToUnionChange" Collapsed="true">
+    <Position X="0.5" Y="21.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIQAEAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Changes\AssociationChild\AssociationChildChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Evolution.AssociationChildClassUnionIndexChanged" Collapsed="true">
+    <Position X="4.25" Y="21.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAIQAEAAAAAAAAAAAAEAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Changes\AssociationChild\AssociationChildChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Evolution.AttributeChange" Collapsed="true">
+    <Position X="1" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAgAAAACAKASQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Changes\Attribute\AttributeChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Evolution.AttributeAliasChanged" Collapsed="true">
+    <Position X="8.25" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIQAEAAAAAAAAAAEAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Changes\Attribute\AttributeChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Evolution.AttributeNameChange" Collapsed="true">
+    <Position X="0.75" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAIQAEAAAAAAAAAAAAEAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Changes\Attribute\AttributeChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Evolution.AttributeMultiplicityChange" Collapsed="true">
+    <Position X="5.75" Y="2.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAIQoEAAAAAAAAAAAAEAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Changes\Attribute\AttributeChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Evolution.AttributeDefaultChange" Collapsed="true">
+    <Position X="12.25" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIQAEAAAAAAAAAAAAEAAAAABAAAABAAA=</HashCode>
+      <FileName>Changes\Attribute\AttributeChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Evolution.AttributePositionChange" Collapsed="true">
+    <Position X="10.75" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAIQAMAAAAAAAAAAEAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Changes\Attribute\AttributeChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Evolution.AttributeMovedToAtributeContainerChange" Collapsed="true">
+    <Position X="0.5" Y="5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAJQAEAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Changes\Attribute\AttributeChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Evolution.AttributeReturnedFromAtributeContainerChange" Collapsed="true">
+    <Position X="0.5" Y="6.25" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIQAEAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Changes\Attribute\AttributeChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Evolution.AttributeRepresentedAttributeChanged" Collapsed="true">
+    <Position X="4.75" Y="5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAIAAEAAAAAAAAAAAAEAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Changes\Attribute\AttributeChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Evolution.AttributeTypeChange" Collapsed="true">
+    <Position X="3.25" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAIQAEAAIAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Changes\Attribute\AttributeChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Evolution.AttributeXSDImplementationChange" Collapsed="true">
+    <Position X="8.75" Y="2.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAIQAEAAAAAAAAAAAAEQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Changes\Attribute\AttributeChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Evolution.ClassChange" Collapsed="true">
+    <Position X="5.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAASQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Changes\Class\ClassChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Evolution.ClassElementNameChange" Collapsed="true">
+    <Position X="0.75" Y="13" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAIQAEAAAAAAAAAAAAEAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Changes\Class\ClassChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Evolution.ClassNameChange" Collapsed="true">
+    <Position X="3" Y="13" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAIQAEAAAAAAAAAAAAEAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Changes\Class\ClassChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Evolution.ClassAllowAnyAttributeChange" Collapsed="true">
+    <Position X="5.75" Y="13" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIYAEAAAAAAAAAAAAEAAAAAAAACAAAAA=</HashCode>
+      <FileName>Changes\Class\ClassChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Evolution.ClassIsStructuralRepresentativeChange" Collapsed="true">
+    <Position X="9" Y="13" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEIQAEAAAAAAAAAAAAEAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Changes\Class\ClassChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Evolution.ClassUnionChange" Collapsed="true">
+    <Position X="3.5" Y="22.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACACAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Changes\ClassUnion\ClassUnionChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Evolution.ClassUnionComponentAddedChange" Collapsed="true">
+    <Position X="1" Y="24.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAIQAEAAAAAAACAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Changes\ClassUnion\ClassUnionChange.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Evolution.ClassUnionComponentRemovedChange" Collapsed="true">
+    <Position X="4.5" Y="24.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAIQAEAAAAAABAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Changes\ClassUnion\ClassUnionChange.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Evolution.DiagramChange" Collapsed="true">
+    <Position X="3.75" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAACAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Changes\Diagram\DiagramChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Evolution.DiagramRootAddedChange" Collapsed="true">
+    <Position X="0.5" Y="16" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAIQAFAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Changes\Diagram\DiagramChange.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Evolution.DiagramRootRemovedChange" Collapsed="true">
+    <Position X="3.5" Y="16" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIQAEAAAAAABAAAAAEAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Changes\Diagram\DiagramChange.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Evolution.DiagramRootMovedChange" Collapsed="true">
+    <Position X="6.5" Y="16" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAgAggAAAAAAIQAAAAAAAAAAAAAAEAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Changes\Diagram\DiagramChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Evolution.HasAttributesChange" Collapsed="true">
+    <Position X="2.75" Y="7.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAACAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Changes\HasAttributes\HasAttributesChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Evolution.HasAttributesAttributeAddedChange" Collapsed="true">
+    <Position X="0.5" Y="9.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAIQAEAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Changes\HasAttributes\HasAttributesChange.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Evolution.HasAttributesAttributeRemovedChange" Collapsed="true">
+    <Position X="4" Y="9.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIQAEAAAAAABAAAAAEAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Changes\HasAttributes\HasAttributesChange.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Evolution.SubordinateChange" Collapsed="true">
+    <Position X="6.5" Y="25.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAACAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Changes\Subordinate\SubordinateChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Evolution.SubordinateComponentMovedChange" Collapsed="true">
+    <Position X="3.75" Y="27" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAIQAECAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Changes\Subordinate\SubordinateChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Evolution.SubordinateComponentComponentIndexChange" Collapsed="true">
+    <Position X="7.25" Y="27" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAIQAEAAAAAAAAAAAAEAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Changes\Subordinate\SubordinateChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Evolution.SuperordinateChange" Collapsed="true">
+    <Position X="3" Y="17.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAABAAAAAAgAAA=</HashCode>
+      <FileName>Changes\Superordinate\SuperordinateChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Evolution.SuperordinateComponentAddedChange" Collapsed="true">
+    <Position X="0.5" Y="19" Width="3" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAIQAEAAAAAAACAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Changes\Superordinate\SuperordinateChange.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Evolution.SuperordinateComponentRemovedChange" Collapsed="true">
+    <Position X="4.25" Y="19" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAIQAEAAAAAABAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Changes\Superordinate\SuperordinateChange.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

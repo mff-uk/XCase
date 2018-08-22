@@ -1,0 +1,157 @@
+﻿<Gui:ClassGridBase
+    x:Class="XCase.Gui.PIMClassGrid"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Model="clr-namespace:XCase.Model;assembly=XCase.Model"
+    xmlns:Gui="clr-namespace:XCase.Gui" 
+    HorizontalAlignment="Stretch"
+    SizeChanged="ClassGridBase_SizeChanged"
+    ScrollViewer.HorizontalScrollBarVisibility="Auto"
+>
+    <ScrollViewer  Name="scrollViewer" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                          ScrollViewer.VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="0,0,0,10">
+
+                <Grid Name="grid" Margin="5,0,5,0">
+                <Grid.Resources>
+                    <Gui:RenamePIMClassConverter x:Key="renamePIMClass"/>
+                    <Gui:RenameAttributeConverter x:Key="renameAttribute"/>
+                    <Gui:RenameOperationConverter x:Key="renameOperation"/>
+                    <Gui:DisplayDerivedClassConverter x:Key="displayPSMClass"/>
+                    <HierarchicalDataTemplate x:Key="classAttributesTemplate" DataType="{x:Type Model:Class}" ItemsSource="{Binding Path=Attributes}">
+                        <Grid Name="attGrid" Focusable="False">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition MinWidth="25" Width="25"/>
+                                <ColumnDefinition Name="attColumn" />
+                            </Grid.ColumnDefinitions>
+                                
+                            <Button Grid.Row="0" Grid.Column="0"  Click="attBox_MouseDoubleClick" Focusable="False">...</Button>
+                           <TextBox Name="attNameBox" Grid.Row="0" Grid.Column="1" 
+                                  Text="{Binding Path=Name, Converter={StaticResource renameAttribute}}"
+                                  VerticalContentAlignment="Stretch"
+                                  GotFocus="attBox_GotFocus"
+                                  LostFocus="CheckUniqueAttributeName"
+                                    Initialized="attNameBox_Initialized"
+                                  KeyDown="KeyPressed_Down"
+                                  Width="115"
+                                  KeyUp="KeyPressed_Up"
+                                  BorderThickness="0" Padding="1,0,0,1"/>
+                       </Grid>
+                    </HierarchicalDataTemplate>
+                    <HierarchicalDataTemplate x:Key="classOperationsTemplate" DataType="{x:Type Model:Class}" ItemsSource="{Binding Path=Attributes}">
+                        <DockPanel>
+                            <TextBox Name="opNameBox"  Text="{Binding Path=Name, Converter={StaticResource renameOperation}}"  
+                                  GotFocus="opBox_GotFocus"
+                                      LostFocus="CheckUniqueOperationName"
+                                  KeyDown="KeyPressed_Down"
+                                  KeyUp="KeyPressed_Up"
+                                       Width="130"
+                                  BorderThickness="0" Padding="1,0,0,1"/>
+                        </DockPanel>
+                    </HierarchicalDataTemplate>
+
+
+                    <HierarchicalDataTemplate x:Key="derivedClassesTemplate" DataType="{x:Type Model:Class}" ItemsSource="{Binding Path=DerivedPSMClasses}">
+                            <TextBox Grid.Row="0" Grid.Column="1"  Name="derivedClassBox"
+                                  Text="{Binding Path=., Converter={StaticResource displayPSMClass}, UpdateSourceTrigger = PropertyChanged, Mode=OneWay}"
+                                  VerticalContentAlignment="Stretch"
+                                  Focusable="False"
+                                     IsVisibleChanged="TextBox_IsVisibleChanged"
+                                  MouseEnter="TextBox_MouseEnter"
+                                  MouseLeave="TextBox_MouseLeave"
+                                 MouseLeftButtonDown="TextBox_MouseLeftButtonDown"
+                                  IsReadOnly="True"
+                                  BorderThickness="0" Padding="1,0,0,1"/>
+                    </HierarchicalDataTemplate>
+                </Grid.Resources>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="20"  />
+                    <RowDefinition Height="25"  />
+                    <RowDefinition Height="Auto"  />
+                    <RowDefinition Height="25"  />
+                    <RowDefinition Height="Auto"  />
+                    <RowDefinition Height="25"  />
+                    <RowDefinition Height="Auto"  />
+                    <RowDefinition Height="25"  />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Name="column1" Width="60" MaxWidth="60"/>
+                    <ColumnDefinition Name="column2" MinWidth="62" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Class name -->
+                <Label Grid.Row="0" Grid.ColumnSpan="2" Name="mainLabel" Content="Class"
+                    />
+                <TextBox Grid.Row="1" Grid.Column="0" IsReadOnly="True" Focusable="False"
+                  Text="Name" />
+                <TextBox  Grid.Row="1" Grid.Column="1" 
+                      Name="classNameBox" 
+                      TextWrapping="NoWrap"
+                      KeyDown="KeyPressed_Down"
+                      KeyUp="KeyPressed_Up"
+                      HorizontalAlignment="Left"
+                      LostFocus="CheckUniqueClassName"
+                      Text="{Binding Path=Name, Converter={StaticResource renamePIMClass}}" 
+                      MaxLines="1" />
+
+                <!-- Class attributes list -->
+                <Label Grid.Row="2" Grid.ColumnSpan="2" Name="attLabel" >
+                   Attributes
+                </Label>
+                <ListView Name="attBox" Grid.Row="3" Grid.ColumnSpan="2" Width="135"
+                      SelectionChanged="ListView_SelectionChanged"
+                      HorizontalAlignment="Left"
+                      KeyDown="KeyPressed_Down"
+                      KeyUp="KeyPressed_Up"
+                      Focusable="False"
+                      ItemTemplate ="{StaticResource classAttributesTemplate}"
+                      ScrollViewer.HorizontalScrollBarVisibility="Hidden" 
+                      ItemsSource="{Binding}" 
+                      MouseDoubleClick="attBox_MouseDoubleClick"
+                      Padding="0" Margin="0">
+                </ListView>
+
+                <!-- Class operations list -->
+                <Label Grid.Row="4" Grid.ColumnSpan="2" Name="opLabel">
+                    Operations
+                </Label>
+                <ListView Name="opBox"  Grid.Row="5" Grid.ColumnSpan="2" 
+                      Padding="0" Margin="0"
+                      SelectionChanged="ListView_SelectionChanged"
+                      ItemTemplate ="{StaticResource classOperationsTemplate}"
+                      ItemsSource="{Binding}" 
+                      MouseDoubleClick="attBox_MouseDoubleClick"
+                      ScrollViewer.HorizontalScrollBarVisibility="Hidden" 
+                      Focusable="False"
+                      HorizontalAlignment="Left"
+                      KeyUp="KeyPressed_Up"                     
+                      KeyDown="KeyPressed_Down"/>
+
+                <!-- Class operations list -->
+                <Label Grid.Row="6" Grid.ColumnSpan="2" Name="dcLabel">
+                    Derived classes
+                </Label>
+                <ListView Name="dcBox"  Grid.Row="7" Grid.ColumnSpan="2" 
+                      Padding="0" Margin="0"
+                      SelectionChanged="ListView_SelectionChanged"
+                      ItemTemplate ="{StaticResource derivedClassesTemplate}"
+                      ItemsSource="{Binding}" 
+                      ScrollViewer.HorizontalScrollBarVisibility="Hidden" 
+                      Focusable="False"
+                      HorizontalAlignment="Left"
+                      KeyUp="KeyPressed_Up"                     
+                      KeyDown="KeyPressed_Down"/>
+
+                <!-- Class appearance -->
+                <Label Grid.Row="8" Grid.ColumnSpan="2" Name="appLabel" MinWidth="130">
+                   Appearance</Label>
+            </Grid>
+            <Gui:AppearanceGrid x:Name="appearance" />
+            
+        </StackPanel>
+    </ScrollViewer>
+</Gui:ClassGridBase>

@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+This template containse basic primitive types and neccessary PSM stereotypes. It is 
+a core of every XCase model and should not be altered by users. 
+-->
+<xc:project xmlns:xc="http://kocour.ms.mff.cuni.cz/~necasky/xcase" version="2.0">
+  <xc:uml>
+    <xc:primitive_types>
+      <xc:datatype id="27" description="int"       name="integer"  simple="True" />
+      <xc:datatype id="28" description="string"    name="string"   simple="True" />
+      <xc:datatype id="29" description="double"    name="double"   simple="True" />
+      <xc:datatype id="30" description="date"      name="date"     simple="True" />
+      <xc:datatype id="31" description="dateTime"  name="dateTime" simple="True" />
+      <xc:datatype id="32" description="time"      name="time"     simple="True" />
+      <xc:datatype id="33" description="boolean"   name="boolean"  simple="True" />
+      <xc:datatype id="34" description="decimal"   name="decimal"  simple="True" />
+      <xc:datatype id="35" description=""          name="object"   simple="True" />
+    </xc:primitive_types>
+    <xc:profiles>
+      <xc:profile id="0" name="XSem">
+        <xc:stereotypes>
+          <xc:stereotype id="1" name="PSMClass">
+            <xc:receivers>
+              <xc:receiver type="Class" />
+            </xc:receivers>
+            <xc:properties>
+              <xc:property id="2" name="RepresentedClass" type="35" aggregation="none" default="" default_value="null" is_composite="False" is_derived="False" is_derived_union="False" is_ordered="False" is_readonly="False" is_unique="True" lower="1" upper="1" visibility="public" />
+              <xc:property id="3" name="ElementName" type="28" aggregation="none" default="" default_value="null" is_composite="False" is_derived="False" is_derived_union="False" is_ordered="False" is_readonly="False" is_unique="True" lower="1" upper="1" visibility="public" />
+							<xc:property id="36" name="AllowAnyAttribute"  type="33" aggregation="none" default="" default_value="False" is_composite="False" is_derived="False" is_derived_union="False" is_ordered="False" is_readonly="False" is_unique="True" lower="1" upper="1" visibility="public" />
+              <xc:property id="4" name="Components" type="35" aggregation="none" default="" default_value="null" is_composite="False" is_derived="False" is_derived_union="False" is_ordered="True" is_readonly="False" is_unique="False" lower="0" upper="*" visibility="public" />
+            </xc:properties>
+          </xc:stereotype>
+          <xc:stereotype id="5" name="PSMAttribute">
+            <xc:receivers>
+              <xc:receiver type="Property" />
+            </xc:receivers>
+            <xc:properties>
+              <xc:property id="6" aggregation="none" type="35" default="null" default_value="null" is_composite="False" is_derived="False" is_derived_union="False" is_ordered="False" is_readonly="False" is_unique="False" lower="1" name="RepresentedAttribute" upper="1" visibility="public" />
+              <xc:property id="7" aggregation="none" type="28" default="null" default_value="null" is_composite="False" is_derived="False" is_derived_union="False" is_ordered="False" is_readonly="False" is_unique="False" lower="1" name="Alias" upper="1" visibility="public" />
+            </xc:properties>
+          </xc:stereotype>
+          <xc:stereotype id="8" name="PSMAttributeContainer">
+            <xc:receivers>
+              <xc:receiver type="Class" />
+            </xc:receivers>
+            <xc:properties>
+              <xc:property id="9" name="Parent" type="35" aggregation="none" default="" default_value="null" is_composite="False" is_derived="False" is_derived_union="False" is_ordered="False" is_readonly="False" is_unique="True" lower="1" upper="1" visibility="public" />
+            </xc:properties>
+          </xc:stereotype>
+          <xc:stereotype id="10" name="PSMClassUnion">
+            <xc:receivers>
+              <xc:receiver type="Class" />
+            </xc:receivers>
+            <xc:properties>
+              <xc:property id="11" name="Components" type="35" aggregation="none" default="" default_value="null" is_composite="False" is_derived="False" is_derived_union="False" is_ordered="True" is_readonly="False" is_unique="True" lower="0" upper="*" visibility="public" />
+            </xc:properties>
+          </xc:stereotype>
+          <xc:stereotype id="12" name="PSMContentContainer">
+            <xc:receivers>
+              <xc:receiver type="Class" />
+            </xc:receivers>
+            <xc:properties>
+              <xc:property id="13" name="Parent" type="35" aggregation="none" default="" default_value="null" is_composite="False" is_derived="False" is_derived_union="False" is_ordered="False" is_readonly="False" is_unique="True" lower="1" upper="1" visibility="public" />
+              <xc:property id="14" name="Components" type="35" aggregation="none" default="" default_value="null" is_composite="False" is_derived="False" is_derived_union="False" is_ordered="True" is_readonly="False" is_unique="True" lower="0" upper="*" visibility="public" />
+              <xc:property id="15" name="ElementLabel" type="28" aggregation="none" default="" default_value="null" is_composite="False" is_derived="False" is_derived_union="False" is_ordered="False" is_readonly="False" is_unique="True" lower="1" upper="1" visibility="public" />
+            </xc:properties>
+          </xc:stereotype>
+          <xc:stereotype id="16" name="PSMContentChoice">
+            <xc:receivers>
+              <xc:receiver type="Class" />
+            </xc:receivers>
+            <xc:properties>
+              <xc:property id="17" name="Parent" type="35" aggregation="none" default="" default_value="null" is_composite="False" is_derived="False" is_derived_union="False" is_ordered="False" is_readonly="False" is_unique="True" lower="1" upper="1" visibility="public" />
+              <xc:property id="18" name="Components" type="35" aggregation="none" default="" default_value="null" is_composite="False" is_derived="False" is_derived_union="False" is_ordered="True" is_readonly="False" is_unique="True" lower="0" upper="*" visibility="public" />
+            </xc:properties>
+          </xc:stereotype>
+          <xc:stereotype id="19" name="PSMAssociation">
+            <xc:receivers>
+              <xc:receiver type="Association" />
+            </xc:receivers>
+            <xc:properties>
+              <xc:property id="20" name="NestingJoin" type="35" aggregation="none" default="" default_value="null" is_composite="False" is_derived="False" is_derived_union="False" is_ordered="False" is_readonly="False" is_unique="True" lower="1" upper="*" visibility="public" />
+            </xc:properties>
+          </xc:stereotype>
+          <xc:stereotype id="21" name="PSMStructuralRepresentative">
+            <xc:receivers>
+              <xc:receiver type="Class" />
+            </xc:receivers>
+            <xc:properties>
+              <xc:property id="22" name="RepresentedClass" type="35" aggregation="none" default="" default_value="null" is_composite="False" is_derived="False" is_derived_union="False" is_ordered="False" is_readonly="False" is_unique="True" lower="1" upper="1" visibility="public" />
+              <xc:property id="23" name="RepresentedPSMClass" type="35" aggregation="none" default="" default_value="null" is_composite="False" is_derived="False" is_derived_union="False" is_ordered="False" is_readonly="False" is_unique="True" lower="1" upper="1" visibility="public" />
+              <xc:property id="24" name="ElementName" type="28" aggregation="none" default="" default_value="null" is_composite="False" is_derived="False" is_derived_union="False" is_ordered="False" is_readonly="False" is_unique="True" lower="1" upper="1" visibility="public" />
+							<xc:property id="37" name="AllowAnyAttribute"  type="33" aggregation="none" default="" default_value="False" is_composite="False" is_derived="False" is_derived_union="False" is_ordered="False" is_readonly="False" is_unique="True" lower="1" upper="1" visibility="public" />
+              <xc:property id="25" name="Components" type="35" aggregation="none" default="" default_value="null" is_composite="False" is_derived="False" is_derived_union="False" is_ordered="True" is_readonly="False" is_unique="True" lower="0" upper="*" visibility="public" />
+            </xc:properties>
+          </xc:stereotype>
+        </xc:stereotypes>
+      </xc:profile>
+    </xc:profiles>
+    <xc:model id="26" name="User model" viewpoint="" namespace="">
+      <xc:comments />
+      <xc:datatypes />      
+      <xc:packages />
+      <xc:pim_classes />
+      <xc:associations />
+      <xc:generalizations />
+    </xc:model>
+  </xc:uml>
+  <xc:diagrams>
+    <xc:PIM_diagrams />
+    <xc:PSM_diagrams />
+  </xc:diagrams>
+</xc:project>

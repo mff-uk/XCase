@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C6073D3B-87E0-4C40-B8CC-C1E420A286F8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XCase.Evolution</RootNamespace>
+    <AssemblyName>Evolution</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IKVM.OpenJDK.Charsets, Version=0.40.0.2, Culture=neutral, PublicKeyToken=e1fdd002d5083fe6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Saxon\IKVM.OpenJDK.Charsets.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Core, Version=0.40.0.2, Culture=neutral, PublicKeyToken=e1fdd002d5083fe6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Saxon\IKVM.OpenJDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Text, Version=0.40.0.2, Culture=neutral, PublicKeyToken=e1fdd002d5083fe6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Saxon\IKVM.OpenJDK.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Util, Version=0.40.0.2, Culture=neutral, PublicKeyToken=e1fdd002d5083fe6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Saxon\IKVM.OpenJDK.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.API, Version=0.40.0.2, Culture=neutral, PublicKeyToken=e1fdd002d5083fe6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Saxon\IKVM.OpenJDK.XML.API.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime, Version=0.40.0.2, Culture=neutral, PublicKeyToken=e1fdd002d5083fe6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Saxon\IKVM.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="NUML.Uml2, Version=0.5.0.0, Culture=neutral, PublicKeyToken=234fa2e4c0d8bfa4">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\nUML\NUML.Uml2.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="saxon9he, Version=9.2.0.3, Culture=neutral, PublicKeyToken=e1fdd002d5083fe6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Saxon\saxon9he.dll</HintPath>
+    </Reference>
+    <Reference Include="saxon9he-api, Version=9.2.0.3, Culture=neutral, PublicKeyToken=e1fdd002d5083fe6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Saxon\saxon9he-api.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AttributeValueGenerator.cs" />
+    <Compile Include="ChangesDetectorContext.cs" />
+    <Compile Include="ChangesLookupManager.cs" />
+    <Compile Include="Changes\AssociationChild\AssociationChildChange.cs" />
+    <Compile Include="Changes\AssociationChild\AssociationChildClassUnionIndexChange.cs" />
+    <Compile Include="Changes\AssociationChild\AssociationChildMovedToUnionChange.cs" />
+    <Compile Include="Changes\AssociationChild\AssociationChildReturnedFromUnionChange.cs" />
+    <Compile Include="Changes\Association\AssociationChange.cs" />
+    <Compile Include="Changes\Association\AssociationMultiplicityChange.cs" />
+    <Compile Include="Changes\Association\AssociationChildAdded.cs" />
+    <Compile Include="Changes\Association\AssociationChildRemoved.cs" />
+    <Compile Include="Changes\Attribute\AttributeAliasChange.cs" />
+    <Compile Include="Changes\Attribute\AttributeDefaultChange.cs" />
+    <Compile Include="Changes\Attribute\AttributeMovedToAtributeContainerChange.cs" />
+    <Compile Include="Changes\Attribute\AttributeMultiplicityChange.cs" />
+    <Compile Include="Changes\Attribute\AttributeNameChange.cs" />
+    <Compile Include="Changes\Attribute\AttributePositionChange.cs" />
+    <Compile Include="Changes\Attribute\AttributeRepresentedAttributeChange.cs" />
+    <Compile Include="Changes\Attribute\AttributeReturnedFromAtributeContainerChange.cs" />
+    <Compile Include="Changes\Attribute\AttributeTypeChange.cs" />
+    <Compile Include="Changes\Attribute\AttributeXSDImplementationChange.cs" />
+    <Compile Include="Changes\ClassUnion\ClassUnionComponentAddedChange.cs" />
+    <Compile Include="Changes\ClassUnion\ClassUnionComponentRemovedChange.cs" />
+    <Compile Include="Changes\ClassUnion\ClassUnionMovedChange.cs" />
+    <Compile Include="Changes\Class\ClassAllowAnyAttributeChange.cs" />
+    <Compile Include="Changes\Class\ClassElementNameChange.cs" />
+    <Compile Include="Changes\Class\ClassIsStructuralRepresentativeChange.cs" />
+    <Compile Include="Changes\Class\ClassNameChange.cs" />
+    <Compile Include="Changes\ContentContainer\ContentContainerChange.cs" />
+    <Compile Include="Changes\Diagram\DiagramRootAddedChange.cs" />
+    <Compile Include="Changes\Diagram\DiagramRootIndexChange.cs" />
+    <Compile Include="Changes\Diagram\DiagramRootRemovedChange.cs" />
+    <Compile Include="Changes\HasAttributes\HasAttributesAttributeAddedChange.cs" />
+    <Compile Include="Changes\HasAttributes\HasAttributesAttributeRemovedChange.cs" />
+    <Compile Include="Changes\IChangeTypesChange.cs" />
+    <Compile Include="Changes\IMultiplicityChange.cs" />
+    <Compile Include="Changes\Attribute\AttributeChange.cs" />
+    <Compile Include="Changes\ChangeDescriptions.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChangeDescriptions.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangesDetector.cs" />
+    <Compile Include="Changes\ChangePropertiesAttribute.cs" />
+    <Compile Include="Changes\ClassUnion\ClassUnionChange.cs" />
+    <Compile Include="Changes\Class\ClassChange.cs" />
+    <Compile Include="Changes\Diagram\DiagramChange.cs" />
+    <Compile Include="Changes\EChangeScope.cs" />
+    <Compile Include="Changes\EEditType.cs" />
+    <Compile Include="Changes\EnumExt.cs" />
+    <Compile Include="Changes\HasAttributes\HasAttributesChange.cs" />
+    <Compile Include="Changes\ISubelementChange.cs" />
+    <Compile Include="Changes\Subordinate\SubordinateChange.cs" />
+    <Compile Include="Changes\Subordinate\SubordinateComponentComponentIndexChange.cs" />
+    <Compile Include="Changes\Subordinate\SubordinateComponentMovedChange.cs" />
+    <Compile Include="Changes\Superordinate\SuperordinateChange.cs" />
+    <Compile Include="Changes\Superordinate\SuperordinateComponentAddedChange.cs" />
+    <Compile Include="Changes\Superordinate\SuperordinateComponentRemovedChange.cs" />
+    <Compile Include="DispNullFormatProvider.cs" />
+    <Compile Include="Changes\EvolutionChange.cs" />
+    <Compile Include="DocumentValidator.cs" />
+    <Compile Include="NodeElementWrapper.cs" />
+    <Compile Include="RepresentedClassCallableTemplateInfo.cs" />
+    <Compile Include="XSLT\EContentPlacementState.cs" />
+    <Compile Include="EvolutionChangeSet.cs" />
+    <Compile Include="XSLT\Modifiers.cs" />
+    <Compile Include="ModelExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XmlDocumentExt.cs" />
+    <Compile Include="XSLT\XPathExpr.cs" />
+    <Compile Include="XSLT\XPathHelper.cs" />
+    <Compile Include="XSLT\XsltDocumentExt.cs" />
+    <Compile Include="XSLT\XsltGeneratorContext.cs" />
+    <Compile Include="XSLT\XsltProcessing.cs" />
+    <Compile Include="XSLT\XsltTemplateGenerator.cs" />
+    <Compile Include="XSLT\XsltTemplateNameManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{70B8B1C4-E4F2-4EFA-A6FF-6AC7E3136BB2}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Translation\Translation.csproj">
+      <Project>{500C5CB0-0550-46A6-AC22-CB97A4A02742}</Project>
+      <Name>Translation</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Changes\ChangeDescriptions.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ChangeDescriptions.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ChangesClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

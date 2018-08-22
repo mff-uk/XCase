@@ -1,0 +1,8 @@
+[autorun]
+open=setup.exe
+action=Install XCase
+icon=xcase.ico
+label=XCase Setup Disc
+shell\install=Install &XCase
+shell\install\command=setup.exe
+shell=install

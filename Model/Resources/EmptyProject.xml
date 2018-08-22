@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- project containing one empty PIM diagram, this template is used when new project is created in XCase -->
+<xc:project xmlns:xc="http://kocour.ms.mff.cuni.cz/~necasky/xcase" version="2.0">
+	<xc:uml>
+		<xc:primitive_types />
+		<xc:profiles />
+		<xc:model id="26" name="User model" viewpoint="" namespace="">
+			<xc:comments />
+			<xc:datatypes />
+			<xc:packages />
+			<xc:pim_classes />
+			<xc:associations />
+			<xc:generalizations />
+		</xc:model>
+	</xc:uml>
+	<xc:diagrams>
+		<xc:PIM_diagrams>
+			<xc:diagram name="PIM Diagram1" no="0" />
+		</xc:PIM_diagrams>
+		<xc:PSM_diagrams />
+	</xc:diagrams>
+</xc:project>

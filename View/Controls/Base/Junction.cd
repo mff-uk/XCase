@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="XCase.View.Controls.JunctionPoint">
+    <Position X="3.5" Y="0.5" Width="2.75" />
+    <Members>
+      <Method Name="AdjustDrag" Hidden="true" />
+      <Method Name="DeleteFromCanvas" Hidden="true" />
+      <Method Name="InvokePositionChanged" Hidden="true" />
+      <Field Name="isSelected" Hidden="true" />
+      <Method Name="JunctionPoint" Hidden="true" />
+      <Method Name="OnMouseEnter" Hidden="true" />
+      <Method Name="OnMouseLeave" Hidden="true" />
+      <Method Name="OnRender" Hidden="true" />
+      <Field Name="radius" Hidden="true" />
+      <Method Name="Remove_click" Hidden="true" />
+      <Method Name="SetPreferedPosition" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAEAAYKAAAEgAEAABgAAAABAAAgAAAAIAAIAgAAAA=</HashCode>
+      <FileName>Controls\Base\JunctionPoint.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.View.Controls.XCaseJunction">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <Members>
+      <Method Name="AdjustEndPoints" Hidden="true" />
+      <Field Name="affectedPoints" Hidden="true" />
+      <Property Name="Association" Hidden="true" />
+      <Property Name="AssociationEnd" Hidden="true" />
+      <Field Name="autoPosModeOnly" Hidden="true" />
+      <Property Name="CanBeDraggedInGroup" Hidden="true" />
+      <Method Name="DeleteFromCanvas" Hidden="true" />
+      <Field Name="downPos" Hidden="true" />
+      <Method Name="DragConnection" Hidden="true" />
+      <Field Name="dragLast" Hidden="true" />
+      <Field Name="endCapStyle" Hidden="true" />
+      <Field Name="Fill" Hidden="true" />
+      <Method Name="FindClosestPoint" Hidden="true" />
+      <Property Name="Generalization" Hidden="true" />
+      <Field Name="geometry" Hidden="true" />
+      <Method Name="GetBounds" Hidden="true" />
+      <Method Name="Highlight" Hidden="true" />
+      <Method Name="InitializeContextMenu" Hidden="true" />
+      <Method Name="InvalidateGeometry" Hidden="true" />
+      <Field Name="isSelected" Hidden="true" />
+      <Property Name="IsSelected" Hidden="true" />
+      <Method Name="JunctionMenuItems" Hidden="true" />
+      <Method Name="OnMouseDoubleClick" Hidden="true" />
+      <Method Name="OnMouseDown" Hidden="true" />
+      <Method Name="OnMouseMove" Hidden="true" />
+      <Method Name="OnMouseUp" Hidden="true" />
+      <Method Name="OnPreviewMouseLeftButtonDown" Hidden="true" />
+      <Method Name="OnPreviewMouseRightButtonDown" Hidden="true" />
+      <Method Name="OnRender" Hidden="true" />
+      <Property Name="Pen" Hidden="true" />
+      <Property Name="PSM_Association" Hidden="true" />
+      <Method Name="ReconnectTargetElement" Hidden="true" />
+      <Field Name="segmentDragging" Hidden="true" />
+      <Property Name="SelectionOwner" Hidden="true" />
+      <Method Name="SelectProperFill" Hidden="true" />
+      <Method Name="SourceElement_SizeChanged" Hidden="true" />
+      <Field Name="sourceMeasureValid" Hidden="true" />
+      <Field Name="startCapStyle" Hidden="true" />
+      <Field Name="startPositions" Hidden="true" />
+      <Method Name="TargetElement_SizeChanged" Hidden="true" />
+      <Field Name="targetMeasureValid" Hidden="true" />
+      <Method Name="UnHighlight" Hidden="true" />
+      <Property Name="viewHelperPointsCollection" Hidden="true" />
+      <Method Name="viewHelperPointsCollection_CollectionChanged" Hidden="true" />
+      <Property Name="XCaseCanvas" Hidden="true" />
+      <Method Name="XCaseJunction" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AICIDBCR6QhB2AAgFEgEAAEAAhAEyEIqoAABIAgDUYw=</HashCode>
+      <FileName>Controls\Base\XCaseJunction.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Points" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

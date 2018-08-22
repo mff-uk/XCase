@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ADD_ASSOCIATION_CLASS_MACRO" xml:space="preserve">
+    <value>Add new association class to model and diagram</value>
+  </data>
+  <data name="ADD_ASSOCIATION_MACRO" xml:space="preserve">
+    <value>Add new association to model and diagram</value>
+  </data>
+  <data name="ADD_ATTRIBUTE" xml:space="preserve">
+    <value>Add class' attribute</value>
+  </data>
+  <data name="ADD_CLASS_MACRO" xml:space="preserve">
+    <value>Add new class to model and diagram</value>
+  </data>
+  <data name="ADD_COMMENT_MACRO" xml:space="preserve">
+    <value>Add new comment to model and diagram</value>
+  </data>
+  <data name="ADD_ELEMENT_TO_DIAGRAM" xml:space="preserve">
+    <value>Adds an alement to a diagram</value>
+  </data>
+  <data name="ADD_GENERALIZATION_MACRO" xml:space="preserve">
+    <value>Add new generalization to model and diagram</value>
+  </data>
+  <data name="ADD_MODEL_ASSOCIATION" xml:space="preserve">
+    <value>Add model association</value>
+  </data>
+  <data name="ADD_MODEL_ASSOCIATION_CLASS" xml:space="preserve">
+    <value>Add model association class</value>
+  </data>
+  <data name="ADD_MODEL_CLASS" xml:space="preserve">
+    <value>Add model class</value>
+  </data>
+  <data name="ADD_MODEL_COMMENT" xml:space="preserve">
+    <value>Add model comment</value>
+  </data>
+  <data name="ADD_MODEL_GENERALIZATION" xml:space="preserve">
+    <value>Add model generalization</value>
+  </data>
+  <data name="ADD_MODEL_STEREOTYPE" xml:space="preserve">
+    <value>Adds a new Stereotype</value>
+  </data>
+  <data name="ADD_OPERATION" xml:space="preserve">
+    <value>Add class' operation</value>
+  </data>
+  <data name="ADD_PACKAGE" xml:space="preserve">
+    <value>Create a new package</value>
+  </data>
+  <data name="ADD_PIM_DIAGRAM" xml:space="preserve">
+    <value>Add an PIM diagram</value>
+  </data>
+  <data name="ADD_PSM_ATTRIBUTE" xml:space="preserve">
+    <value>Add a PSM Attribute</value>
+  </data>
+  <data name="ADD_PSM_ATTRIBUTE_CONTAINER" xml:space="preserve">
+    <value>Add a PSM Attribute Container</value>
+  </data>
+  <data name="ADD_PSM_CLASS" xml:space="preserve">
+    <value>Derive a new PSM Class</value>
+  </data>
+  <data name="ADD_PSM_CONTENT_CHOICE" xml:space="preserve">
+    <value>Add a PSM Content Choice</value>
+  </data>
+  <data name="ADD_PSM_CONTENT_CONTAINER" xml:space="preserve">
+    <value>Add a PSM Content Container</value>
+  </data>
+  <data name="ADD_PSM_DIAGRAM" xml:space="preserve">
+    <value>Add an PSM diagram</value>
+  </data>
+  <data name="ADD_PSM_DIAGRAM_ROOT" xml:space="preserve">
+    <value>Add a root to a PSM Diagram</value>
+  </data>
+  <data name="APPLY_MODEL_STEREOTYPE" xml:space="preserve">
+    <value>Apply a Stereotype to a class</value>
+  </data>
+  <data name="APPLY_NEW_MODEL_STEREOTYPE" xml:space="preserve">
+    <value>Apply a new Stereotype to a class</value>
+  </data>
+  <data name="CHANGE_AGGREGATION" xml:space="preserve">
+    <value>Change association end aggregation</value>
+  </data>
+  <data name="CHANGE_COMMENT" xml:space="preserve">
+    <value>Change comment text</value>
+  </data>
+  <data name="CHANGE_ELEMENT_NAME" xml:space="preserve">
+    <value>Changes PSM class Element Name</value>
+  </data>
+  <data name="CHANGE_MULTIPLICITY" xml:space="preserve">
+    <value>Change element multiplicity</value>
+  </data>
+  <data name="DELETE_FROM_MODEL" xml:space="preserve">
+    <value>Delete elements from model</value>
+  </data>
+  <data name="DERIVE_PSM_CLASS_DIAGRAM" xml:space="preserve">
+    <value>Derive a PSM Class to an existing PSM Diagram</value>
+  </data>
+  <data name="DERIVE_PSM_CLASS_NEW_DIAGRAM" xml:space="preserve">
+    <value>Derive a PSM Class to a new PSM Diagram</value>
+  </data>
+  <data name="INCLUDE_ELEMENTS" xml:space="preserve">
+    <value>Include elements to a diagram</value>
+  </data>
+  <data name="LABEL_SHOWHIDE" xml:space="preserve">
+    <value>Show/hide label</value>
+  </data>
+  <data name="MOVED_POINTS" xml:space="preserve">
+    <value>({0} moved points)</value>
+  </data>
+  <data name="MOVE_CLASS_TO_PACKAGE" xml:space="preserve">
+    <value>Move a class to a package</value>
+  </data>
+  <data name="MOVE_ELEMENT" xml:space="preserve">
+    <value>Move element on a diagram</value>
+  </data>
+  <data name="MOVE_JUNCTION_POINTS" xml:space="preserve">
+    <value>Move some points of junction</value>
+  </data>
+  <data name="MOVE_JUNCTION_SEGMENT" xml:space="preserve">
+    <value>Move junction segment</value>
+  </data>
+  <data name="MOVE_MACRO" xml:space="preserve">
+    <value>Move macro command</value>
+  </data>
+  <data name="MOVE_PACKAGE" xml:space="preserve">
+    <value>Move a package</value>
+  </data>
+  <data name="PSM_CLASS_TO_DIAGRAM_MODELCOMMAND" xml:space="preserve">
+    <value>Add a PSM Class to a PSM Diagram</value>
+  </data>
+  <data name="RECONNECT_COMPONENTS" xml:space="preserve">
+    <value>Reconnect all components of the source to the target</value>
+  </data>
+  <data name="REMOVE_ATTRIBUTE" xml:space="preserve">
+    <value>Remove class' attribute</value>
+  </data>
+  <data name="REMOVE_DIAGRAM" xml:space="preserve">
+    <value>Remove a diagram</value>
+  </data>
+  <data name="REMOVE_FROM_DIAGRAM" xml:space="preserve">
+    <value>Remove an element from a diagram</value>
+  </data>
+  <data name="REMOVE_OPERATION" xml:space="preserve">
+    <value>Remove class' operation</value>
+  </data>
+  <data name="REMOVE_PACKAGE" xml:space="preserve">
+    <value>Remove a package</value>
+  </data>
+  <data name="REMOVE_PACKAGE_MACRO" xml:space="preserve">
+    <value>Remove a package and its classes and nested packages</value>
+  </data>
+  <data name="REMOVE_PSM_ATTRIBUTE" xml:space="preserve">
+    <value>Remove a PSM Attribute</value>
+  </data>
+  <data name="REMOVE_PSM_SUPERORDINATE" xml:space="preserve">
+    <value>Remove a PSM Superordinate component</value>
+  </data>
+  <data name="RENAME_DIAGRAM" xml:space="preserve">
+    <value>Rename a diagram</value>
+  </data>
+  <data name="RENAME_ELEMENT" xml:space="preserve">
+    <value>Rename element</value>
+  </data>
+  <data name="RESIZE_ELEMENT" xml:space="preserve">
+    <value>Resize element on a diagram</value>
+  </data>
+  <data name="RESIZE_MACRO" xml:space="preserve">
+    <value>Resize element on a diagram</value>
+  </data>
+  <data name="UPDATE_ASSOCIATION_MACRO" xml:space="preserve">
+    <value>Update association</value>
+  </data>
+  <data name="UPDATE_CLASS_MACRO" xml:space="preserve">
+    <value>Update class</value>
+  </data>
+  <data name="UPDATE_OPERATION_MACRO" xml:space="preserve">
+    <value>Update operation </value>
+  </data>
+  <data name="UPDATE_PROPERTY_MACRO" xml:space="preserve">
+    <value>Update property</value>
+  </data>
+  <data name="UPDATE_PACKAGE_MACRO" xml:space="preserve">
+    <value>Update package</value>
+  </data>
+  <data name="PSM_ATTRIBUTE_CONTAINER" xml:space="preserve">
+    <value>Move attributes to attribute container</value>
+  </data>
+  <data name="PSM_INCLUDE_CLASS_ATTRIBUTES" xml:space="preserve">
+    <value>Include/exclude attributes of a class in a PSM diagram</value>
+  </data>
+  <data name="PSM_CHANGE_ATTRIBUTE_ALIAS" xml:space="preserve">
+    <value>Change alias of an atribute on a PSM diagram</value>
+  </data>
+  <data name="PSM_EXCLUDE_CLASS_ATTRIBUTES" xml:space="preserve">
+    <value>Exclude attributes of a class in from a PSM diagram</value>
+  </data>
+  <data name="REMOVE_FROM_DIAGRAM_MACRO" xml:space="preserve">
+    <value>Remove element from diagram with dependencies</value>
+  </data>
+  <data name="REMOVE_FROM_MODEL_MACRO" xml:space="preserve">
+    <value>Remove element from model with dependencies</value>
+  </data>
+  <data name="ADD_PSM_CHILDREN_MACRO" xml:space="preserve">
+    <value>Add PSM Class children</value>
+  </data>
+  <data name="PSM_MANAGE_ATTRIBUTES" xml:space="preserve">
+    <value>Alter list of class attributes</value>
+  </data>
+  <data name="INVALIDATE_STACK" xml:space="preserve">
+    <value>Invalidate command stack</value>
+  </data>
+  <data name="CHANGE_ATTRIBUTE_DEFAULT" xml:space="preserve">
+    <value>Change attribute's default value</value>
+  </data>
+  <data name="CHANGE_ATTRIBUTE_TYPE" xml:space="preserve">
+    <value>Change type of an attribute</value>
+  </data>
+  <data name="ADD_PSM_ASSOCIATION" xml:space="preserve">
+    <value>Add a PSM Association</value>
+  </data>
+  <data name="PSM_CLASS_TO_DIAGRAM" xml:space="preserve">
+    <value>Add a PSM Class to a PSM Diagram</value>
+  </data>
+  <data name="ADD_NESTING_JOIN" xml:space="preserve">
+    <value>Add a nesting join to a PSM Association</value>
+  </data>
+  <data name="HOLDER_CONVERTOR" xml:space="preserve">
+    <value>Convert Element Holder type</value>
+  </data>
+  <data name="PSM_COMPONENT_REORDER" xml:space="preserve">
+    <value>Reorder components</value>
+  </data>
+  <data name="ALIGN_ELEMENT_NAME" xml:space="preserve">
+    <value>Align Element name label</value>
+  </data>
+  <data name="SET_REPRESENTED_CLASS" xml:space="preserve">
+    <value>Set represented PSM Class</value>
+  </data>
+  <data name="PSM_LEAVE_OUT_ATTRIBUTE_CONTAINER" xml:space="preserve">
+    <value>Remove attribute container from the diagram</value>
+  </data>
+  <data name="PSM_LEAVE_OUT_CLASS_UNION" xml:space="preserve">
+    <value>Remove class union from the diagram</value>
+  </data>
+  <data name="PSM_LEAVE_OUT_SUPERORDINATE_COMPONENT" xml:space="preserve">
+    <value>Remove content choice / conent container from the diagram</value>
+  </data>
+  <data name="PSM_ADD_SPECIFICATIONS" xml:space="preserve">
+    <value>Add a subclass of a class to the diagram</value>
+  </data>
+  <data name="PSM_LEAVE_OUT_STRUCTURAL_ELEMENTS" xml:space="preserve">
+    <value>Remove structural elements from the diagram</value>
+  </data>
+  <data name="PSM_MOVE_ATTRIBUTES_BACK_TO_CLASS" xml:space="preserve">
+    <value>Move attribues from attribute container back to class</value>
+  </data>
+  <data name="NEW_SIMPLE_TYPE" xml:space="preserve">
+    <value>Add new simple type</value>
+  </data>
+  <data name="PROPAGATE_PIMLESS" xml:space="preserve">
+    <value>Propagate PIMLess attribute to PIM</value>
+  </data>
+  <data name="REMOVE_PSMCLASS_FROM_ROOTS" xml:space="preserve">
+    <value>Remove PSM Class from roots</value>
+  </data>
+  <data name="PSM_CUT_ASSOCIATION_TO_ROOT" xml:space="preserve">
+    <value>Cut association to root</value>
+  </data>
+  <data name="PSM_CLASS_ALTER_ABSTRACT" xml:space="preserve">
+    <value>Update PSMClass' - abstract/not-abstract</value>
+  </data>
+  <data name="RENAME_PROJECT_NAMESPACE" xml:space="preserve">
+    <value>Rename project namespace</value>
+  </data>
+  <data name="GROUP_BY" xml:space="preserve">
+    <value>Group by</value>
+  </data>
+  <data name="SWITCH_DIAMOND" xml:space="preserve">
+    <value>Switches view of an association between view with an association diamond and without it. </value>
+  </data>
+  <data name="ADD_ASSOCIATION_END" xml:space="preserve">
+    <value>Add another association end.</value>
+  </data>
+  <data name="REMOVE_ASSOCIATION_END" xml:space="preserve">
+    <value>Removes an end fom an association. </value>
+  </data>
+  <data name="CHANGE_ANY_ATTRIBUTE" xml:space="preserve">
+    <value>Change  "any attribute" definition</value>
+  </data>
+  <data name="DUPLICATE_DIAGRAM" xml:space="preserve">
+    <value>Duplicate diagram in project.</value>
+  </data>
+  <data name="PSM_ADD_ATTRIBUTE" xml:space="preserve">
+    <value>Adds attribute to a PSM Class</value>
+  </data>
+  <data name="PSM_COMPONENTS_MOVED" xml:space="preserve">
+    <value>Component(s) moved.</value>
+  </data>
+  <data name="PSM_MORE_CLASSES_TO_UNION" xml:space="preserve">
+    <value>Classes added to class union.</value>
+  </data>
+  <data name="PSM_MOVE_CONTENT_FROM_CONTAINER" xml:space="preserve">
+    <value>Moves component from content choice or content container</value>
+  </data>
+  <data name="PSM_ADD_DIAGRAM_REFERENCE" xml:space="preserve">
+    <value>Reference another PSM diagram</value>
+  </data>
+  <data name="PSM_REMOVE_DIAGRAM_REFERENCE" xml:space="preserve">
+    <value>Remove PSM diagram refernce</value>
+  </data>
+	<data name="CHANGE_SCHEMA_LOCATION">
+		<value xml:space="preserve">Change diagram reference schema location</value>
+	</data>
+	<data name="CHANGE_REFERENCE_NAMESPACE">
+		<value xml:space="preserve">Change diagram reference namespace</value>
+	</data>
+	<data name="REFERENCE_LOCAL_EXTERNAL">
+		<value xml:space="preserve">Change diagram reference local/external</value>
+	</data>
+	<data name="CHANGE_REFERENCE_NAMESPACE_PREFIX">
+		<value xml:space="preserve">Change diagram reference namespace prefix</value>
+	</data>
+	<data name="CHANGE_REFERENCED_DIAGRAM">
+		<value xml:space="preserve">Change referenced diagram</value>
+	</data>
+	<data name="DIAGRAM_REFERENCE_MACRO">
+		<value xml:space="preserve">Update diagram reference macro command</value>
+	</data>
+	<data name="CHANGE_DIAGRAM_TARGET_NAMESPACE">
+		<value xml:space="preserve">Change diagram target namespace</value>
+	</data>
+</root>

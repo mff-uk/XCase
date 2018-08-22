@@ -1,0 +1,36 @@
+﻿<Window x:Class="XCase.Controller.Dialogs.DiagramReferenceDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Dialogs="clr-namespace:XCase.Controller.Dialogs"
+    Title="Attribute"
+    ShowInTaskbar="False" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Topmost="True" SizeToContent="Height" Width="351" Padding="10" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" d:DesignHeight="256">
+	<StackPanel Orientation="Vertical" Margin="10">
+		<Canvas Height="28" Name="canvas1" >
+			<Label Height="28" HorizontalAlignment="Left" Name="auto" VerticalAlignment="Top" Width="44.5">Name:</Label>
+			<Dialogs:RememberingTextBox Height="23" x:Name="tbName" VerticalAlignment="Top" HorizontalAlignment="Right" Width="178" Canvas.Left="128" Canvas.Top="0" />
+            <ComboBox Canvas.Left="128" Height="23" Name="cbDiagram" Width="178" IsEditable="False" Canvas.Top="28" />
+            <Dialogs:RememberingTextBox Canvas.Left="129" Height="23" x:Name="tbNamespacePrefix" Width="178" Canvas.Top="56" />
+            <Dialogs:RememberingTextBox Canvas.Left="129" Height="23" x:Name="tbNamespace" Width="178" Canvas.Top="84" />
+            <Dialogs:RememberingTextBox Canvas.Left="129" Height="23" x:Name="tbSchemaLocation" Width="178" Canvas.Top="112" />
+        </Canvas>
+		<Canvas Height="28" Name="canvas2" >
+			<Label Height="28" HorizontalAlignment="Left" Name="label2" VerticalAlignment="Top"  Width="144">Referenced diagram:</Label>
+        </Canvas>
+        <Canvas Height="28" Name="canvas3" >
+            <Label   Height="28" Name="label1" Margin="0" Width="123" Canvas.Top="1" Content="Namespace prefix:"></Label>
+        </Canvas>
+        <Canvas Height="28" Name="canvas4" >
+            <Label   Height="28" Name="label3" Margin="0" Width="123" Canvas.Top="1" Content="Namespace:"></Label>
+        </Canvas>
+        <Canvas Height="28" Name="canvas5" >
+            <Label   Height="28" Name="label4" Margin="0" Width="123" Canvas.Top="1" Content="Schema location:"></Label>
+        </Canvas>
+        <Canvas Height="28" Name="canvas7" >
+            <CheckBox Height="28" Name="cbLocal" Margin="0" Width="123" Canvas.Top="1" Content="from current project"></CheckBox>
+        </Canvas>
+        <Canvas Height="28" Name="canvas6" >
+			<Button Height="23"  Name="bOk" VerticalAlignment="Top" IsDefault="True" Click="bOk_Click" Canvas.Left="86"  Width="75" Canvas.Top="-1">OK</Button>
+			<Button Height="23" HorizontalAlignment="Right" Name="bCancel" VerticalAlignment="Top" Width="75" IsCancel="True" Canvas.Left="166" Canvas.Top="-1">Cancel</Button>
+		</Canvas>
+	</StackPanel>
+</Window>

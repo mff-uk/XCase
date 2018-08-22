@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="XCase.Gui.MainMenuCommands.ToolTipControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Width="300">
+    <StackPanel>
+		<StackPanel Height="100" Orientation="Horizontal" >
+			<Image Name="Image1" Source="{StaticResource ContentChoice}" ></Image>
+			<Canvas Width="100">
+				<Image Source="{StaticResource navigate_right}" Height="43" Canvas.Left="27" Canvas.Top="28" Width="43"></Image>
+			</Canvas>
+			<Image Name="Image2" Source="{StaticResource ContentChoice}" ></Image>
+		</StackPanel>
+		<Canvas Height="100">
+			<TextBlock Name="tbMessage" Height="16" Canvas.Left="20.36" Canvas.Top="17" Width="27.64">Hello</TextBlock>
+		</Canvas>
+	</StackPanel>
+</UserControl>

@@ -1,0 +1,12 @@
+﻿<Window x:Class="XCase.Gui.Dialogs.OperationDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Operation" Height="168" Width="297" WindowStartupLocation="CenterScreen" Topmost="True" ShowInTaskbar="False" ResizeMode="NoResize">
+    <Grid>
+        <Label Height="28" HorizontalAlignment="Left" Margin="16,17,0,0" Name="label1" VerticalAlignment="Top" Width="120">Name:</Label>
+        <Label Height="28" HorizontalAlignment="Left" Margin="16,49,0,0" Name="label2" VerticalAlignment="Top" Width="120">Return type:</Label>
+        <TextBox Height="23" Margin="0,22,12,0" Name="tbName" VerticalAlignment="Top" HorizontalAlignment="Right" Width="178" />
+        <Button Height="23" Margin="111,95,93,0" Name="bOk" VerticalAlignment="Top" IsDefault="True" Click="bOk_Click">OK</Button>
+        <Button Height="23" HorizontalAlignment="Right" Margin="0,95,12,0" Name="bCancel" VerticalAlignment="Top" Width="75" IsCancel="True">Cancel</Button>
+    </Grid>
+</Window>

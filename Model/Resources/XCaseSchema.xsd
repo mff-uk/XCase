@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<!-- ..................................................................-->
+<!--                                                                   -->
+<!--                   XCase Project XML Schema                        -->
+<!--                                                                   -->
+<!--     This XML schema describes the structure and datatypes         -->
+<!--     of a XML file with one serialized XCase project.              -->
+<!--                                                                   -->  
+<!-- ..................................................................-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://kocour.ms.mff.cuni.cz/~necasky/xcase" 
+           targetNamespace="http://kocour.ms.mff.cuni.cz/~necasky/xcase" 
+           elementFormDefault="qualified">
+  
+  <!-- OVERAL DOCUMENT STRUCTURE -->
+  <xs:element name="project">
+    <xs:complexType>
+			<xs:choice>
+				<!-- structure for the NONVERSIONED PROJECTS -->
+				<xs:sequence>
+	        
+					<!-- LOGICAL PART -->
+					<xs:element name="uml">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="primitive_types" type="datatypes_type" minOccurs="0" />
+								<xs:element name="profiles"        type="profiles_type"  />
+								<xs:element name="model"           type="model_type"     />
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+	        
+					<!-- VISUALIZATION -->
+					<xs:element name="diagrams" type="gui_diagramsType" />
+				</xs:sequence>
+				<!-- structure for the VERSIONED PROJECTS -->
+				<xs:sequence>
+					<xs:element name="versions">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="version" type="version_type" minOccurs="1" maxOccurs="unbounded" />
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="versionedProjects">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="version" minOccurs="1" maxOccurs="unbounded">
+									<xs:complexType>
+										<xs:complexContent>
+											<xs:extension base="version_type">
+												<xs:sequence>
+													<xs:element name="profiles" type="profiles_type"  />
+													<xs:element name="model"    type="model_type"     />
+													<xs:element name="diagrams" type="gui_diagramsType" />
+												</xs:sequence>
+											</xs:extension>
+										</xs:complexContent>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="versionLinks">
+						<xs:complexType>
+							<xs:choice minOccurs="0" maxOccurs="unbounded">
+								<xs:element name="versionLink">
+									<xs:complexType>
+										<xs:attribute name="firstVersion" type="xs:string" />
+										<xs:attribute name="firstVersionRef" type="xs:string" />
+										<xs:attribute name="version" type="xs:string" />
+										<xs:attribute name="ref" type="xs:string" />
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="versionLinkDiagram">
+									<xs:complexType>
+										<xs:attribute name="firstVersion" type="xs:string" />
+										<xs:attribute name="firstVersionRef" type="xs:string" />
+										<xs:attribute name="version" type="xs:string" />
+										<xs:attribute name="ref" type="xs:string" />
+									</xs:complexType>
+								</xs:element>
+							</xs:choice>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:choice>
+      <xs:attribute name="version" type="xs:string" default="1.0" />
+    </xs:complexType>
+  </xs:element>
+
+  <!--...................................................................... -->
+  <!--...................................................................... -->
+  <!--                                                                       -->
+  <!--                                UML                                    -->
+  <!--                                                                       -->
+  <!--.......................................................................-->
+  <!--...................................................................... -->
+ 
+  <!--..............................  MODEL .................................-->
+
+	<xs:complexType name="version_type">
+		<xs:attribute name="number"				type="xs:decimal" />
+		<xs:attribute name="label"			  type="xs:string" />
+		<xs:attribute name="createdFrom"	type="xs:nonNegativeInteger" />
+	</xs:complexType>
+									
+	
+  <xs:complexType name="model_type">
+    <xs:sequence>
+      <xs:element name="comments"         type="comments_type"        />
+      <xs:element name="datatypes"        type="datatypes_type"       />
+      <xs:element name="packages"         type="packages_type"        />
+      <xs:element name="pim_classes"      type="pim_classes_type"     />
+      <xs:element name="associations"     type="associations_type"    />
+      <xs:element name="generalizations"  type="generalizations_type" />
+    </xs:sequence>
+    <xs:attributeGroup ref="identification"/>
+		<xs:attribute name="version"	 type="xs:nonNegativeInteger"	 use="optional"  />
+		<xs:attribute name="viewpoint" type="xs:string" use="required"/>
+    <xs:attribute name="namespace" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <!-- COMMENTS -->
+  <xs:complexType name="comments_type">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="comment" type="comment_type"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="comment_type">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="id" type="xs:string" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <!-- PACKAGES -->
+  <xs:complexType name="packages_type">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="package" type="package_type"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="package_type">
+    <xs:sequence>
+      <xs:element name="comments"             type="comments_type"      />
+      <xs:element name="stereotype_instances" type="stereotype_instances_type"  />
+      <xs:element name="datatypes"            type="datatypes_type"     />
+      <xs:element name="packages"             type="packages_type"      />
+      <xs:element name="pim_classes"          type="pim_classes_type"   />
+    </xs:sequence>
+    <xs:attributeGroup ref="identification"/>
+  </xs:complexType>
+
+  <!--.............................. PIM CLASSES ........................-->
+
+  <xs:complexType name="pim_classes_type">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="pim_class" type="pim_class_type" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="pim_class_type">
+    <xs:sequence>
+      <xs:element name="comments"             type="comments_type"             />
+      <xs:element name="stereotype_instances" type="stereotype_instances_type" />
+      <xs:element name="associations"         type="ref_associations_type"     />
+      <xs:element name="properties"           type="properties_type"           />
+      <xs:element name="operations"           type="operations_type"           />
+      <xs:element name="psm_classes"          type="psm_classes_type"          />
+    </xs:sequence>
+    <xs:attribute name="id"    type="xs:string"  use="required"/>
+    <xs:attribute name="name"   type="xs:string"              use="required"/>
+    <xs:attribute name="ontologyEquivalent"   type="xs:string" use="optional"/>
+  </xs:complexType>
+  
+  <!-- CLASS STEREOTYPES -->
+  <xs:complexType name="stereotype_instances_type">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="stereotype_instance" type="stereotype_instance_type"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="stereotype_instance_type">
+    <xs:sequence>
+      <xs:element name="value_specification" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="value" type="xs:string"/>
+          </xs:sequence>
+          <xs:attributeGroup ref="identification" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="ref" type="xs:string" use="required" />
+  </xs:complexType>
+
+  <!-- CLASS ASSOCIATIONS -->
+  <xs:complexType name="ref_associations_type">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="association">
+        <xs:complexType>
+          <xs:attribute name="ref" type="xs:string" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- CLASS PROPERTIES -->
+  <xs:complexType name="properties_type">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="property" type="property_type"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="property_type">
+    <xs:attributeGroup ref="identification"/>
+    <xs:attributeGroup ref="basic_attributes" />
+    <xs:attributeGroup ref="prop_assoc_attributes" />
+    <xs:attribute name="type" type="ID_or_null" use="required" />
+    <xs:attribute name="ontologyEquivalent"   type="xs:string" use="optional"/>
+  </xs:complexType>
+
+  <!-- CLASS OPERATIONS -->
+  <xs:complexType name="operations_type">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="operation" type="operation_type"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="operation_type">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="parameter" type="operation_parameter_type" />
+    </xs:sequence>
+    <xs:attributeGroup ref="identification"/>
+    <xs:attributeGroup ref="basic_attributes" />
+    <xs:attribute name="type"  type="ID_or_null" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="operation_parameter_type">
+    <xs:attributeGroup ref="identification"/>
+    <xs:attributeGroup ref="basic_attributes" />
+    <xs:attribute name="type"       type="ID_or_null"     use="required"/>
+    <xs:attribute name="direction"  type="direction_type" use="required"  />
+    <xs:attribute name="is_ordered" type="bool_type"      use="required"  />
+    <xs:attribute name="is_unique"  type="bool_type"      use="required" />
+  </xs:complexType>
+
+  <!--.............................. PSM CLASSES .........................-->
+
+  <xs:complexType name="psm_classes_type">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="psm_class" type="psm_class_type" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="psm_class_type">
+        <xs:sequence>
+          <xs:element name="comments"             type="comments_type"              />
+          <xs:element name="stereotype_instances" type="stereotype_instances_type"  />
+          <xs:element name="associations"         type="ref_associations_type"      />
+          <xs:element name="psm_attributes"       type="psm_properties_type"        />
+          <xs:element name="operations"           type="operations_type"            />
+          <xs:element name="element_name"         type="xs:string"                  />
+					<xs:element name="allow_any_attribute"  type="bool_type" minOccurs="0" maxOccurs="1" />
+          <xs:element name="components"           type="components_type"            />
+        </xs:sequence>        
+        <xs:attributeGroup ref="identification" />
+        <!-- If attribute not present, class in not a structural representative -->
+        <xs:attribute name="structural_representative" type="xs:string" use="optional"/>
+        <xs:attribute name="abstract" type="bool_type" use="required"/>
+  </xs:complexType>
+
+ <!-- PSM ATTRIBUTES -->
+  
+  <xs:complexType name="psm_properties_type">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="psm_attribute" type="psm_property_type" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="psm_property_type">
+    <xs:complexContent>
+      <xs:extension base="property_type">
+        <xs:attribute name="alias"              type="xs:string"              use="required"/>
+        <xs:attribute name="att_implementation" type="xs:string"              use="required"/>
+        <xs:attribute name="class_ref"          type="xs:string"   use="required"/>
+        <!-- If @att_ref not present, it is free PSM Attribute -->
+        <xs:attribute name="att_ref"            type="xs:string"  use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- PSM ASSOCIATIONS -->
+  
+  <xs:complexType name="psm_association_type">
+    <xs:complexContent>
+      <xs:extension base="subordinate_type">
+        <xs:sequence>
+          <xs:element name="parent">
+            <xs:complexType>
+              <xs:attribute name="ref" type="xs:string" use="required"/>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="class_union"    type="class_union_type" minOccurs="0"/>
+          <xs:element name="child" >
+            <xs:complexType>
+              <xs:attribute name="ref" type="xs:string" use="required" />
+              <xs:attribute name="min" type="lower_upper_type"      use="required" />
+              <xs:attribute name="max" type="lower_upper_type"      use="required" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="used_generalizations" type="used_generalizations_type" minOccurs="0"/>
+          <xs:element name="nesting_joins"  type="nesting_joins_type" />
+        </xs:sequence>
+
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="used_generalizations_type">
+    <xs:sequence>
+      <xs:element name="used_generalization" minOccurs="1" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attribute name="ref" type="xs:string" use="required"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="nesting_joins_type">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="nesting_join" type="nesting_join_type"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="nesting_join_type">
+    <xs:sequence>
+      <xs:element name="child"          type="pim_path_type" />
+      <xs:element name="parent"          type="pim_path_type" />
+      <xs:element name="context"        type="context_type" />
+    </xs:sequence>
+    <xs:attribute name="core_class_ref"     type="xs:string" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="context_type">
+    <xs:sequence>
+      <xs:element name="pim_path" type="pim_path_type" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="pim_path_type">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="pim_step">
+        <xs:complexType>
+          <xs:attribute name="start_ref"          type="xs:string" use="required"/>
+          <xs:attribute name="end_ref"            type="xs:string" use="required"/>
+          <xs:attribute name="association_ref"    type="xs:string" use="required"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- PSM COMPONENTS -->
+ 
+  <xs:complexType name="components_type">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:choice>
+        <xs:element name="psm_att_container" type="psm_att_container_type"/>
+        <xs:element name="content_container" type="content_container_type"/>
+        <xs:element name="content_choice"    type="superordinate_type"/>
+        <xs:element name="psm_association"   type="psm_association_type" />
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="subordinate_type">
+    <xs:sequence>
+      <xs:element name="comments"             type="comments_type" />
+      <xs:element name="stereotype_instances" type="stereotype_instances_type" />
+    </xs:sequence>
+    <xs:attributeGroup ref="identification"/>
+    <xs:attribute name="index" type="xs:string" use="optional" />
+  </xs:complexType>
+
+  <xs:complexType name="superordinate_type">
+    <xs:complexContent>
+      <xs:extension base="subordinate_type">
+        <xs:sequence>
+          <xs:element name="components" type="components_type" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- PSM COMPONENTS: PSM Attribute Container -->
+  
+  <xs:complexType name="psm_att_container_type">
+    <xs:complexContent>
+      <xs:extension base="subordinate_type">
+        <xs:sequence>
+          <xs:element name="parent">
+            <xs:complexType>
+              <xs:attribute name="ref" type="xs:string" use="required"/>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="psm_attributes" type="psm_properties_type" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- PSM COMPONENTS: PSM Content Container -->
+
+  <xs:complexType name="content_container_type">
+    <xs:complexContent>
+      <xs:extension base="superordinate_type">
+        <xs:sequence>
+          <xs:element name="element_label" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- PSM COMPONENTS: PSM Class Union -->
+
+  <xs:complexType name="class_union_type">
+    <xs:complexContent>
+      <xs:extension base="subordinate_type">
+        <xs:sequence>
+          <xs:element name="components">
+            <xs:complexType>
+              <xs:sequence maxOccurs="unbounded">
+                <xs:choice>
+                  <xs:element name="psm_class">
+                    <xs:complexType>
+                      <xs:attribute name="ref" type="xs:string" use="required"/>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="class_union" type="class_union_type"/>
+                </xs:choice>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--..............................  ASSOCIATIONS .........................-->
+
+  <xs:complexType name="associations_type">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:choice>
+        <xs:element name="association" type="association_type" />
+        <xs:element name="association_class" />
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="association_type">
+    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="comments"             type="comments_type" />
+      <xs:element name="stereotype_instances" type="stereotype_instances_type" />
+      <xs:element name="association_end" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attributeGroup ref="identification"/>
+          <xs:attributeGroup ref="basic_attributes" />
+          <xs:attributeGroup ref="prop_assoc_attributes" />
+          <xs:attribute name="class" type="xs:string" use="required" />
+          <xs:attribute name="type"  type="ID_or_null" use="required"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="identification"/>
+    <xs:attribute name="ontologyEquivalent"   type="xs:string" use="optional"/>
+  </xs:complexType>
+
+  <!--..............................  GENERALIZATIONS ......................-->
+
+  <xs:complexType name="generalizations_type">
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+        <xs:choice>
+          <xs:element name="pim_generalization" type="generalization_type"/>
+          <xs:element name="psm_generalization" type="generalization_type"/>
+        </xs:choice>
+      </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="generalization_type">
+    <xs:sequence>
+      <xs:element name="comments"             type="comments_type" />
+    </xs:sequence>
+      <xs:attribute name="id" type="xs:string" use="required"/>
+      <!-- @general contains reference to the appropriate class id -->
+      <xs:attribute name="general" type="xs:string"  use="required"/>
+      <!-- @specific contains reference to the appropriate class id -->
+      <xs:attribute name="specific" type="xs:string"  use="required" />
+      <xs:attribute name="is_substitable"  type="bool_type" use="required"/>
+  </xs:complexType>
+
+  <!--................................ PROFILES ................................-->
+  
+  <xs:complexType name="profiles_type">
+    <xs:sequence  minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="profile" type="profile_type" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="profile_type">
+    <xs:sequence>
+      <xs:element name="stereotypes" type="stereotypes_type"  minOccurs="0"/>
+      <xs:element name ="datatypes"  type="datatypes_type"    minOccurs="0" />
+    </xs:sequence>
+    <xs:attributeGroup ref="identification"/>
+  </xs:complexType>
+  
+  <xs:complexType name="stereotypes_type">
+    <xs:sequence  minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="stereotype" type="stereotype_type" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="stereotype_type">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="receivers"  type="receivers_type" />
+      <xs:element name="properties" type="stereotype_properties_type" />
+    </xs:sequence>
+    <xs:attributeGroup ref="identification"/>
+  </xs:complexType>
+
+  <xs:complexType name="receivers_type">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="receiver">
+        <xs:complexType>
+          <xs:attribute name="type" type="xs:string" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="stereotype_properties_type">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="property" type="property_type" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!--................................ DATATYPES ................................-->
+
+  <xs:complexType name="datatypes_type">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="datatype" type="datatype_type">
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="datatype_type">
+    <!-- @id, @name -->
+    <xs:attributeGroup ref="identification"/>
+    <xs:attribute name="simple"       type="bool_type" use="required" />
+    <!-- @description is present if simple=True -->
+    <xs:attribute name="description"  type="xs:string" use="optional" />
+    <!-- @parent is present if simple=True -->
+    <xs:attribute name="parent_ref"  type="xs:string" use="optional" />
+  </xs:complexType>
+
+  <!-- COMMON ATTRIBUTE GROUPS -->
+  
+  <xs:attributeGroup name="identification">
+    <xs:attribute name="id"     type="xs:string"              use="required"/>
+    <xs:attribute name="name"   type="xs:string"              use="required"/>
+  </xs:attributeGroup>
+
+  <xs:attributeGroup name="basic_attributes">
+    <xs:attribute name="lower"       type="lower_upper_type" use="required" />
+    <xs:attribute name="upper"       type="lower_upper_type" use="required" />
+    <xs:attribute name="visibility"  type="visibility_type"  use="required"/>
+  </xs:attributeGroup>
+
+  <xs:attributeGroup name="prop_assoc_attributes">
+    <xs:attribute name="aggregation"      use="required"  type="aggregation_type" />
+    <xs:attribute name="default"          use="required"  type="xs:string" />
+    <xs:attribute name="default_value"    use="required"  type="xs:string" />
+    <xs:attribute name="is_composite"     use="required"  type="bool_type" />
+    <xs:attribute name="is_derived"       use="required"  type="bool_type" />
+    <xs:attribute name="is_derived_union" use="required"  type="bool_type" />
+    <xs:attribute name="is_readonly"      use="required"  type="bool_type" />
+    <xs:attribute name="is_ordered"       use="required"  type="bool_type"/>
+    <xs:attribute name="is_unique"        use="required"  type="bool_type"/>
+  </xs:attributeGroup>
+  
+  <!-- SIMPLE TYPES -->
+
+  <xs:simpleType name="ID_or_null">
+    <xs:union memberTypes="xs:string nullString" />
+  </xs:simpleType>
+
+  <xs:simpleType name="nullString">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="null" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- It is a positive integer or '*' or 'null' -->
+  <xs:simpleType name="lower_upper_type">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([0-9]*)|\*|(null)"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="direction_type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="in"/>
+      <xs:enumeration value="inout"/>
+      <xs:enumeration value="out"/>
+      <xs:enumeration value="return"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="bool_type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="True"/>
+      <xs:enumeration value="False"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="visibility_type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="public"/>
+      <xs:enumeration value="private"/>
+      <xs:enumeration value="protected"/>
+      <xs:enumeration value="package"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="aggregation_type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="none"/>
+      <xs:enumeration value="shared"/>
+      <xs:enumeration value="composite"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <!--...................................................................... -->
+  <!--...................................................................... -->
+  <!--                                                                       -->
+  <!--                           VISUALIZATION                               -->
+  <!--                                                                       -->
+  <!--.......................................................................-->
+  <!--...................................................................... -->
+
+	<xs:complexType name="gui_diagramsType">
+		<xs:sequence>
+			<xs:element name="PIM_diagrams">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="diagram" type="gui_PIM_diagram_type" minOccurs="0" maxOccurs="unbounded" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PSM_diagrams">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="diagram" type="gui_PSM_diagram_type" minOccurs="0" maxOccurs="unbounded" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- PIM DIAGRAM -->
+  <!-- Lists visual elements allowed in a PIM diagram -->
+  <xs:complexType name="gui_PIM_diagram_type">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:choice>
+        <xs:element name="class"          type="gui_class_type"/>
+        <xs:element name="association"    type="gui_association_type"/>
+        <xs:element name="association_class" type="gui_association_class_type" />
+        <xs:element name="comment"        type="visual_element_type"/>
+        <xs:element name="generalization" type="visual_element_type"/>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="no" type="xs:int" use="required"/>
+    <xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="diagram_id" type="xs:int" use="optional" />
+  </xs:complexType>
+
+  <!-- PSM DIAGRAM -->
+  <!-- Lists visual elements allowed in a PSM diagram -->
+  <xs:complexType name="gui_PSM_diagram_type">
+    <xs:sequence>
+      <xs:element name="roots">
+        <xs:complexType>
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="root">
+              <xs:complexType>
+                <xs:attribute name="ref" type="xs:string" use="required"/>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:choice>
+        <xs:element name="class"              type="gui_class_type"/>
+        <xs:element name="psm_association"    type="gui_psm_association_type"/>
+        <xs:element name="comment"            type="visual_element_type"/>
+        <xs:element name="psm_att_container"  type="visual_element_type"/>
+        <xs:element name="content_container"  type="visual_element_type"/>
+        <xs:element name="content_choice"     type="visual_element_type" />
+        <xs:element name="class_union"        type="visual_element_type" />
+        <xs:element name="generalization"     type="visual_element_type"/>
+        <xs:element name="diagram_reference"  type="diagram_reference_type" />
+      </xs:choice>
+    </xs:sequence>
+    </xs:sequence>
+    <xs:attribute name="no" type="xs:int" use="required"/>
+    <xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="diagram_id" type="xs:int" use="optional" />
+    <xs:attribute name="target_namespace" type="xs:string" use="optional" />
+  </xs:complexType>
+
+  <!-- VISUAL ELEMENT -->
+  <!-- PIM Diagrams: Comment, Generalization -->
+  <!-- PSM Diagrams: Comment, Attribute Container, Content Choice, Content Conatiner, Class Union -->
+  <xs:complexType name="visual_element_type">
+    <xs:sequence>
+      <xs:element name="appearance"   type="appearance_type"/>
+      <xs:element name="points"       type="points_type" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="ref" type="xs:string" use="required"/>
+  </xs:complexType>
+
+
+  <!-- DIAGRAM REFERENCE -->
+  <xs:complexType name="diagram_reference_type">
+    <xs:complexContent>
+      <xs:extension base="visual_element_type">
+        <xs:attribute name="referenced_diagram" type="xs:int"  use="required"/>
+        <xs:attribute name="referencing_diagram" type="xs:int"  use="required"/>
+        <xs:attribute name="schema_location" type="xs:string"  use="required"/>
+        <xs:attribute name="local" type="xs:boolean"  use="required"/>
+        <xs:attribute name="namespace_prefix" type="xs:string"  use="optional"/>
+        <xs:attribute name="namespace" type="xs:string"  use="optional"/>
+        <xs:attribute name="name" type="xs:string"  use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- CLASS -->
+  <!-- Describes visualization of both PIM and PSM class -->
+  <xs:complexType name="gui_class_type">
+    <xs:complexContent>
+      <xs:extension base="visual_element_type">
+         <xs:attribute name="methods_collapsed"            type="bool_type"  use="required"/>
+         <xs:attribute name="properties_collapsed"         type="bool_type"  use="required"/>
+         <xs:attribute name="element_label_collapsed"      type="bool_type"  use="required" />
+         <xs:attribute name="element_label_aligned_right"  type="bool_type"  use="required" />   
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="gui_association_class_type">
+    <xs:complexContent>
+      <xs:extension base="gui_class_type">
+        <xs:sequence>
+         <xs:element name="diamond"            type="appearance_type" minOccurs="0"/>
+         <xs:element name="namelabel"          type="appearance_type"/>
+         <xs:element name="association_ends"   type="gui_association_ends_type" />
+       </xs:sequence>
+      <xs:attribute name="diamond" type="bool_type" use="required" /> 
+     </xs:extension>
+    </xs:complexContent>
+    
+  </xs:complexType>
+
+  <!-- PIM ASSOCIATION -->
+  <xs:complexType name="gui_association_type">
+    <xs:sequence>
+      <xs:element name="diamond"    type="appearance_type" minOccurs="0" />
+      <xs:element name="namelabel"          type="appearance_type"/>      
+      <xs:element name="points"             type="points_type" />
+      <xs:element name="association_ends"   type="gui_association_ends_type"/>
+    </xs:sequence>
+    <xs:attribute name="ref"     type="xs:string" use="required"/>
+    <xs:attribute name="diamond" type="bool_type"             use="required" />
+  </xs:complexType>
+
+  <!-- ASSOCIATION ENDS -->
+  <xs:complexType name="gui_association_ends_type">
+    <xs:sequence minOccurs="2" maxOccurs="unbounded">
+      <xs:element name="association_end"    type="gui_association_end_type" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- ASSOCIATION END -->
+  <xs:complexType name="gui_association_end_type">
+    <xs:sequence>
+      <xs:element name="cardinality_label"  type="appearance_type" />
+      <xs:element name="role_label"         type="appearance_type" />
+    </xs:sequence>
+    <xs:attribute name="ref" type="xs:string" use="required"/>
+  </xs:complexType>
+  
+  <!-- PSM ASSOCIATION -->
+  <xs:complexType name="gui_psm_association_type">
+    <xs:complexContent>
+      <xs:extension base="visual_element_type">
+        <xs:sequence>
+          <xs:element name="multiplicity_label" type="appearance_type"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- APPEARANCE -->
+  <xs:complexType name="appearance_type">
+    <xs:sequence>
+      <xs:element name="width"        type="size_or_empty"/>
+      <xs:element name="height"       type="size_or_empty"/>
+      <xs:element name="coordinate_x" type="xs:int"/>
+      <xs:element name="coordinate_y" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- POINTS -->
+  <xs:complexType name="points_type">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="point">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="coordinate_x" type="xs:int"/>
+            <xs:element name="coordinate_y" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- GUI SIMPLE TYPES -->
+
+  <!-- Non negative integer value or empty string -->
+  <xs:simpleType name="size_or_empty">
+    <xs:union memberTypes="xs:string emptyString" />
+  </xs:simpleType>
+
+  <xs:simpleType name="emptyString">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value=""/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="cardinality_type">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([0-9])|([0-9]\.\.[0-9\*])"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

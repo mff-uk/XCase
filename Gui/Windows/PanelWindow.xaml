@@ -1,0 +1,71 @@
+﻿<ad:DocumentContent x:Class="XCase.Gui.PanelWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:ad="clr-namespace:AvalonDock;assembly=AvalonDock"
+    xmlns:view="clr-namespace:XCase.View.Controls;assembly=View"
+    xmlns:Dialogs="clr-namespace:XCase.Controller.Dialogs;assembly=Controller"
+    Title="" Height="416" Width="721">
+
+    <DockPanel LastChildFill="True" Visibility="Visible">
+        <DockPanel.Resources>
+            <Style x:Key="{x:Static ToolBar.ButtonStyleKey}" TargetType="Button">
+                <Setter Property="Foreground" Value="DarkBlue"/>
+                <Setter Property="BorderBrush" Value="LightGray"/>
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="Padding" Value="4,1,4,1" />
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="Margin" Value="0,1,3,0" />
+                <Setter Property="Background" Value="Lavender" />
+                <Setter Property="Height" Value="25" />
+            </Style>
+            <Style x:Key="ComboBoxStyler" TargetType="ComboBox">
+                <Setter Property="Foreground" Value="DarkBlue"/>
+                <Setter Property="BorderBrush" Value="LightGray"/>
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="Padding" Value="4,1,4,1" />
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="Width" Value="80" />
+                <Setter Property="Height" Value="25" />
+                <Setter Property="Background" Value="Lavender" />
+                <Setter Property="Margin" Value="0,1,3,0" />
+
+            </Style>
+        </DockPanel.Resources>
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar Band="1" Name="demoBar">
+                <Button Name="diagramDemoButton" Click="diagramDemo_Click">Demo</Button>
+                <Button Name="diagramDemoButton2" Click="diagramDemo2_Click">PSM Demo</Button>
+            </ToolBar>
+        </ToolBarTray>
+        <!-- 
+        JM 30. 8. 2008 toolbar removed, its function replaced by toolbar in MainWindow 
+        
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar Band="1">
+                <Button Name="classButton" PreviewMouseLeftButtonDown="dragButton_PreviewMouseLeftButtonDown">Class</Button>
+                <Button Name="associationContainerButton" PreviewMouseLeftButtonDown="dragButton_PreviewMouseLeftButtonDown">Association Container</Button>
+                <Button Name="associationChoiceButton" PreviewMouseLeftButtonDown="dragButton_PreviewMouseLeftButtonDown">Association Choice</Button>
+                <Button Name="classChoiceButton" PreviewMouseLeftButtonDown="dragButton_PreviewMouseLeftButtonDown">Class Choice</Button>
+                <Button Name="commentaryButton" PreviewMouseLeftButtonDown="dragButton_PreviewMouseLeftButtonDown">Comment</Button>
+                <Button Name="attributeContainerButton" PreviewMouseLeftButtonDown="dragButton_PreviewMouseLeftButtonDown">Attribute Container</Button>
+            </ToolBar>
+            <ToolBar Band="2">
+                <Button Name="connectionButton">Association</Button>
+                <Button Name="generalizationButton">Generalization</Button>
+                <ToggleButton Name="associationDragButton">Association (drag)</ToggleButton>
+                <ToggleButton Name="generalizationDragButton">Generalization (drag)</ToggleButton>
+                <ToggleButton Name="compositionDragButton">Composition (drag)</ToggleButton>
+                <ToggleButton Name="aggregationDragButton">Aggregation (drag)</ToggleButton>
+            </ToolBar>
+            <ToolBar Band="2">
+                <Button Name="diagramDemoButton" Click="diagramDemo_Click">Demo</Button>
+                <Button Name="deleteButton" Click="deleteButton_Click">Delete</Button>
+                <Button Name="clearButton" Click="clearButton_Click">Clear</Button>
+            </ToolBar>
+        </ToolBarTray>
+        -->
+        <Grid>
+            <view:XCaseDrawComponent Name="xCaseDrawComponent" BorderThickness="0" BorderBrush="LightGray" Focusable="True" AllowDrop="True" Padding="1" Dialogs:AccessKeyScoper.IsAccessKeyScope="True" />
+        </Grid>
+    </DockPanel>
+</ad:DocumentContent>

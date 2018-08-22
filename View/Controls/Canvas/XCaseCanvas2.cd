@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="XCase.View.Controls.XCaseCanvas">
+    <Position X="0.5" Y="4.25" Width="3" />
+    <Members>
+      <Field Name="controller" Hidden="true" />
+      <Field Name="CurrentState" Hidden="true" />
+      <Property Name="draggingConnectionState" Hidden="true" />
+      <Property Name="draggingElementState" Hidden="true" />
+      <Event Name="ElementSizeChanged" Hidden="true" />
+      <Method Name="ExportToImage" Hidden="true" />
+      <Method Name="GetCanvasWidthAndHeight" Hidden="true" />
+      <Method Name="IncludeDependentElements" Hidden="true" />
+      <Method Name="InitializeContextMenu" Hidden="true" />
+      <Method Name="InvokeElementSizeChanged" Hidden="true" />
+      <Method Name="MeasureOverride" Hidden="true" />
+      <Field Name="MouseLabel" Hidden="true" />
+      <Property Name="normalState" Hidden="true" />
+      <Method Name="OnMouseDown" Hidden="true" />
+      <Method Name="OnMouseMove" Hidden="true" />
+      <Method Name="OnMouseUp" Hidden="true" />
+      <Method Name="SelectableItemPreviewMouseDown" Hidden="true" />
+      <Field Name="selectedItems" Hidden="true" />
+      <Property Name="SelectedItems" Hidden="true" />
+      <Property Name="SelectedRepresentants" Hidden="true" />
+      <Field Name="state" Hidden="true" />
+      <Property Name="State" Hidden="true" />
+      <Method Name="updateLayout" Hidden="true" />
+      <Method Name="updateSelectionAfterCommand" Hidden="true" />
+    </Members>
+    <NestedTypes>
+      <Enum Name="XCase.View.Controls.XCaseCanvas.EExportToImageMethod" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controls\Canvas\XCaseCanvas.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Class Name="XCase.View.Controls.XCaseCanvas.XCaseCanvasState" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controls\Canvas\XCaseCanvasState.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="XCase.View.Controls.XCaseCanvas.NormalState" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controls\Canvas\XCaseCanvasState.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="XCase.View.Controls.XCaseCanvas.DraggingConnectionState" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controls\Canvas\XCaseCanvasState.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="XCase.View.Controls.XCaseCanvas.DraggingElementState" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controls\Canvas\XCaseCanvasState.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <AssociationLine Name="ElementRepresentations" Type="XCase.View.Interfaces.RepresentationCollection" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.5" Y="4.25" />
+        <Point X="3.5" Y="3.938" />
+        <Point X="4" Y="3.938" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.173" Y="-0.211" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AgAECAgAAYgBAAEAAAQAQaEDABEAAIIEIAAXFAACAAA=</HashCode>
+      <FileName>Controls\Canvas\XCaseCanvas.cs</FileName>
+      <NewMemberFileName>Controls\Canvas\XCaseCanvasState.cs</NewMemberFileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Diagram" />
+      <Property Name="ElementRepresentations" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="XCase.Model.Diagram">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <Members>
+      <Field Name="caption" Hidden="true" />
+      <Field Name="diagramElements" Hidden="true" />
+      <Field Name="project" Hidden="true" />
+      <Property Name="Project" Hidden="true" />
+      <Event Name="PropertyChanged" Hidden="true" />
+    </Members>
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Model.PIMDiagram" Collapsed="true">
+    <Position X="4.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="XCase.Model.PSMDiagram" Collapsed="true">
+    <Position X="4.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="XCase.View.Interfaces.RepresentationCollection">
+    <Position X="4" Y="2.5" Width="3" />
+    <Members>
+      <Method Name="CreateNewViewHelper" Hidden="true" />
+      <Property Name="DeletingNotPresentBehavior" Hidden="true" />
+      <Property Name="ElementTypeNotRegisteredBehavior" Hidden="true" />
+      <Field Name="registeredRepresentations" Hidden="true" />
+      <Field Name="representedElements" Hidden="true" />
+      <Property Name="this" Hidden="true" />
+    </Members>
+    <NestedTypes>
+      <Enum Name="XCase.View.Interfaces.RepresentationCollection.EErrorBehavior" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Interfaces\RepresentationCollection.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <AssociationLine Name="PresentElements" Type="XCase.Model.Element" FixedFromPoint="true">
+      <Path>
+        <Point X="5.062" Y="5.594" />
+        <Point X="5.062" Y="6.25" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-1.388" Y="0.11" Height="0.182" Width="1.235" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAhAAAACCBAABAAgAASQACAACAEAAAAABI=</HashCode>
+      <FileName>Interfaces\RepresentationCollection.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="PresentElements" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Interface Name="XCase.Model.Element" Collapsed="true">
+    <Position X="4" Y="6.25" Width="2.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Various Element Controllers">
+    <Position X="10.835" Y="3.345" Height="0.309" Width="1.81" />
+  </Comment>
+  <Class Name="XCase.UMLController.AssociationController" Collapsed="true">
+    <Position X="3.5" Y="3.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAABAAoAAAAAAAAAgAAAAAAAABAAAUA=</HashCode>
+      <FileName>AssociationController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.UMLController.ClassController" Collapsed="true">
+    <Position X="8.75" Y="3.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAACCAaEAjAAAIAAAEAAACAQAEAAAAMAAgAQAA=</HashCode>
+      <FileName>ClassController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.UMLController.CommandControllerBase" Collapsed="true">
+    <Position X="1.75" Y="4.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAgAgAhIAAIAAAAAQA=</HashCode>
+      <FileName>CommandControllerBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.UMLController.CommentController" Collapsed="true">
+    <Position X="1" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CommentController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.UMLController.ConnectionController" Collapsed="true">
+    <Position X="4.75" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConnectionController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.UMLController.DiagramController" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAIBAAAAAAAAAAAIAIKAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DiagramController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.UMLController.ElementController" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgABAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ElementController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.UMLController.GeneralizationController" Collapsed="true">
+    <Position X="6" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GeneralizationController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.UMLController.ModelController" Collapsed="true">
+    <Position X="3" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>ModelController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.UMLController.NamedElementController" Collapsed="true">
+    <Position X="11" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>NamedElementController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.UMLController.PSM_AttributeContainerController" Collapsed="true">
+    <Position X="13" Y="3.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACCAaAAAAAAAAAAAAAACAAAAAAAAIAAgAAAA=</HashCode>
+      <FileName>PSM_AttributeContainerController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

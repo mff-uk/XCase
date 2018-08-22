@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="XCase.View.Controls.ConnectableDragThumb">
+    <Position X="3.75" Y="0.75" Width="2.75" />
+    <Members>
+      <Field Name="connectorDecorator" Hidden="true" />
+      <Method Name="DeleteFromCanvas" Hidden="true" />
+      <Method Name="Highlight" Hidden="true" />
+      <Method Name="UnHighlight" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAIAAAAAEIAACAAAAgEAAAAAACAAAAAA=</HashCode>
+      <FileName>Controls\Base\ConnectableDragThumb.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="XCase.View.Interfaces.IConnectable">
+    <Position X="0.75" Y="0.75" Width="2.75" />
+    <Members>
+      <Method Name="Highlight" Hidden="true" />
+      <Property Name="IsMeasureValid" Hidden="true" />
+      <Method Name="UnHighlight" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAEAAAAACAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IConnectable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

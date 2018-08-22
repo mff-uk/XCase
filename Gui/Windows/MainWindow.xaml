@@ -1,0 +1,1129 @@
+﻿<Window x:Class="XCase.Gui.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:ad="clr-namespace:AvalonDock;assembly=AvalonDock" 
+    xmlns:Gui="clr-namespace:XCase.Gui" 
+    Loaded="OnLoaded" Closing="OnClosing" WindowState="Maximized"
+    AllowDrop="true" Drop="MainWindow_FileDropped" Width="1694">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ResourceLibrary;component/Images/Images.xaml" ></ResourceDictionary>
+                <ResourceDictionary Source="/Styles/Shared.xaml" />
+                <ResourceDictionary Source="/Styles/ToolBar.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <DockPanel>
+        <ToolBar DockPanel.Dock="Top" Height="140">
+            <TabControl SelectedIndex="0" Name="Tabs">
+                <TabItem Header="General" Padding="8,3" Name="tbGeneral">
+                    <StackPanel Orientation="Horizontal">
+                        <GroupBox Header="Project" Style="{StaticResource ToolbarGroup}" Margin="2,1,2,1">
+                        <StackPanel Grid.Row="1" Orientation="Horizontal">
+                            <Button Margin="0,3,0,3" Width="55" Style="{StaticResource ToolBarButtonBaseStyle}"
+                        HorizontalContentAlignment="Center"
+                        Name="bOpenProject" IsTabStop="False">
+                                <Button.Content>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="3*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource Folder Yellow Downloads}" Width="30" Margin="4" />
+                                        <TextBlock Grid.Row="1" Text="Open" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                                    </Grid>
+                                </Button.Content>
+                            </Button>
+                            <StackPanel Orientation="Vertical" Margin="0,2,0,2" VerticalAlignment="Center">
+                                <Button Margin="0" Padding="1" HorizontalContentAlignment="Left"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                            OverridesDefaultStyle="True" Name="bNewProject" IsTabStop="False">
+                                    <Button.Content>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition />
+                                            </Grid.ColumnDefinitions>
+                                            <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource GenericDocument}" Width="18"/>
+                                            <TextBlock Margin="3,0,3,0" Text="New project" VerticalAlignment="Center" Grid.Column="1"/>
+                                        </Grid>
+                                    </Button.Content>
+                                </Button>
+                                <Button Margin="0" Padding="1" HorizontalContentAlignment="Left"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                            OverridesDefaultStyle="True" Name="bSaveProject" IsTabStop="False">
+                                    <Button.Content>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource Save}" Width="18"/>
+                                            <TextBlock Margin="3,0,3,0" Text="Save project" VerticalAlignment="Center"  Grid.Column="1"/>
+                                        </Grid>
+                                    </Button.Content>
+                                </Button>
+
+                                <Button Margin="0" Padding="1" HorizontalContentAlignment="Left"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                            OverridesDefaultStyle="True" Name="bSaveProjectAs" IsTabStop="False">
+                                    <Button.Content>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition />
+                                            </Grid.ColumnDefinitions>
+                                            <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource Save}" Width="18"/>
+                                            <TextBlock Margin="3,0,3,0" Text="Save as" VerticalAlignment="Center" Grid.Column="1"/>
+                                        </Grid>
+                                    </Button.Content>
+                                </Button>
+                            </StackPanel>
+                        </StackPanel>
+                    </GroupBox>
+                        <GroupBox Header="Edit" Style="{StaticResource ToolbarGroup}" Margin="2,2,2,1" >
+                        <StackPanel Grid.Row="1" Orientation="Horizontal">
+                            <Button Margin="0,3,0,3" Width="40" Style="{StaticResource ToolBarButtonBaseStyle}"
+                        HorizontalContentAlignment="Center"
+						ToolTip="{Binding RelativeSource={RelativeSource Self}, 
+                                  Path=Command.UnderlyingCommandDescription}" 
+                        Name="bUndo" IsTabStop="False">
+                                <Button.Content>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="3*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource undo}" Width="30" Margin="4"/>
+                                        <TextBlock Grid.Row="1" Text="Undo" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                                    </Grid>
+                                </Button.Content>
+                            </Button>
+                            <Button Margin="0,3,0,3" Width="40" Style="{StaticResource ToolBarButtonBaseStyle}"
+                        HorizontalContentAlignment="Center"
+						ToolTip="{Binding RelativeSource={RelativeSource Self}, 
+                              Path=Command.UnderlyingCommandDescription}" 
+                        Name="bRedo" IsTabStop="False">
+                                <Button.Content>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="3*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource redo}" Width="30" Margin="4"/>
+                                        <TextBlock Grid.Row="1" Text="Redo" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                                    </Grid>
+                                </Button.Content>
+                            </Button>
+                            <StackPanel Name="PIMDeleteMenu" Orientation="Vertical" Margin="0,2,0,2" VerticalAlignment="Center">
+                                <Button Margin="1" Padding="1" HorizontalContentAlignment="Left"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                            Name="bDeleteFromDiagram" IsTabStop="False">
+                                    <Button.Content>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition />
+                                            </Grid.ColumnDefinitions>
+                                            <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource delete2}" Height="20" VerticalAlignment="Top" />
+                                            <TextBlock Margin="3,0,3,0" Text="Delete from diagram" VerticalAlignment="Center" Grid.Column="1"/>
+                                        </Grid>
+                                    </Button.Content>
+                                </Button>
+                                <Button Margin="1" Padding="1" HorizontalContentAlignment="Left"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                            Name="bDeleteFromModel" IsTabStop="False">
+                                    <Button.Content>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource delete}" Width="18" Margin="1" />
+                                            <TextBlock Margin="3,0,3,0" Text="Delete from model" VerticalAlignment="Center"  Grid.Column="1"/>
+                                        </Grid>
+                                    </Button.Content>
+                                </Button>
+
+                            </StackPanel>
+                            <StackPanel Name="PSMDeleteMenu" Orientation="Vertical" Margin="0,2,0,2" VerticalAlignment="Center">
+                                <Button Margin="1" Padding="1" HorizontalContentAlignment="Left"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                            Name="bDeleteFromPSMDiagram">
+                                    <Button.Content>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition />
+                                            </Grid.ColumnDefinitions>
+                                            <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource delete2}" Height="20" VerticalAlignment="Top" />
+                                            <TextBlock Margin="3,0,3,0" Text="Delete subtree" VerticalAlignment="Center" Grid.Column="1"/>
+                                        </Grid>
+                                    </Button.Content>
+                                </Button>
+                                <Button Margin="1" Padding="1" HorizontalContentAlignment="Left"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                            Name="bDeleteContainer" IsTabStop="False">
+                                    <Button.Content>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition />
+                                            </Grid.ColumnDefinitions>
+                                            <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource RemoveContainer}" Height="20" VerticalAlignment="Top" />
+                                            <TextBlock Margin="3,0,3,0" Text="Delete container" VerticalAlignment="Center" Grid.Column="1"/>
+                                        </Grid>
+                                    </Button.Content>
+                                </Button>
+
+                            </StackPanel>
+                        </StackPanel>
+                    </GroupBox>
+                        <GroupBox Header="Diagrams" Style="{StaticResource ToolbarGroup}" Margin="2,1,2,1">
+                            <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" >
+                                <StackPanel Orientation="Vertical" Margin="0,2,0,2">
+                                    <Button Margin="0" Padding="1" HorizontalContentAlignment="Left"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                            Name="bNewPIMDiagram" IsTabStop="False">
+                                        <Button.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition />
+                                                </Grid.ColumnDefinitions>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource GenericDocument}" Width="18"/>
+                                                <TextBlock Margin="3,0,3,0" Text="New PIM diagram" VerticalAlignment="Center" Grid.Column="1"/>
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+                                    <Button Margin="0" Padding="1" HorizontalContentAlignment="Left"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                            Name="bNewPSMDiagram" IsTabStop="False">
+                                        <Button.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                </Grid.ColumnDefinitions>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource GenericDocument}" Width="18"/>
+                                                <TextBlock Margin="3,0,3,0" Text="New PSM diagram" VerticalAlignment="Center"  Grid.Column="1"/>
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+
+                                    <Button Margin="0" Padding="1" HorizontalContentAlignment="Left"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                            Name="bDeleteDiagram" IsTabStop="False">
+                                        <Button.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition />
+                                                </Grid.ColumnDefinitions>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource delete}" Width="18" Margin="1" />
+                                                <TextBlock Margin="3,0,3,0" Text="Delete diagram" VerticalAlignment="Center" Grid.Column="1"/>
+                                            </Grid>
+                                        </Button.Content>
+
+                                    </Button>
+                                </StackPanel>
+                                <Button Margin="0,3,0,3" Width="76" Style="{StaticResource ToolBarButtonBaseStyle}"
+                        HorizontalContentAlignment="Center"
+                        Name="bXMLSchema" IsTabStop="False">
+                                    <Button.Content>
+                                        <Grid Width="auto">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="3*"/>
+                                                <RowDefinition Height="1*"/>
+                                            </Grid.RowDefinitions>
+                                            <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource XmlSchema}" Width="30" Margin="4" />
+                                            <TextBlock Grid.Row="1" Text="XML schema" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                                        </Grid>
+                                    </Button.Content>
+                                </Button>
+                                <Button Margin="0,3,0,3" Width="60" Style="{StaticResource ToolBarButtonBaseStyle}"
+                        HorizontalContentAlignment="Center"
+                        ToolTip="Generates sample XML document"
+                        Name="bSampleDocument" IsTabStop="False">
+                                    <Button.Content>
+                                        <Grid Width="auto">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="3*"/>
+                                                <RowDefinition Height="1*"/>
+                                            </Grid.RowDefinitions>
+                                            <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource xmlIcon}" Height="34" Margin="4" />
+                                            <TextBlock Grid.Row="1" Text="XML doc" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                                        </Grid>
+                                    </Button.Content>
+                                </Button>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="Windows" Style="{StaticResource ToolbarGroup}" Margin="2,2,2,1" >
+                            <GroupBox.ContextMenu>
+                                <ContextMenu>
+                                    <ContextMenu.Items>
+                                        <MenuItem x:Name="miResetLayout" Click="miResetLayout_Click" Header="Reset layout" />
+                                    </ContextMenu.Items>
+                                </ContextMenu>
+                            </GroupBox.ContextMenu>
+                            <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center">
+                                <StackPanel Orientation="Vertical" Margin="0,2,0,2" VerticalAlignment="Center">
+                                    <Button Margin="0" Padding="1" HorizontalContentAlignment="Left" Click="ShowProjectsWindow"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                            Name="bProjectsWindow" IsTabStop="False">
+                                        <Button.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                </Grid.ColumnDefinitions>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource view_remove}" Width="18"/>
+                                                <TextBlock Margin="3,0,3,0" Text="Projects" VerticalAlignment="Center"  Grid.Column="1" Height="15.96" HorizontalAlignment="Right" Width="41.81" />
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+                                    <Button Margin="0" Padding="1" HorizontalContentAlignment="Left" Click="ShowPropertiesWindow"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                            Name="bPropertiesWindow" IsTabStop="False">
+                                        <Button.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="18*" />
+                                                    <ColumnDefinition Width="29*" />
+                                                    <ColumnDefinition Width="30.77*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource props}" Height="18" VerticalAlignment="Top" />
+                                                <TextBlock Margin="3,0,3,0" Text="Properties" VerticalAlignment="Center" Grid.Column="1" Height="15.96" />
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+                                    <Button Margin="0" Padding="1" HorizontalContentAlignment="Left" Click="ShowNavigatorWindow"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                            Name="bNavigatorWindow" IsTabStop="False">
+                                        <Button.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition />
+                                                </Grid.ColumnDefinitions>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource view_tree}" Height="18"/>
+                                                <TextBlock Margin="3,0,3,0" Text="Navigator" VerticalAlignment="Center" Grid.Column="1"/>
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+
+                                </StackPanel>
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>                    
+                </TabItem>
+                <TabItem Header="PIM" Padding="8,3" Name="tbPIM" >
+                    <StackPanel Orientation="Horizontal">
+                        <GroupBox Name="PIMmenu"  Header="PIM diagram elements" Style="{StaticResource ToolbarGroup}" Margin="2,1,2,1">
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Button Name="bClass"  Margin="3" Width="55" Style="{StaticResource ToolBarButtonBaseStyle}"
+                        ClickMode="Press" 
+                            HorizontalContentAlignment="Center"
+                        Grid.Column="0" Grid.Row="1" ToolTip="Add new Class to diagram, press and drag the class to desired position" IsTabStop="False">
+                                    <Button.Content>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="3*"/>
+                                                <RowDefinition Height="1*"/>
+                                            </Grid.RowDefinitions>
+                                            <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource class}" Width="45"/>
+                                            <TextBlock Grid.Row="1" Text="Class" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                                        </Grid>
+                                    </Button.Content>
+                                </Button>
+                                <Button Margin="0,3,0,3" Width="56" Style="{StaticResource ToolBarButtonBaseStyle}"
+                        HorizontalContentAlignment="Center"
+                        Grid.Column="1"
+                        ToolTip="Associate selected classes"
+                        Name="bAssociate" IsTabStop="False">
+                                    <Button.Content>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="3*"/>
+                                                <RowDefinition Height="1*"/>
+                                            </Grid.RowDefinitions>
+                                            <Image Style="{StaticResource toolbarImageStyle}" Source="{StaticResource branch}" Width="45"/>
+                                            <TextBlock Grid.Row="1" Margin="2,0,2,0"  Text="Associate" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                                        </Grid>
+                                    </Button.Content>
+                                </Button>
+                                <StackPanel Orientation="Vertical" Grid.Column="2">
+                                    <Button Margin="1" Padding="1" HorizontalContentAlignment="Left"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                                      Name="bPIMAddAttribute"
+                            ToolTip="Add an attribute to selected class" IsTabStop="False">
+                                        <Button.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="18*" />
+                                                    <ColumnDefinition Width="41*" />
+                                                    <ColumnDefinition Width="40.997*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource AddAttributes}" Height="18" VerticalAlignment="Top" />
+                                                <TextBlock Margin="3,0,3,0" Text="Add attribute" VerticalAlignment="Center" Grid.Column="1" Height="15.96" HorizontalAlignment="Right" />
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+                                    <Button Margin="1" Padding="1" HorizontalContentAlignment="Left"
+                                      Name="bPIMAddOperation"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                            ToolTip="Add an operation to selected class" IsTabStop="False">
+                                        <Button.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition />
+                                                </Grid.ColumnDefinitions>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource AddAttributes}" Height="18" VerticalAlignment="Top" />
+                                                <TextBlock Margin="3,0,3,0" Text="Add operation" VerticalAlignment="Center" Grid.Column="1"/>
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+                                </StackPanel>
+                                <StackPanel Orientation="Vertical" Grid.Column="3">
+                                    <Button Name="bCommentary" Margin="1" Padding="1" HorizontalContentAlignment="Left"
+                            Style="{StaticResource ToolBarButtonBaseStyle}" ClickMode="Press" ToolTip="Add commentary to diagram" IsTabStop="False">
+                                        <Button.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition />
+                                                </Grid.ColumnDefinitions>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource comment}" Height="18" VerticalAlignment="Top" />
+                                                <TextBlock Margin="3,0,3,0" Text="Commentary" VerticalAlignment="Center" Grid.Column="1"/>
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+                                    <ToggleButton Margin="1" Padding="1" HorizontalContentAlignment="Left"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                                      Name="bGeneralization"
+                            ToolTip="Press, then drag generalizations among classes" IsTabStop="False">
+                                        <ToggleButton.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition />
+                                                </Grid.ColumnDefinitions>
+                                                <Image Style="{StaticResource toolbarImageStyleForToggleButton}"  Source="{StaticResource generalize}" Height="18" VerticalAlignment="Top" />
+                                                <TextBlock Margin="3,0,3,0" Text="Generalization" VerticalAlignment="Center" Grid.Column="1" />
+                                            </Grid>
+                                        </ToggleButton.Content>
+                                    </ToggleButton>
+                                    <ToggleButton Margin="1" Padding="1" HorizontalContentAlignment="Left"
+                                      Name="bAssociation"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                            ToolTip="Press, then drag associations among classes" IsTabStop="False">
+                                        <ToggleButton.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition />
+                                                </Grid.ColumnDefinitions>
+                                                <Image Style="{StaticResource toolbarImageStyleForToggleButton}" Source="{StaticResource associate}" Height="18" VerticalAlignment="Top" />
+                                                <TextBlock Margin="3,0,3,0" Text="Association" VerticalAlignment="Center" Grid.Column="1"/>
+                                            </Grid>
+                                        </ToggleButton.Content>
+                                    </ToggleButton>
+
+                                </StackPanel>
+                                <StackPanel Orientation="Vertical" Grid.Column="4">
+                                    <Button Margin="1" Padding="1" HorizontalContentAlignment="Left"
+                            Style="{StaticResource ToolBarButtonBaseStyle}" Name="bAssociationClass"
+                            ToolTip="Associate selected classes using association class" IsTabStop="False">
+                                        <Button.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition />
+                                                </Grid.ColumnDefinitions>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource assocclass}" Height="18" VerticalAlignment="Top" />
+                                                <TextBlock Margin="3,1,3,1" Text="Association class" VerticalAlignment="Center" Grid.Column="1"/>
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+                                    <ToggleButton Margin="1" Padding="1" HorizontalContentAlignment="Left"
+                                      Name="bAggregation"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                            ToolTip="Press, then drag aggregations among classes" IsTabStop="False">
+                                        <ToggleButton.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition />
+                                                </Grid.ColumnDefinitions>
+                                                <Image Style="{StaticResource toolbarImageStyleForToggleButton}"  Source="{StaticResource aggregate}" Height="18" VerticalAlignment="Top" />
+                                                <TextBlock Margin="3,0,3,0" Text="Aggregation" VerticalAlignment="Center" Grid.Column="1"/>
+                                            </Grid>
+                                        </ToggleButton.Content>
+                                    </ToggleButton>
+                                    <ToggleButton Margin="1" Padding="1" HorizontalContentAlignment="Left"
+                                      Name="bComposition"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                            ToolTip="Press, then drag compositions among classes" IsTabStop="False">
+                                        <ToggleButton.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition />
+                                                </Grid.ColumnDefinitions>
+                                                <Image Style="{StaticResource toolbarImageStyleForToggleButton}"  Source="{StaticResource compose}" Height="18" VerticalAlignment="Top" />
+                                                <TextBlock Margin="3,0,3,0" Text="Composition" VerticalAlignment="Center" Grid.Column="1"/>
+                                            </Grid>
+                                        </ToggleButton.Content>
+                                    </ToggleButton>
+                                </StackPanel>
+                            </Grid>
+                        </GroupBox>
+                        <GroupBox Name="DeriveMenu" Header="Derive" Style="{StaticResource ToolbarGroup}" Margin="2,2,2,1" >
+                            <StackPanel Orientation="Vertical" Margin="0,2,0,2" VerticalAlignment="Center">
+                                <Button Margin="1" Padding="1" HorizontalContentAlignment="Left"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                            Name="bDeriveNew" IsTabStop="False">
+                                    <Button.Content>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition />
+                                            </Grid.ColumnDefinitions>
+                                            <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource view_remove}" Height="20" VerticalAlignment="Top" />
+                                            <TextBlock Margin="3,0,3,0" Text="Derive to new PSM Diagram" VerticalAlignment="Center" Grid.Column="1"/>
+                                        </Grid>
+                                    </Button.Content>
+                                </Button>
+                                <Button Margin="1" Padding="1" HorizontalContentAlignment="Left"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                            Name="bDeriveExisting" IsTabStop="False">
+                                    <Button.Content>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition />
+                                            </Grid.ColumnDefinitions>
+                                            <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource view_tree}" Height="20" VerticalAlignment="Top" />
+                                            <TextBlock Margin="3,0,3,0" Text="Derive to existing diagram" VerticalAlignment="Center" Grid.Column="1"/>
+                                        </Grid>
+                                    </Button.Content>
+                                </Button>
+
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Name="AlignmentMenu" Header="Alignment" Style="{StaticResource ToolbarGroup}" Margin="2,1,2,1">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0" Orientation="Vertical" VerticalAlignment="Center">
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Padding="2" Margin="1" Style="{StaticResource ToolBarButtonBaseStyle}" Name="bAlignLeft" ToolTip="Align left" IsTabStop="False">
+                                            <Button.Content>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource AlignObjectsLeft}" Width="16"/>
+                                            </Button.Content>
+                                        </Button>
+                                        <Button Padding="2" Margin="1" Style="{StaticResource ToolBarButtonBaseStyle}" Name="bAlignCenterH" IsTabStop="False">
+                                            <Button.Content>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource AlignObjectsCenteredHorizontal}" Width="16" ToolTip="Align center horizontally" />
+                                            </Button.Content>
+                                        </Button>
+                                        <Button Padding="2" Margin="1" Style="{StaticResource ToolBarButtonBaseStyle}" Name="bAlignRight" IsTabStop="False">
+                                            <Button.Content>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource AlignObjectsRight}" Width="16" ToolTip="Align right" />
+                                            </Button.Content>
+                                        </Button>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Padding="2" Margin="1" Style="{StaticResource ToolBarButtonBaseStyle}" Name="bAlignTop" IsTabStop="False">
+                                            <Button.Content>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource AlignObjectsTop}" Width="16" ToolTip="Align top" />
+                                            </Button.Content>
+                                        </Button>
+                                        <Button Padding="2" Margin="1" Style="{StaticResource ToolBarButtonBaseStyle}" Name="bAlignCenterV" IsTabStop="False">
+                                            <Button.Content>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource AlignObjectsCenteredVertical}" Width="16" ToolTip="Align center vertically" />
+                                            </Button.Content>
+                                        </Button>
+                                        <Button Padding="2" Margin="1" Style="{StaticResource ToolBarButtonBaseStyle}" Name="bAlignBottom" IsTabStop="False">
+                                            <Button.Content>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource AlignObjectsBottom}" Width="16" ToolTip="Align bottom" />
+                                            </Button.Content>
+                                        </Button>
+                                    </StackPanel>
+
+                                </StackPanel>
+                                <StackPanel Grid.Column="1" Orientation="Vertical" Margin="5,0,0,0" VerticalAlignment="Center">
+                                    <Button Margin="1" Padding="1" HorizontalContentAlignment="Left"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                                Name="bDistributeHorizontal" ToolTip="Distribute horizontally" IsTabStop="False">
+                                        <Button.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition />
+                                                </Grid.ColumnDefinitions>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource DistributeObjectsHorizontal}" Width="16"/>
+                                                <TextBlock Margin="3" Text="Horizontal" VerticalAlignment="Center" Grid.Column="1"/>
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+                                    <Button Margin="1" Padding="1" HorizontalContentAlignment="Left"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                                Name="bDistributeVertical" IsCancel="True" ToolTip="Distribute vertically" IsTabStop="False">
+                                        <Button.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition />
+                                                </Grid.ColumnDefinitions>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource DistributeObjectsVertical}" Width="16"/>
+                                                <TextBlock Margin="3" Text="Vertical" VerticalAlignment="Center" Grid.Column="1"/>
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+                                </StackPanel>
+                                <Line Stroke="{StaticResource ToolbarBorderBrush}" StrokeThickness="1" X1="0" Y1="0" X2="0" Y2="20" Stretch="Fill" HorizontalAlignment="Left"
+              Margin="3,0,0,0" Grid.Column="1"/>
+                            </Grid>
+                        </GroupBox>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="PSM" Padding="8,3" Name="tbPSM">
+                    <StackPanel Orientation="Horizontal">
+                        <GroupBox Name="PSMmenuClass" Header="PSM class" Style="{StaticResource ToolbarGroup}" Margin="2,1,2,1">
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Button Name="bAddChildren"  Margin="3" Style="{StaticResource ToolBarButtonBaseStyle}" 
+                            HorizontalContentAlignment="Center" ToolTip="Add children of the selected class into the diagram" IsTabStop="False">
+                                    <Button.Content>
+                                        <Grid Width="76">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="3*"/>
+                                                <RowDefinition Height="1*"/>
+                                            </Grid.RowDefinitions>
+                                            <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource AddChildren}" Width="45"/>
+                                            <TextBlock Grid.Row="1" Text="Add children" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                                        </Grid>
+                                    </Button.Content>
+                                </Button>
+                                <Button Margin="0,3,0,3" Style="{StaticResource ToolBarButtonBaseStyle}"
+                        HorizontalContentAlignment="Center"
+                        Grid.Column="1"
+                        ToolTip="Add attributes of the class to the diagram"
+                        Name="bAddAttributes" IsTabStop="False">
+                                    <Button.Content>
+                                        <Grid Width="82">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="3*"/>
+                                                <RowDefinition Height="1*"/>
+                                            </Grid.RowDefinitions>
+                                            <Image Style="{StaticResource toolbarImageStyle}" Source="{StaticResource AddAttributes}" Width="45"/>
+                                            <TextBlock Grid.Row="1" TextAlignment="Center" Text="Attributes..." />
+                                        </Grid>
+                                    </Button.Content>
+                                </Button>
+                            </Grid>
+                        </GroupBox>
+                        <GroupBox Name="PSMmenuElements" Header="PSM diagram elements" Style="{StaticResource ToolbarGroup}" Margin="2,1,2,1">
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Orientation="Vertical" Grid.Column="0" Visibility="Visible">
+                                    <Button Margin="1" Padding="1" HorizontalContentAlignment="Left"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                                      Name="bPSMAddAttribute"
+                            ToolTip="Add an attribute to selected class" IsTabStop="False">
+                                        <Button.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="18*" />
+                                                    <ColumnDefinition Width="41*" />
+                                                    <ColumnDefinition Width="40.997*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource AddAttributes}" Height="18" VerticalAlignment="Top" />
+                                                <TextBlock Margin="3,0,3,0" Text="Add attribute" VerticalAlignment="Center" Grid.Column="1" Height="15.96" HorizontalAlignment="Right" />
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+                                    <Button Margin="1" Padding="1" HorizontalContentAlignment="Left"
+                            Style="{StaticResource ToolBarButtonBaseStyle}" ToolTip="Move component out of container"
+                            Name="bMoveOutOfContainer" IsTabStop="False">
+                                        <Button.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition />
+                                                </Grid.ColumnDefinitions>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource RemoveContainer}" Height="20" VerticalAlignment="Top" />
+                                                <TextBlock Margin="3,0,3,0" Text="Move out" VerticalAlignment="Center" Grid.Column="1"/>
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+                                </StackPanel>
+                                <StackPanel Orientation="Vertical" Grid.Column="1">
+                                    <Button Margin="1" Padding="1" HorizontalContentAlignment="Left"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                                      Name="bContentChoice"
+                            ToolTip="Wrap content in content choice" IsTabStop="False">
+                                        <Button.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="18*" />
+                                                    <ColumnDefinition Width="41*" />
+                                                    <ColumnDefinition Width="40.997*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource ContentChoice}" Height="18" VerticalAlignment="Top" />
+                                                <TextBlock Margin="3,0,3,0" Text="Content choice" VerticalAlignment="Center" Grid.Column="1" Height="15.96" HorizontalAlignment="Right" />
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+                                    <Button Margin="1" Padding="1" HorizontalContentAlignment="Left"
+                                      Name="bClassChoice"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                            ToolTip="Wrap associations in class union" IsTabStop="False">
+                                        <Button.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition />
+                                                </Grid.ColumnDefinitions>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource ClassUnion}" Height="18" VerticalAlignment="Top" />
+                                                <TextBlock Margin="3,0,3,0" Text="Class union" VerticalAlignment="Center" Grid.Column="1"/>
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+                                    <Button Margin="1" Padding="1" HorizontalContentAlignment="Left"
+                                      Name="bAddSpecifications"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                            ToolTip="Add specialifacations of the class" IsTabStop="False">
+                                        <Button.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition />
+                                                </Grid.ColumnDefinitions>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource AddChildren}" Height="18" VerticalAlignment="Top" />
+                                                <TextBlock Margin="3,0,3,0" Text="Add specializations" VerticalAlignment="Center" Grid.Column="1"/>
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+                                </StackPanel>
+                                <StackPanel Orientation="Vertical" Grid.Column="2">
+                                    <Button Margin="1" Padding="1" HorizontalContentAlignment="Left"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                                      Name="bAttributeContainer"
+                            ToolTip="Move some attributes to separate Attribute container" IsTabStop="False">
+                                        <Button.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="18*" />
+                                                    <ColumnDefinition Width="41*" />
+                                                    <ColumnDefinition Width="40.997*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource AttributeContainer}" Height="18" VerticalAlignment="Top" />
+                                                <TextBlock Margin="3,0" Text="Attribute container" VerticalAlignment="Center" Grid.Column="1" Height="15.96" HorizontalAlignment="Right" />
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+                                    <Button Margin="1" Padding="1" HorizontalContentAlignment="Left"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                                      Name="bContentContainer"
+                            ToolTip="Wrap content in a content container" IsTabStop="False">
+                                        <Button.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="18*" />
+                                                    <ColumnDefinition Width="41*" />
+                                                    <ColumnDefinition Width="40.997*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource ContentContainer}" Height="18" VerticalAlignment="Top" />
+                                                <TextBlock Margin="3,0" Text="Content container" VerticalAlignment="Center" Grid.Column="1" Height="15.96" HorizontalAlignment="Right" />
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+                                    <Button Name="bPSMCommentary" Margin="1" Padding="1" HorizontalContentAlignment="Left"
+                            Style="{StaticResource ToolBarButtonBaseStyle}" ClickMode="Press" ToolTip="Add comment to diagram" IsTabStop="False">
+                                        <Button.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition />
+                                                </Grid.ColumnDefinitions>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource comment}" Height="18" VerticalAlignment="Top" />
+                                                <TextBlock Margin="3,0,3,0" Text="Commentary" VerticalAlignment="Center" Grid.Column="1"/>
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+
+                                </StackPanel>
+                            </Grid>
+                        </GroupBox>
+                        <GroupBox Name="ReferenceMenu" Header="References" Style="{StaticResource ToolbarGroup}" Margin="2,1,2,1">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Orientation="Vertical" Margin="0,2,0,2" VerticalAlignment="Center">
+                                    <Button Margin="1" Padding="1" HorizontalContentAlignment="Left"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                            Name="bAddPSMReference" IsTabStop="False">
+                                        <Button.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition />
+                                                </Grid.ColumnDefinitions>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource ResourceKey=component_add}" Height="20" VerticalAlignment="Top" />
+                                                <TextBlock Margin="3,0,3,0" Text="Add reference" VerticalAlignment="Center" Grid.Column="1"/>
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+                                    <Button Margin="1" Padding="1" HorizontalContentAlignment="Left"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                            Name="bRemoveReference" IsTabStop="False">
+                                        <Button.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition />
+                                                </Grid.ColumnDefinitions>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource ResourceKey=component_delete}" Height="20" VerticalAlignment="Top" />
+                                                <TextBlock Margin="3,0,3,0" Text="Remove reference" VerticalAlignment="Center" Grid.Column="1"/>
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+                                </StackPanel>
+                                <!--<Line Stroke="{StaticResource ToolbarBorderBrush}" StrokeThickness="1" X1="0" Y1="0" X2="0" Y2="20" Stretch="Fill" HorizontalAlignment="Left"
+              Margin="3,0,0,0" Grid.Column="1"/>-->
+                            </Grid>
+                        </GroupBox>
+                        <GroupBox Name="OrderingMenu" Header="Ordering" Style="{StaticResource ToolbarGroup}" Margin="2,1,2,1">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0" Orientation="Vertical" VerticalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Padding="2" Margin="1" Style="{StaticResource ToolBarButtonBaseStyle}" Name="bMoveToLeft" ToolTip="Move element left" IsTabStop="False">
+                                            <Button.Content>
+                                                <Grid Width="66">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="3*"/>
+                                                        <RowDefinition Height="1*"/>
+                                                    </Grid.RowDefinitions>
+                                                    <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource navigate_left}" Width="34"/>
+                                                    <TextBlock Grid.Row="1" Text="Move left" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                                                </Grid>
+                                            </Button.Content>
+                                        </Button>
+                                        <Button Padding="2" Margin="1" Style="{StaticResource ToolBarButtonBaseStyle}" Name="bMoveToRight" IsTabStop="False">
+                                            <Button.Content>
+                                                <Grid Width="66">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="3*"/>
+                                                        <RowDefinition Height="1*"/>
+                                                    </Grid.RowDefinitions>
+                                                    <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource navigate_right}" Width="34" ToolTip="Move element right" />
+                                                    <TextBlock Grid.Row="1" Text="Move right" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                                                </Grid>
+                                            </Button.Content>
+                                        </Button>
+                                    </StackPanel>
+                                </StackPanel>
+                                <!--<Line Stroke="{StaticResource ToolbarBorderBrush}" StrokeThickness="1" X1="0" Y1="0" X2="0" Y2="20" Stretch="Fill" HorizontalAlignment="Left"
+              Margin="3,0,0,0" Grid.Column="1"/>-->
+                            </Grid>
+                        </GroupBox>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Extensions" Padding="8,3" Name="tbExtensions">
+                    <StackPanel Orientation="Horizontal">
+                        <GroupBox Header="SemanticWS" Name="SemWSMenu" Style="{StaticResource ToolbarGroup}" Margin="2,2,2,1" Width="209">
+                            <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center">
+                                <StackPanel Orientation="Vertical" Margin="0,2,0,2" VerticalAlignment="Center">
+                                    <Button Margin="0" Padding="1" HorizontalContentAlignment="Left"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                            Name="bOWLtoPIM" IsTabStop="False">
+                                        <Button.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                </Grid.ColumnDefinitions>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource view_remove}" Width="18"/>
+                                                <TextBlock Margin="3,0,3,0" Text="OWL->PIM" VerticalAlignment="Center"  Grid.Column="1"/>
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+                                    <Button Margin="0" Padding="1" HorizontalContentAlignment="Left"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                            Name="bPIMtoOWL" IsTabStop="False">
+                                        <Button.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                </Grid.ColumnDefinitions>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource view_remove}" Width="18"/>
+                                                <TextBlock Margin="3,0,3,0" Text="PIM -> OWL" VerticalAlignment="Center"  Grid.Column="1"/>
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+                                </StackPanel>
+                                <StackPanel Orientation="Vertical" Margin="0,2,0,2" VerticalAlignment="Center">
+                                    <Button Margin="0" Padding="1" HorizontalContentAlignment="Left"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                            Name="bLiftingXSLT" IsTabStop="False">
+                                        <Button.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                </Grid.ColumnDefinitions>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource view_remove}" Width="18"/>
+                                                <TextBlock Margin="3,0,3,0" Text="Lifting XSLT" VerticalAlignment="Center"  Grid.Column="1"/>
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+                                    <Button Margin="0" Padding="1" HorizontalContentAlignment="Left"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                            Name="bLoweringXSLT" IsTabStop="False">
+                                        <Button.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                </Grid.ColumnDefinitions>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource view_remove}" Width="18"/>
+                                                <TextBlock Margin="3,0,3,0" Text="Lowering XSLT" VerticalAlignment="Center"  Grid.Column="1"/>
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+                                </StackPanel>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="Reverse" Name="ReverseMenu" Style="{StaticResource ToolbarGroup}" Margin="2,2,2,1" >
+                            <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center">
+                                <StackPanel Orientation="Vertical" Margin="0,2,0,2" VerticalAlignment="Center">
+                                    <Button Margin="0" Padding="1" HorizontalContentAlignment="Left"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                            Name="bXSDtoPSM" IsTabStop="False">
+                                        <Button.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                </Grid.ColumnDefinitions>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource view_remove}" Width="18"/>
+                                                <TextBlock Margin="3,0,3,0" Text="XSD->PSM" VerticalAlignment="Center"  Grid.Column="1"/>
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+                                    <Button Margin="0" Padding="1" HorizontalContentAlignment="Left"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                            Name="bPSMtoPIM" IsTabStop="False">
+                                        <Button.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                </Grid.ColumnDefinitions>
+                                                <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource view_remove}" Width="18"/>
+                                                <TextBlock Margin="3,0,3,0" Text="PSM->PIM" VerticalAlignment="Center"  Grid.Column="1"/>
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+                                </StackPanel>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Name="EvolutionMenu" Header="Evolution" Style="{StaticResource ToolbarGroup}" Margin="2,1,2,1">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0" Orientation="Vertical" VerticalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Padding="2" Margin="1" Style="{StaticResource ToolBarButtonBaseStyle}" Name="bFindChanges" IsTabStop="False">
+                                            <Button.Content>
+                                                <Grid Width="76">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="3*"/>
+                                                        <RowDefinition Height="1*"/>
+                                                    </Grid.RowDefinitions>
+                                                    <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource magnifier}" Width="34"/>
+                                                    <TextBlock Grid.Row="1" Text="Find changes" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                                                </Grid>
+                                            </Button.Content>
+                                        </Button>
+                                        <Button Padding="2" Margin="1" Style="{StaticResource ToolBarButtonBaseStyle}" Name="bEvolve" IsTabStop="False">
+                                            <Button.Content>
+                                                <Grid Width="66">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="3*"/>
+                                                        <RowDefinition Height="1*"/>
+                                                    </Grid.RowDefinitions>
+                                                    <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource Validate}" Width="34"/>
+                                                    <TextBlock Grid.Row="1" Text="Evolve" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                                                </Grid>
+                                            </Button.Content>
+                                        </Button>
+                                    </StackPanel>
+                                </StackPanel>
+                                <!--<Line Stroke="{StaticResource ToolbarBorderBrush}" StrokeThickness="1" X1="0" Y1="0" X2="0" Y2="20" Stretch="Fill" HorizontalAlignment="Left"
+              Margin="3,0,0,0" Grid.Column="1"/>-->
+                            </Grid>
+                        </GroupBox>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Evolution" Name="tabEvolution">
+                    
+                    <StackPanel Orientation="Horizontal">
+                        <GroupBox Header="Mapping" Style="{StaticResource ToolbarGroup}" Margin="2,2,2,1" Width="300">
+                            <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Vertical" Grid.Column="0">
+                                <Button Margin="1" Padding="1" HorizontalContentAlignment="Left"
+                            Style="{StaticResource ToolBarButtonBaseStyle}"
+                                      Name="bCreateVersionMappingAttribute" IsTabStop="False">
+                                    <Button.Content>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="18*" />
+                                                <ColumnDefinition Width="100*" />
+                                                <ColumnDefinition Width="40.997*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource view_remove}" Height="18" VerticalAlignment="Top" />
+                                            <TextBlock Margin="3,0,3,0" Text="Attribute mapping..." VerticalAlignment="Center" Grid.Column="1" Height="15.96" HorizontalAlignment="Right" />
+                                        </Grid>
+                                    </Button.Content>
+                                </Button>
+                                <Button Margin="1" Padding="1" HorizontalContentAlignment="Left"
+                                      Name="bMultipleMapping"
+                                      Style="{StaticResource ToolBarButtonBaseStyle}" IsTabStop="False">
+                                    <Button.Content>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="18*" />
+                                                <ColumnDefinition Width="100*" />
+                                                <ColumnDefinition Width="40.997*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource view_remove}" Height="18" VerticalAlignment="Top" />
+                                            <TextBlock Margin="3,0" Text="Multiple mapping..." VerticalAlignment="Center" Grid.Column="1"/>
+                                        </Grid>
+                                    </Button.Content>
+                                </Button>
+                                <Button Margin="1" Padding="1" HorizontalContentAlignment="Left"
+                                      Name="bCreateVersionMappingDiagram"
+                            Style="{StaticResource ToolBarButtonBaseStyle}" IsTabStop="False">
+                                    <Button.Content>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="18*" />
+                                                <ColumnDefinition Width="100*" />
+                                                <ColumnDefinition Width="40.997*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource view_remove}" Height="18" VerticalAlignment="Top" />
+                                            <TextBlock Margin="3,0,3,0" Text="Diagram mapping..." VerticalAlignment="Center" Grid.Column="1"/>
+                                        </Grid>
+                                    </Button.Content>
+                                </Button>
+                            </StackPanel>
+                            <StackPanel Orientation="Vertical" Grid.Column="1">
+                                <Button Margin="1" Padding="1" HorizontalContentAlignment="Left" Style="{StaticResource ToolBarButtonBaseStyle}"
+                                      Name="bRemoveVersionMapping" IsTabStop="False">
+                                    <Button.Content>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="18*" />
+                                                <ColumnDefinition Width="100*" />
+                                                <ColumnDefinition Width="40.997*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource view_remove}" Height="18" VerticalAlignment="Top" />
+                                            <TextBlock Margin="3,0,3,0" Text="Remove mapping..." VerticalAlignment="Center" Grid.Column="1" Height="15.96" HorizontalAlignment="Right" />
+                                        </Grid>
+                                    </Button.Content>
+                                </Button>
+                                <Button Margin="1" Padding="1" HorizontalContentAlignment="Left"
+                                      Name="bMapDirectly" Style="{StaticResource ToolBarButtonBaseStyle}" IsTabStop="False">
+                                    <Button.Content>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="18*" />
+                                                <ColumnDefinition Width="100*" />
+                                                <ColumnDefinition Width="40.997*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource view_remove}" Height="18" VerticalAlignment="Top" />
+                                            <TextBlock Margin="3,0" Text="Map directly" VerticalAlignment="Center" Grid.Column="1"/>
+                                        </Grid>
+                                    </Button.Content>
+                                </Button>
+                                <Button Margin="1" Padding="1" HorizontalContentAlignment="Left"
+                                      Name="bLocatePreviousVersion" Style="{StaticResource ToolBarButtonBaseStyle}" IsTabStop="False">
+                                    <Button.Content>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="18*" />
+                                                <ColumnDefinition Width="100*" />
+                                                <ColumnDefinition Width="40.997*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Image Style="{StaticResource toolbarImageStyle}"  Source="{StaticResource view_remove}" Height="18" VerticalAlignment="Top" />
+                                            <TextBlock Margin="3,0,3,0" Text="Locate previous version" VerticalAlignment="Center" Grid.Column="1"/>
+                                        </Grid>
+                                    </Button.Content>
+                                </Button>
+                            </StackPanel>
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </TabItem>
+            </TabControl>
+
+        </ToolBar>
+        <Button DockPanel.Dock="Bottom" Visibility="Collapsed" Width="100" Click="test_Click" Name="test" >test</Button>
+        <Button DockPanel.Dock="Bottom" Visibility="Collapsed" Width="100" Click="testall_Click" Name="testall" >test</Button>
+        <ContentControl x:Name="TestContainer">
+            <ad:DockingManager x:Name="dockManager" Padding="5" IsAnimationEnabled="false">
+                <ad:ResizingPanel Orientation="Horizontal">
+                    <ad:DockablePane x:Name="leftPane" ad:ResizingPanel.ResizeWidth="200">
+                        <ad:DockableContent Title="Navigator" Icon="{StaticResource view_tree}" ad:ResizingPanel.ResizeWidth="200" x:Name="navigatorWindowWrap" >
+                            <Gui:NavigatorWindow x:Name="navigatorWindow" Width="Auto" Height="Auto" />
+                        </ad:DockableContent>
+                    </ad:DockablePane>
+                    <ad:ResizingPanel Orientation="Vertical">
+                        <ad:DocumentPane x:Name="documentPane" Loaded="DocumentPane_Loaded"></ad:DocumentPane>
+                        <ad:DockablePane ad:ResizingPanel.ResizeHeight="200">
+                            <ad:DockableContent Title="Project" Icon="{StaticResource view_remove}" x:Name="projectsWindowWrap" ad:ResizingPanel.ResizeHeight="200">
+                                <Gui:ProjectsWindow x:Name="projectsWindow" Width="Auto" Height="Auto" />
+                            </ad:DockableContent>
+                        </ad:DockablePane>
+                    </ad:ResizingPanel>
+                    <ad:DockablePane x:Name="rightPane"  ad:ResizingPanel.ResizeWidth="200">
+                        <ad:DockableContent Title="Properties" Icon="{StaticResource props}" x:Name="propertiesWindowWrap" ad:ResizingPanel.ResizeWidth="200">
+                            <Gui:PropertiesWindow x:Name="propertiesWindow" Width="Auto" Height="Auto" />
+                        </ad:DockableContent>
+                    </ad:DockablePane>
+                </ad:ResizingPanel>
+            </ad:DockingManager>
+        </ContentControl>
+    </DockPanel>
+
+</Window>

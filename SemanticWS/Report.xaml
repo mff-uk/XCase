@@ -1,0 +1,17 @@
+﻿<Window x:Class="XCase.SemanticWS.Report"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             SizeToContent="WidthAndHeight" d:DesignHeight="402" d:DesignWidth="586" Title="OWL->PIM Report" MaxHeight="768">
+    <Grid>
+        <ScrollViewer Height="122" VerticalAlignment="Top">
+            <ListBox Name="lb1"></ListBox>
+        </ScrollViewer>
+        <ScrollViewer Margin="0,137,0,93">
+            <ListBox Name="lb2"></ListBox>
+        </ScrollViewer>
+        <Button Click="Button_Click" Height="33" VerticalAlignment="Bottom" Margin="244,0,0,0" HorizontalAlignment="Left" Width="82">Close</Button>
+    </Grid>
+</Window>

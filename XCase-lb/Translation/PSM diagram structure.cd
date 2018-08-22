@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Interface Name="XCase.Model.PSMClass" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.5" Y="5.75" Width="1.5" />
+    <InheritanceLine Type="XCase.Model.PSMAssociationChild" FixedFromPoint="true">
+      <Path>
+        <Point X="4.292" Y="4.441" />
+        <Point X="4.292" Y="5.45" />
+        <Point X="3.25" Y="5.45" />
+        <Point X="3.25" Y="5.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="XCase.Model.PSMAssociation" BaseTypeListCollapsed="true">
+    <Position X="4.75" Y="2.25" Width="1.5" />
+    <Members>
+      <Method Name="AddNestingJoin" Hidden="true" />
+      <Property Name="Lower" Hidden="true" />
+      <Property Name="NestingJoins" Hidden="true" />
+      <Property Name="Upper" Hidden="true" />
+      <Property Name="UsedGeneralizations" Hidden="true" />
+    </Members>
+    <InheritanceLine Type="XCase.Model.PSMSubordinateComponent" FixedFromPoint="true">
+      <Path>
+        <Point X="3.5" Y="1.733" />
+        <Point X="3.5" Y="1.95" />
+        <Point X="5.5" Y="1.95" />
+        <Point X="5.5" Y="2.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="XCase.Model.PSMSubordinateComponent" BaseTypeListCollapsed="true">
+    <Position X="2.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="XCase.Model.PSMContentChoice" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.75" Y="2.25" Width="1.75" />
+    <InheritanceLine Type="XCase.Model.PSMSubordinateComponent" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.5" Y="1.733" />
+        <Point X="3.5" Y="2.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="XCase.Model.PSMContentContainer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="2.25" Width="1.75" />
+    <InheritanceLine Type="XCase.Model.PSMSubordinateComponent" FixedFromPoint="true">
+      <Path>
+        <Point X="3.5" Y="1.733" />
+        <Point X="3.5" Y="1.95" />
+        <Point X="1.375" Y="1.95" />
+        <Point X="1.375" Y="2.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="XCase.Model.PSMClassUnion" BaseTypeListCollapsed="true">
+    <Position X="4.25" Y="5.75" Width="1.5" />
+    <InheritanceLine Type="XCase.Model.PSMAssociationChild" FixedFromPoint="true">
+      <Path>
+        <Point X="5" Y="4.441" />
+        <Point X="5" Y="5.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="XCase.Model.PSMSuperordinateComponent" BaseTypeListCollapsed="true">
+    <Position X="1" Y="3.75" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="XCase.Model.PSMAssociationChild" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="3.75" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

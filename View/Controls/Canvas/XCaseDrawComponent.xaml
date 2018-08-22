@@ -1,0 +1,84 @@
+﻿<UserControl x:Class="XCase.View.Controls.XCaseDrawComponent"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:c="clr-namespace:XCase.View.Controls"
+    Focusable="False" Width="Auto" Height="Auto" MinWidth="300" >
+    <DockPanel MouseMove="dockPanel_MouseMove" Name="dockPanel" Width="Auto">
+        <DockPanel.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="/ResourceLibrary;component/Images/Images.xaml" ></ResourceDictionary>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </DockPanel.Resources>
+        <Canvas x:Name="sliderPanel" Visibility="Collapsed"  DockPanel.Dock="Bottom" MouseLeave="zoomSlider_MouseLeave" VerticalAlignment="Center" Height="53.061" MinWidth="500">
+            <TextBlock VerticalAlignment="Center" Height="16" Canvas.Left="6" Canvas.Top="9.02" Width="34">Zoom: </TextBlock>
+            <Slider x:Name="zoomSlider" Minimum="0.1" Maximum="5" Value="1" Width="155.338" Height="36.143" AutoToolTipPrecision="1" 
+                    AutoToolTipPlacement="TopLeft" TickPlacement="BottomRight" IsDirectionReversed="False" 
+                    Orientation="Horizontal" Canvas.Left="46.14" Canvas.Top="11.535" IsSnapToTickEnabled="False" IsMoveToPointEnabled="False"
+                    Ticks="0.1, 1, 2, 3, 4, 5" ValueChanged="zoomSlider_ValueChanged"
+                    >
+            </Slider>
+            <TextBlock VerticalAlignment="Center" Text="{Binding Path=Value, ElementName=zoomSlider, StringFormat=\{0:F1\} x}" Height="16.149" Canvas.Left="10.766" Canvas.Top="29.222" Width="24.608"></TextBlock>
+            <Button x:Name="bZoomIn" Height="41.526" Canvas.Left="207"  Canvas.Top="4" Width="100" Click="bZoomIn_Click">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#FFD7D3F2"></GradientStop>
+                        <GradientStop Color="#FFD7FFFF" Offset="1"></GradientStop>
+                    </LinearGradientBrush>
+                </Button.Background>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="{StaticResource ResourceKey=zoomIn}" Width="20" ></Image>
+                    <Label>Zoom In</Label>
+                </StackPanel>
+            </Button>
+            <Button Canvas.Left="313" Canvas.Top="4" Height="41.526" Width="100" Click="bZoomOut_Click" >
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                        <GradientStop Color="#FFD7D3F2" />
+                        <GradientStop Color="#FFD7FFFF" Offset="1" />
+                    </LinearGradientBrush>
+                </Button.Background>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="{StaticResource ResourceKey=zoomOut}" Width="20" ></Image>
+                    <Label>Zoom Out</Label>
+                </StackPanel>
+            </Button>
+            <Button x:Name="bReset" Height="41.526" Width="54" Click="bReset_Click" Canvas.Left="419" Canvas.Top="4">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#FFD7D3F2"></GradientStop>
+                        <GradientStop Color="#FFD7FFFF" Offset="1"></GradientStop>
+                    </LinearGradientBrush>
+                </Button.Background> Reset
+            </Button>
+        </Canvas>
+        <ScrollViewer Name="scrollViewer" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Focusable="False">
+            <c:XCaseCanvas x:Name="canvas" Background="White" Focusable="False" MinHeight="100" MinWidth="100" MouseWheel="viewer_MouseWheel">
+                <c:XCaseCanvas.LayoutTransform>
+                    <!--ScaleX="{Binding Path=Value, ElementName=zoomSlider}"
+                        ScaleY="{Binding Path=Value, ElementName=zoomSlider}"-->
+                    <ScaleTransform x:Name="scaleTransform"
+                        
+                                    />
+                </c:XCaseCanvas.LayoutTransform>
+                
+            </c:XCaseCanvas>
+        </ScrollViewer>
+    </DockPanel>
+    
+    
+    <!--
+    <Slider x:Name="zoomSlider" Minimum="0.1" Maximum="5" Value="1"/>
+
+    <ScrollViewer HorizontalScrollBarVisibility="Auto">
+    <Canvas x:Name="canvas" Background="#FFFFFFFF" Width="632" Height="500">
+        <Canvas.LayoutTransform>
+        <ScaleTransform ScaleX="{Binding Path=Value, ElementName=zoomSlider}"
+                        ScaleY="{Binding Path=Value, ElementName=zoomSlider}"/>
+    </Canvas.LayoutTransform>
+    </Canvas>
+
+    </ScrollViewer> 
+     -->
+</UserControl>

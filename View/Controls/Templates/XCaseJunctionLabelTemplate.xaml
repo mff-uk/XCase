@@ -1,0 +1,12 @@
+﻿<Grid x:Class="XCase.View.Controls.XCaseJunctionLabelTemplate"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:XCase.View.Controls" 
+    Height="Auto" Width="Auto">
+    <Grid.Resources>
+        <ResourceDictionary Source="pack://application:,,,/View;component/ControlTemplates.xaml" />
+    </Grid.Resources>
+	<Controls:EditableTextBox x:Name="txtText" Background="Transparent">
+		label
+	</Controls:EditableTextBox>
+</Grid>

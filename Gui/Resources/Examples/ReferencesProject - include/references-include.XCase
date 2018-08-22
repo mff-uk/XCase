@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xc:project xmlns:xc="http://kocour.ms.mff.cuni.cz/~necasky/xcase" version="2.0">
+  <xc:uml>
+    <xc:profiles />
+    <xc:model id="135" namespace="" name="Project1" viewpoint="">
+      <xc:comments />
+      <xc:datatypes />
+      <xc:packages />
+      <xc:pim_classes>
+        <xc:pim_class id="136" name="Class1" ontologyEquivalent="">
+          <xc:comments />
+          <xc:stereotype_instances />
+          <xc:associations>
+            <xc:association ref="137" />
+          </xc:associations>
+          <xc:properties>
+            <xc:property id="140" name="Attribute1" type="null" aggregation="none" default="" default_value="null" is_composite="False" is_derived="False" is_derived_union="False" is_ordered="False" is_readonly="False" is_unique="True" lower="1" upper="1" visibility="public" ontologyEquivalent="" />
+          </xc:properties>
+          <xc:operations />
+          <xc:psm_classes>
+            <xc:psm_class id="141" abstract="False" name="Class1_Type">
+              <xc:comments />
+              <xc:stereotype_instances />
+              <xc:associations />
+              <xc:psm_attributes>
+                <xc:psm_attribute id="142" name="Attribute1" type="null" aggregation="none" default="" default_value="null" is_composite="False" is_derived="False" is_derived_union="False" is_ordered="False" is_readonly="False" is_unique="True" lower="1" upper="1" visibility="public" ontologyEquivalent="" class_ref="141" alias="" att_implementation="" att_ref="140" />
+              </xc:psm_attributes>
+              <xc:operations />
+              <xc:element_name />
+              <xc:allow_any_attribute>False</xc:allow_any_attribute>
+              <xc:components />
+            </xc:psm_class>
+            <xc:psm_class id="143" abstract="False" structural_representative="141" name="Class1">
+              <xc:comments />
+              <xc:stereotype_instances />
+              <xc:associations />
+              <xc:psm_attributes>
+                <xc:psm_attribute id="144" name="fa1" type="null" aggregation="none" default="" default_value="null" is_composite="False" is_derived="False" is_derived_union="False" is_ordered="False" is_readonly="False" is_unique="True" lower="1" upper="1" visibility="public" ontologyEquivalent="" class_ref="143" alias="" att_implementation="" />
+              </xc:psm_attributes>
+              <xc:operations />
+              <xc:element_name>Class1</xc:element_name>
+              <xc:allow_any_attribute>False</xc:allow_any_attribute>
+              <xc:components />
+            </xc:psm_class>
+          </xc:psm_classes>
+        </xc:pim_class>
+        <xc:pim_class id="145" name="Class2" ontologyEquivalent="">
+          <xc:comments />
+          <xc:stereotype_instances />
+          <xc:associations>
+            <xc:association ref="137" />
+          </xc:associations>
+          <xc:properties>
+            <xc:property id="146" name="Attribute2" type="null" aggregation="none" default="" default_value="null" is_composite="False" is_derived="False" is_derived_union="False" is_ordered="False" is_readonly="False" is_unique="True" lower="1" upper="1" visibility="public" ontologyEquivalent="" />
+          </xc:properties>
+          <xc:operations />
+          <xc:psm_classes>
+            <xc:psm_class id="147" abstract="False" name="Class2">
+              <xc:comments />
+              <xc:stereotype_instances />
+              <xc:associations />
+              <xc:psm_attributes>
+                <xc:psm_attribute id="148" name="Attribute2" type="null" aggregation="none" default="" default_value="null" is_composite="False" is_derived="False" is_derived_union="False" is_ordered="False" is_readonly="False" is_unique="True" lower="1" upper="1" visibility="public" ontologyEquivalent="" class_ref="147" alias="" att_implementation="" att_ref="146" />
+              </xc:psm_attributes>
+              <xc:operations />
+              <xc:element_name>Class2</xc:element_name>
+              <xc:allow_any_attribute>False</xc:allow_any_attribute>
+              <xc:components>
+                <xc:psm_association index="0" id="149" name="">
+                  <xc:comments />
+                  <xc:stereotype_instances />
+                  <xc:parent ref="147" />
+                  <xc:child ref="143" min="1" max="1" />
+                  <xc:nesting_joins>
+                    <xc:nesting_join core_class_ref="136">
+                      <xc:child />
+                      <xc:parent>
+                        <xc:pim_step start_ref="136" end_ref="145" association_ref="137" />
+                      </xc:parent>
+                      <xc:context />
+                    </xc:nesting_join>
+                  </xc:nesting_joins>
+                </xc:psm_association>
+              </xc:components>
+            </xc:psm_class>
+          </xc:psm_classes>
+        </xc:pim_class>
+      </xc:pim_classes>
+      <xc:associations>
+        <xc:association id="137" name="" ontologyEquivalent="">
+          <xc:comments />
+          <xc:stereotype_instances />
+          <xc:association_end id="138" name="" type="null" aggregation="none" default="" default_value="null" is_composite="False" is_derived="False" is_derived_union="False" is_ordered="False" is_readonly="False" is_unique="True" lower="1" upper="1" visibility="public" class="136" />
+          <xc:association_end id="139" name="" type="null" aggregation="none" default="" default_value="null" is_composite="False" is_derived="False" is_derived_union="False" is_ordered="False" is_readonly="False" is_unique="True" lower="1" upper="1" visibility="public" class="145" />
+        </xc:association>
+      </xc:associations>
+      <xc:generalizations />
+    </xc:model>
+  </xc:uml>
+  <xc:diagrams>
+    <xc:PIM_diagrams>
+      <xc:diagram name="PIM Diagram1" no="0" diagram_id="0">
+        <xc:class ref="136" methods_collapsed="False" properties_collapsed="False" element_label_collapsed="False" element_label_aligned_right="False">
+          <xc:appearance>
+            <xc:width />
+            <xc:height />
+            <xc:coordinate_x>74</xc:coordinate_x>
+            <xc:coordinate_y>48</xc:coordinate_y>
+          </xc:appearance>
+        </xc:class>
+        <xc:class ref="145" methods_collapsed="False" properties_collapsed="False" element_label_collapsed="False" element_label_aligned_right="False">
+          <xc:appearance>
+            <xc:width />
+            <xc:height />
+            <xc:coordinate_x>230</xc:coordinate_x>
+            <xc:coordinate_y>48</xc:coordinate_y>
+          </xc:appearance>
+        </xc:class>
+        <xc:association ref="137" diamond="False">
+          <xc:namelabel>
+            <xc:width />
+            <xc:height />
+            <xc:coordinate_x>0</xc:coordinate_x>
+            <xc:coordinate_y>0</xc:coordinate_y>
+          </xc:namelabel>
+          <xc:points>
+            <xc:point>
+              <xc:coordinate_x>71</xc:coordinate_x>
+              <xc:coordinate_y>24</xc:coordinate_y>
+            </xc:point>
+            <xc:point>
+              <xc:coordinate_x>0</xc:coordinate_x>
+              <xc:coordinate_y>24</xc:coordinate_y>
+            </xc:point>
+          </xc:points>
+          <xc:association_ends>
+            <xc:association_end ref="138">
+              <xc:cardinality_label>
+                <xc:width />
+                <xc:height />
+                <xc:coordinate_x>0</xc:coordinate_x>
+                <xc:coordinate_y>0</xc:coordinate_y>
+              </xc:cardinality_label>
+              <xc:role_label>
+                <xc:width />
+                <xc:height />
+                <xc:coordinate_x>0</xc:coordinate_x>
+                <xc:coordinate_y>0</xc:coordinate_y>
+              </xc:role_label>
+            </xc:association_end>
+            <xc:association_end ref="139">
+              <xc:cardinality_label>
+                <xc:width />
+                <xc:height />
+                <xc:coordinate_x>-23</xc:coordinate_x>
+                <xc:coordinate_y>-9</xc:coordinate_y>
+              </xc:cardinality_label>
+              <xc:role_label>
+                <xc:width />
+                <xc:height />
+                <xc:coordinate_x>0</xc:coordinate_x>
+                <xc:coordinate_y>0</xc:coordinate_y>
+              </xc:role_label>
+            </xc:association_end>
+          </xc:association_ends>
+        </xc:association>
+      </xc:diagram>
+    </xc:PIM_diagrams>
+    <xc:PSM_diagrams>
+      <xc:diagram name="PSM Diagram1" no="0" diagram_id="1">
+        <xc:roots>
+          <xc:root ref="141" />
+        </xc:roots>
+        <xc:class ref="141" methods_collapsed="False" properties_collapsed="False" element_label_collapsed="False" element_label_aligned_right="False">
+          <xc:appearance>
+            <xc:width />
+            <xc:height />
+            <xc:coordinate_x>20</xc:coordinate_x>
+            <xc:coordinate_y>20</xc:coordinate_y>
+          </xc:appearance>
+          <xc:points />
+        </xc:class>
+      </xc:diagram>
+      <xc:diagram name="PSM Diagram2" no="1" diagram_id="2">
+        <xc:roots>
+          <xc:root ref="147" />
+        </xc:roots>
+        <xc:class ref="143" methods_collapsed="False" properties_collapsed="False" element_label_collapsed="False" element_label_aligned_right="False">
+          <xc:appearance>
+            <xc:width />
+            <xc:height />
+            <xc:coordinate_x>20</xc:coordinate_x>
+            <xc:coordinate_y>124</xc:coordinate_y>
+          </xc:appearance>
+          <xc:points />
+        </xc:class>
+        <xc:class ref="147" methods_collapsed="False" properties_collapsed="False" element_label_collapsed="False" element_label_aligned_right="False">
+          <xc:appearance>
+            <xc:width />
+            <xc:height />
+            <xc:coordinate_x>23</xc:coordinate_x>
+            <xc:coordinate_y>20</xc:coordinate_y>
+          </xc:appearance>
+          <xc:points />
+        </xc:class>
+        <xc:psm_association ref="149">
+          <xc:appearance>
+            <xc:width />
+            <xc:height />
+            <xc:coordinate_x>0</xc:coordinate_x>
+            <xc:coordinate_y>0</xc:coordinate_y>
+          </xc:appearance>
+          <xc:points>
+            <xc:point>
+              <xc:coordinate_x>36</xc:coordinate_x>
+              <xc:coordinate_y>64</xc:coordinate_y>
+            </xc:point>
+            <xc:point>
+              <xc:coordinate_x>38</xc:coordinate_x>
+              <xc:coordinate_y>0</xc:coordinate_y>
+            </xc:point>
+          </xc:points>
+          <xc:multiplicity_label>
+            <xc:width />
+            <xc:height />
+            <xc:coordinate_x>-40</xc:coordinate_x>
+            <xc:coordinate_y>-22</xc:coordinate_y>
+          </xc:multiplicity_label>
+        </xc:psm_association>
+        <xc:diagram_reference ref="150" referenced_diagram="1" referencing_diagram="2" name="ref PSMDiagram 1" schema_location="file://D://Programování//XCase//Test//ReferencesProject - include//PSM Diagram1.xsd" local="true" namespace_prefix="" namespace="">
+          <xc:appearance>
+            <xc:width />
+            <xc:height />
+            <xc:coordinate_x>117</xc:coordinate_x>
+            <xc:coordinate_y>20</xc:coordinate_y>
+          </xc:appearance>
+        </xc:diagram_reference>
+      </xc:diagram>
+    </xc:PSM_diagrams>
+  </xc:diagrams>
+</xc:project>

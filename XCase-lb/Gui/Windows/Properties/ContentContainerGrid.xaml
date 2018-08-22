@@ -1,0 +1,51 @@
+﻿<Gui:XCaseGridBase
+    x:Class="XCase.Gui.ContentContainerGrid"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:Gui="clr-namespace:XCase.Gui"
+    SizeChanged="ContentContainerGrid_SizeChanged">
+
+    <ScrollViewer  Name="scrollViewer" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                          ScrollViewer.VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="0,0,0,10">
+            <Grid Name="grid" Margin="5,0,5,0">
+                <Grid.Resources>
+                    <Gui:RenameElementConverter x:Key="renameElement"/>
+                </Grid.Resources>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="20"  />
+                    <RowDefinition Height="25"  />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60" MaxWidth="60"/>
+                    <ColumnDefinition MinWidth="62" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Content Container -->
+                <Label Name="mainLabel" Grid.Row="0" Grid.ColumnSpan="2" Focusable="True">
+                    Content Container
+                </Label>
+                <TextBox Grid.Row="1" Grid.Column="0" IsReadOnly="True" Focusable="False">
+                    Element
+                </TextBox>
+                <TextBox    Name="elementNameBox" Grid.Row="1" Grid.Column="1" 
+                            HorizontalAlignment="Left"
+                            TextWrapping="NoWrap"
+                            KeyDown="KeyPressed_Down"
+                            KeyUp="KeyPressed_Up"
+                            SizeChanged="elementNameBox_SizeChanged"
+                            Text="{Binding Path=Name, Converter={StaticResource renameElement}}"  />
+
+                <!-- Container appearance -->
+                <Label Grid.Row="2" Grid.ColumnSpan="2">
+                    Appearance</Label>
+
+            </Grid>
+            <Gui:AppearanceGrid x:Name="appearance"/>
+        </StackPanel>
+        
+    </ScrollViewer>
+</Gui:XCaseGridBase>
+

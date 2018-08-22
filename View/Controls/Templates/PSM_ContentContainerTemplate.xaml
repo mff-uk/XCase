@@ -1,0 +1,18 @@
+﻿<Grid x:Class="XCase.View.Controls.PSM_ContentContainerTemplate"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:c="clr-namespace:XCase.View.Controls"
+    Height="Auto" Width="Auto">
+    <Grid.Resources>
+        <ResourceDictionary Source="pack://application:,,,/View;component/ControlTemplates.xaml" />
+    </Grid.Resources>
+    <Border Name="Border" BorderBrush="Black" BorderThickness="0.8" Background="Gainsboro" CornerRadius="6,6,6,6" Opacity="0.8">
+        <c:EditableTextBox x:Name="txtName" FontSize="12" Background="Transparent">
+            AssociationContainer
+        </c:EditableTextBox>
+    </Border>
+    <Control Name="ConnectorDecorator"
+                     Visibility="Visible"
+                     Template="{StaticResource ConnectorDecoratorTemplate}"/>
+
+</Grid>

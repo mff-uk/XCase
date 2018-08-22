@@ -1,0 +1,16 @@
+﻿<Grid x:Class="XCase.View.Controls.PSM_ClassUnionTemplate"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:c="clr-namespace:XCase.View.Controls"
+    Height="20" Width="20">
+    <Grid.Resources>
+        <ResourceDictionary Source="pack://application:,,,/View;component/ControlTemplates.xaml" />
+    </Grid.Resources>
+    <Border Name="Border" BorderBrush="Black" BorderThickness="2" Background="Gainsboro" CornerRadius="10,10,10,10">
+    </Border>
+    <Control Name="ConnectorDecorator"
+                 Visibility="Visible"
+                 Template="{StaticResource ConnectorDecoratorTemplate}"/>
+    <Rectangle Margin="9,0,9,0" Name="rectangle1" Stroke="Black" />
+    <Rectangle Margin="0,9,0,9" Name="rectangle2" Stroke="Black" />
+</Grid>

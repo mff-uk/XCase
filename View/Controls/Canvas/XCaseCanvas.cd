@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="XCase.View.Controls.XCaseCanvas">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <Members>
+      <Field Name="controller" Hidden="true" />
+      <Method Name="Diagram_ElementAdded" Hidden="true" />
+      <Method Name="Diagram_ElementRemoved" Hidden="true" />
+      <Property Name="draggingConnectionState" Hidden="true" />
+      <Property Name="draggingElementState" Hidden="true" />
+      <Property Name="ElementRepresentations" Hidden="true" />
+      <Method Name="GetCanvasWidthAndHeight" Hidden="true" />
+      <Method Name="IncludeDependentElements" Hidden="true" />
+      <Method Name="InitializeContextMenu" Hidden="true" />
+      <Method Name="InitializeRegistrationSet" Hidden="true" />
+      <Method Name="InvokeElementSizeChanged" Hidden="true" />
+      <Method Name="MeasureOverride" Hidden="true" />
+      <Field Name="MouseLabel" Hidden="true" />
+      <Property Name="normalState" Hidden="true" />
+      <Method Name="OnMouseDown" Hidden="true" />
+      <Method Name="OnMouseMove" Hidden="true" />
+      <Method Name="OnMouseUp" Hidden="true" />
+      <Method Name="SelectableItemPreviewMouseDown" Hidden="true" />
+      <Field Name="selectedItems" Hidden="true" />
+      <Field Name="state" Hidden="true" />
+      <Method Name="Unbind" Hidden="true" />
+      <Method Name="updateLayout" Hidden="true" />
+      <Method Name="updateSelectionAfterCommand" Hidden="true" />
+    </Members>
+    <NestedTypes>
+      <Enum Name="XCase.View.Controls.XCaseCanvas.EExportToImageMethod" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controls\Canvas\XCaseCanvas.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Class Name="XCase.View.Controls.XCaseCanvas.XCaseCanvasState">
+        <TypeIdentifier>
+          <NewMemberFileName>Controls\Canvas\XCaseCanvasState.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="XCase.View.Controls.XCaseCanvas.NormalState" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controls\Canvas\XCaseCanvasState.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="XCase.View.Controls.XCaseCanvas.DraggingConnectionState" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controls\Canvas\XCaseCanvasState.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="XCase.View.Controls.XCaseCanvas.DraggingElementState" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controls\Canvas\XCaseCanvasState.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AgAECAgAAYgBAAEAAAQAQaEDABEAAIIEIAAXFAACAAA=</HashCode>
+      <FileName>Controls\Canvas\XCaseCanvas.cs</FileName>
+      <NewMemberFileName>Controls\Canvas\XCaseCanvasState.cs</NewMemberFileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SelectedItems" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="XCase.View.Controls.SelectedItemsCollection">
+    <Position X="4.25" Y="0.5" Width="2.5" />
+    <Members>
+      <Method Name="GetOwner" Hidden="true" />
+      <Method Name="InsertItem" Hidden="true" />
+      <Field Name="locked" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAIAAIAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Canvas\SelectedItemsCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

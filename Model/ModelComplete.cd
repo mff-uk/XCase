@@ -1,0 +1,865 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="XCase.Model.Implementation._Association&lt;NUmlType&gt;" Collapsed="true">
+    <Position X="9.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ADAAAAAAgAAIAEAEAAAIAAQEAAAAAAAAgAAAAAIAAAA=</HashCode>
+      <FileName>Implementation\_Association.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Model.Implementation._AssociationClass" Collapsed="true">
+    <Position X="9.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABABACYBAIAliACACSkAAQAACEMABA4ARAAAAAQAA=</HashCode>
+      <FileName>Implementation\_AssociationClass.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Model.Implementation._AssociationEnd" Collapsed="true">
+    <Position X="38.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAEAgAAAAAEAAAAAAAAAAAAAAIAAQA=</HashCode>
+      <FileName>Implementation\_AssociationEnd.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Model.Implementation._Class&lt;NUmlType&gt;" Collapsed="true">
+    <Position X="25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABABACYBAIAkiACACCkAAQAACAMAAAwARAAAAAAAA=</HashCode>
+      <FileName>Implementation\_Class.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Model.Implementation._Comment" Collapsed="true">
+    <Position X="2.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAEAAAJAAAEAAAAAAAAAAAAQAIAAAA=</HashCode>
+      <FileName>Implementation\_Comment.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Model.Implementation._DataType&lt;NUmlType&gt;" Collapsed="true">
+    <Position X="26.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAABAAAAAQAAAEAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Implementation\_DataType.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Model.Implementation._Element&lt;NUmlType&gt;" Collapsed="true">
+    <Position X="24" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAIAABAAIABAAAAAAAFgAAABAAAAAAEEQJAJAA=</HashCode>
+      <FileName>Implementation\_Element.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Model.Implementation._Generalization" Collapsed="true">
+    <Position X="7" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAgAEIAIKAGAEAAAAAAAAABAAAAIAAAA=</HashCode>
+      <FileName>Implementation\_Generalization.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Model.Implementation._InstantiatedProperty" Collapsed="true">
+    <Position X="4.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Implementation\_InstantiatedProperty.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Model.Implementation._Model" Collapsed="true">
+    <Position X="13.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAQACAAEAEAAAAAAAEAAACAAAAAAAAAAIAAQA=</HashCode>
+      <FileName>Implementation\_Model.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Model.Implementation._NamedElement&lt;NUmlType&gt;" Collapsed="true">
+    <Position X="27.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAFAAAAAAQKAABAAAAAgAAAgAAAAAA=</HashCode>
+      <FileName>Implementation\_NamedElement.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Model.Implementation._NestingJoing" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="60.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAgAAgAAQIBEAACAUAAAABAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Implementation\_NestingJoing.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="XCase.Model.Implementation._Operation" Collapsed="true">
+    <Position X="43" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAEIAAABAAAAAAgAIAAAAGAAAAAQAAAICAAAKAAIA=</HashCode>
+      <FileName>Implementation\_Operation.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Model.Implementation._Package&lt;NUmlType&gt;" Collapsed="true">
+    <Position X="12.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIBBEAAABAEAgAABAIBAECAEASAAAAAAgAAgIAKAQCA=</HashCode>
+      <FileName>Implementation\_Package.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Model.Implementation._Parameter" Collapsed="true">
+    <Position X="36.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEIAAABAAAAAAgCAAAAAEAAAAAYAAAAEAAAIBAIA=</HashCode>
+      <FileName>Implementation\_Parameter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Model.Implementation._PIMClass" Collapsed="true">
+    <Position X="22.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAEAAAEAAAAAAAAAAIAQAA=</HashCode>
+      <FileName>Implementation\_PIMClass.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Model.Implementation._PIMPath" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="62.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAQAAAAgEAAAIAAAAAAAAAAAAABABAAAAAAA=</HashCode>
+      <FileName>Implementation\_PIMPath.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="XCase.Model.Implementation._PIMStep" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="64.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIBAAACACAAAAIkAAACAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Implementation\_PIMStep.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="XCase.Model.Implementation._Profile" Collapsed="true">
+    <Position X="11.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAogAMAIAA=</HashCode>
+      <FileName>Implementation\_Profile.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Model.Implementation._Property" Collapsed="true">
+    <Position X="39.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAEIAAABAAAAIUgAYAIAAEAADAAQAAUAKAAAIAAIA=</HashCode>
+      <FileName>Implementation\_Property.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Model.Implementation._PSMAssociation" Collapsed="true">
+    <Position X="34" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAEIhAAJAAQIDNgACAQAgVgAAAIQAAAAAAACIAAIA=</HashCode>
+      <FileName>Implementation\_PSMAssociation.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Model.Implementation._PSMAttribute" Collapsed="true">
+    <Position X="40.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAKIABACBCAIAAAAUgAAAAAAAIAAAAAIAAAE=</HashCode>
+      <FileName>Implementation\_PSMAttribute.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Model.Implementation._PSMAttributeContainer" Collapsed="true">
+    <Position X="45.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACgAAIAAAADFCAAAQAEEAAAAEAAAgABAACIAAAA=</HashCode>
+      <FileName>Implementation\_PSMAttributeContainer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Model.Implementation._PSMClass" Collapsed="true">
+    <Position X="27.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAATAAAIAJAICFiACAAREGAEABEAEAAhZACKMAAgA=</HashCode>
+      <FileName>Implementation\_PSMClass.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Model.Implementation._PSMClassUnion" Collapsed="true">
+    <Position X="16" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAIAAAICFAACAABAEAAAAEAEAAAQAAAIAAAA=</HashCode>
+      <FileName>Implementation\_PSMClassUnion.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Model.Implementation._PSMContentContainer" Collapsed="true">
+    <Position X="18.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAABBAAAAQAAEAAAAABAAAAIAACIAAAA=</HashCode>
+      <FileName>Implementation\_PSMContentContainer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Model.Implementation._PSMContentChoice" Collapsed="true">
+    <Position X="20.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAABBAAAAQAAEAAAAAAAAAAIAACIAAAA=</HashCode>
+      <FileName>Implementation\_PSMContentChoice.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Model.Implementation._PSMSuperordinateComponent" Collapsed="true">
+    <Position X="19.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAJAICEgACAAAAAAAAAEAAAAAYAAAAAAAA=</HashCode>
+      <FileName>Implementation\_PSMSuperordinateComponent.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Model.Implementation._SimpleDataType" Collapsed="true">
+    <Position X="29.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAQAAAAAAAgAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Implementation\_SimpleDataType.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Model.Implementation._Stereotype" Collapsed="true">
+    <Position X="25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAQAAAAAKAAAAAAAAAAIAAAEAA=</HashCode>
+      <FileName>Implementation\_Stereotype.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Model.Implementation._StereotypeInstance" Collapsed="true">
+    <Position X="31.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\_StereotypeInstance.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Model.Implementation._TypedElement&lt;NUmlType&gt;" Collapsed="true">
+    <Position X="39.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Implementation\_TypedElement.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Model.Diagram" Collapsed="true">
+    <Position X="1.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAgAAIIAQAAACBAAgEgAAAQACAQAAAgEAAA=</HashCode>
+      <FileName>Interface\Diagram.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Model.ElementAddedEventArgs" Collapsed="true">
+    <Position X="67.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\DiagramEvents.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Model.ElementRemovedEventArgs" Collapsed="true">
+    <Position X="60.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\DiagramEvents.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Model.DiagramEventArgs" Collapsed="true">
+    <Position X="66" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\DiagramEvents.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Model.XCaseExtensions" Collapsed="true">
+    <Position X="64.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Model.NameSuggestor&lt;Type&gt;" Collapsed="true">
+    <Position X="62.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\NameSuggestor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Model.PIMDiagram" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\PIMDiagram.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Model.Project" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="66" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAASAoAAAAAAAIAAQAQCAACEgAQABIAACABIEAgQAAA=</HashCode>
+      <FileName>Interface\Project.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="XCase.Model.PSMDiagram" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAFAAAIAQQAAAAACAA=</HashCode>
+      <FileName>Interface\PSMDiagram.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Model.PSMAttributeContainerFactory" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="60.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\PSMSubordinateComponentFactories.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="XCase.Model.PSMContentContainerFactory" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="62.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\PSMSubordinateComponentFactories.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="XCase.Model.PSMContentChoiceFactory" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="64.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\PSMSubordinateComponentFactories.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="XCase.Model.PSMAssociationFactory" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="67.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\PSMSubordinateComponentFactories.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="XCase.Model.PSMTree" Collapsed="true">
+    <Position X="66" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAABA=</HashCode>
+      <FileName>Interface\PSMTree.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Model.Schema" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="60.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAACEAJBAsAQEgJAAQAAwAAAAAAAAAgAAAAQAAA=</HashCode>
+      <FileName>Interface\Schema.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="XCase.Model.ValueSpecification" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="62.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAKAFAAAAAAEBgAgBAAAoCAAQAAQAEAA=</HashCode>
+      <FileName>Interface\ValueSpecification.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="XCase.Model.AssociationClassViewHelper" Collapsed="true">
+    <Position X="5.75" Y="19.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>ViewHelper\AssociationClassViewHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Model.AssociationEndViewHelper" Collapsed="true">
+    <Position X="3.5" Y="18.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAECAAAAAgAAAAAAAAAQAACAEAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>ViewHelper\AssociationEndViewHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Model.AssociationViewHelper" Collapsed="true">
+    <Position X="14.75" Y="19.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAIAAAAAAgAAAACAAAAIgAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>ViewHelper\AssociationViewHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Model.ClassViewHelper" Collapsed="true">
+    <Position X="7" Y="18.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAABAAAAAQAAAEAIAAAACAAAAQAAAAE=</HashCode>
+      <FileName>ViewHelper\ClassViewHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Model.CommentViewHelper" Collapsed="true">
+    <Position X="10.25" Y="18.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewHelper\CommentViewHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Model.ConnectionViewHelper&lt;ConnectionElementType&gt;" Collapsed="true">
+    <Position X="16" Y="18.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewHelper\ConnectionViewHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Model.GeneralizationViewHelper" Collapsed="true">
+    <Position X="19.25" Y="19.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewHelper\GeneralizationViewHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Model.rPoint" Collapsed="true">
+    <Position X="67.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAABAAAAAAAAAAAAABAAAAAAAAAAAAAYAA=</HashCode>
+      <FileName>ViewHelper\ObservablePointCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Model.ObservablePointCollection" Collapsed="true">
+    <Position X="64.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAACAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>ViewHelper\ObservablePointCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Model.PositionableElementViewHelper" Collapsed="true">
+    <Position X="10.25" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAABAgAAAQAQAAAAEAAAAAAAAAAAABgAAAAYAA=</HashCode>
+      <FileName>ViewHelper\PositionableElementViewHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Model.AssociationLabelViewHelper" Collapsed="true">
+    <Position X="1.25" Y="18.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAA=</HashCode>
+      <FileName>ViewHelper\PositionableElementViewHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Model.ComponentConnectorViewHelper" Collapsed="true">
+    <Position X="12.5" Y="19.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewHelper\PSM\ComponentConnectorViewHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Model.PSMAssociationViewHelper" Collapsed="true">
+    <Position X="17" Y="19.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAgAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewHelper\PSM\PSMAssociationViewHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Model.PSMElementViewHelper" Collapsed="true">
+    <Position X="8" Y="19.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewHelper\PSM\PSMElementViewHelper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.Model.ViewHelper" Collapsed="true">
+    <Position X="10.25" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAACAIAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewHelper\ViewHelper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="XCase.Model.Implementation._ImplAssociation" Collapsed="true">
+    <Position X="37.25" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\_ImplAssociation.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.Implementation._ImplAssociationClass" Collapsed="true">
+    <Position X="37.25" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\_ImplAssociationClass.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.Implementation._ImplClass" Collapsed="true">
+    <Position X="41.25" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Implementation\_ImplClass.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.Implementation._ImplDataType" Collapsed="true">
+    <Position X="32.75" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\_ImplDataType.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.Implementation._ImplElement" Collapsed="true">
+    <Position X="17" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\_ImplElement.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.Implementation._ImplPackage" Collapsed="true">
+    <Position X="26" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Implementation\_ImplPackage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.Implementation._ImplPSMAssociationChild" Collapsed="true">
+    <Position X="44.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAQAAAAAAAA=</HashCode>
+      <FileName>Implementation\_ImplPSMAssociationChild.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.Implementation._ImplPSMSubordinateComponent" Collapsed="true">
+    <Position X="55.75" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Implementation\_ImplPSMSubordinateComponent.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.Implementation._ImplPSMSuperordinateComponent" Collapsed="true">
+    <Position X="51.25" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Implementation\_ImplPSMSuperordinateComponent.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.Association" Collapsed="true">
+    <Position X="37.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAIAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\Association.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.AssociationClass" Collapsed="true">
+    <Position X="40.25" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\AssociationClass.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.AssociationEnd" Collapsed="true">
+    <Position X="20.75" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Interface\AssociationEnd.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.Class" Collapsed="true">
+    <Position X="33.75" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQBAAAAgAAACCkAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\Class.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.Comment" Collapsed="true">
+    <Position X="19.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\Comment.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.DataType" Collapsed="true">
+    <Position X="33.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\DataType.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.Element" Collapsed="true">
+    <Position X="33.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAEAAAAAAAAAAAEAAIAJAA=</HashCode>
+      <FileName>Interface\Element.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.Generalization" Collapsed="true">
+    <Position X="50.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAgAAAAACAGAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\Generalization.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.IAssociationSource" Collapsed="true">
+    <Position X="39.5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\IAssociationSource.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.IAssociationTarget" Collapsed="true">
+    <Position X="17.75" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\IAssociationTarget.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.IHasAttributes" Collapsed="true">
+    <Position X="35" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Interface\IHasAttributes.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.IHasOperations" Collapsed="true">
+    <Position X="58.25" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\IHasOperations.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.IHasPSMAttributes" Collapsed="true">
+    <Position X="31.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAEAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Interface\IHasPSMAttributes.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.InstantiatedProperty" Collapsed="true">
+    <Position X="21.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Interface\InstantiatedProperty.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.Model" Collapsed="true">
+    <Position X="28.25" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Interface\Model.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.MultiplicityElement" Collapsed="true">
+    <Position X="20.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAABAAAAAAgAAAAAAAAAAAAQAAAAAAAAAAAIA=</HashCode>
+      <FileName>Interface\MultiplicityElement.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.NamedElement" Collapsed="true">
+    <Position X="36" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAQIAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Interface\NamedElement.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.NestingJoin" Collapsed="true">
+    <Position X="62.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAQIAAAAAAUAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Interface\NestingJoin.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.Operation" Collapsed="true">
+    <Position X="23.75" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAACAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Interface\Operation.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.Package" Collapsed="true">
+    <Position X="28.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAEAAAAAEAgAAAAABAACAAACAAAAAAAAAAAAAAQCA=</HashCode>
+      <FileName>Interface\Package.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.Parameter" Collapsed="true">
+    <Position X="23.75" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Interface\Parameter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.PIMClass" Collapsed="true">
+    <Position X="31.5" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Interface\PIMClass.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.PIMPath" Collapsed="true">
+    <Position X="64.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Interface\PIMPath.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.PIMStep" Collapsed="true">
+    <Position X="66" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAACAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Interface\PIMStep.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.Profile" Collapsed="true">
+    <Position X="30.5" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAEAIAA=</HashCode>
+      <FileName>Interface\Profile.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.Property" Collapsed="true">
+    <Position X="20.75" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIQAAYAIAAAAADAAAAAEAIAAAAAAAA=</HashCode>
+      <FileName>Interface\Property.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.PSMAssociation" Collapsed="true">
+    <Position X="55.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAQIAAAAAAAAgAgAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\PSMAssociation.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.PSMAssociationChild" Collapsed="true">
+    <Position X="45.5" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\PSMAssociationChild.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.PSMAttribute" Collapsed="true">
+    <Position X="36.25" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAACIAAAAAAAIAAAAAgAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Interface\PSMAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.PSMAttributeContainer" Collapsed="true">
+    <Position X="53.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Interface\PSMAttributeContainer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.PSMClass" Collapsed="true">
+    <Position X="44.5" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAEAAAYAAIEAAAA=</HashCode>
+      <FileName>Interface\PSMClass.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.PSMClassUnion" Collapsed="true">
+    <Position X="46.75" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\PSMClassUnion.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.PSMContentContainer" Collapsed="true">
+    <Position X="52.25" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\PSMContentContainer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.PSMContentChoice" Collapsed="true">
+    <Position X="49.25" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\PSMContentChoice.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.PSMElement" Collapsed="true">
+    <Position X="47.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\PSMElement.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.PSMSubordinateComponent" Collapsed="true">
+    <Position X="53.5" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\PSMSubordinateComponent.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.PSMSubordinateComponentFactory" Collapsed="true">
+    <Position X="67.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\PSMSubordinateComponentFactories.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.PSMSuperordinateComponent" Collapsed="true">
+    <Position X="51.25" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAJAIAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\PSMSuperordinateComponent.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.SimpleDataType" Collapsed="true">
+    <Position X="41.75" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Interface\SimpleDataType.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.Stereotype" Collapsed="true">
+    <Position X="39" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Interface\Stereotype.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.StereotypeInstance" Collapsed="true">
+    <Position X="50.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\StereotypeInstance.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.TypedElement" Collapsed="true">
+    <Position X="23.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Interface\TypedElement.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="XCase.Model.ISubordinateComponentViewHelper" Collapsed="true">
+    <Position X="60.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewHelper\PSM\ISubordinateComponentViewHelper.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="XCase.Model.EAssociationEnd" Collapsed="true">
+    <Position X="60.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\Association.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="XCase.Model.StereotypeTarget" Collapsed="true">
+    <Position X="62.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEERAAAAAAAAAIQAAAAAAAQBAAAAAEAAQEAAwA=</HashCode>
+      <FileName>Interface\Stereotype.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,45 @@
+﻿<Window x:Class="XCase.Controller.Dialogs.SelectRepresentantDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Dialogs="clr-namespace:XCase.Controller.Dialogs"
+	Title="Select children" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" 
+    ResizeMode="NoResize" Icon="/Controller;component/Dialogs/question_mark.png" ShowInTaskbar="False" Topmost="True">
+	<ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+		<StackPanel Margin="10" Name="stackPanel1">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="40" />
+					<ColumnDefinition Width="Auto" />
+				</Grid.ColumnDefinitions>
+				<Image Name="image1" Stretch="Fill"  Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Width="40" Source="question_mark.png" />
+				<Label Name="textBlock1" Content="Selected class is already represented on this PSM Diagram" Margin="5" FontWeight="bold" Grid.Column="1" VerticalContentAlignment="Center" />
+			</Grid>
+			
+			<Label Name="label" Height="30" Width="auto" Content="Select PSM class you whish to represent or select new class" VerticalContentAlignment="Bottom" />
+            <StackPanel Margin="0,10,0,0">
+                <StackPanel.Resources>
+                    <DataTemplate x:Key="selectorTemplate" DataType="{x:Type Dialogs:StructuralRepresentativeSelectorData}">
+                        <Border>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Add "/>
+                                <TextBlock Text="{Binding TreeClass.PIMClass.Name}" FontWeight="Bold"/>
+                                <TextBlock Text=" as a "/>
+                                <RadioButton IsChecked="True" />
+                                <TextBlock Text=" new class, or "/>
+                                <RadioButton IsChecked="{Binding Representative}" Margin="0,0,5,0"/>
+                                <TextBlock Text="structural representative of " Margin="0,0,5,0"/>
+                                <ComboBox ItemsSource="{Binding Path=PossibleRepresented}" DisplayMemberPath="Name" SelectedValue="{Binding SelectedRepresentative}"/>
+                                <TextBlock Text=" or " IsEnabled="{Binding RootsSelectionEnabled}"/>
+                                <RadioButton IsChecked="{Binding ExistingRootClass}" Margin="0,0,5,0" IsEnabled="{Binding RootsSelectionEnabled}"/>
+                                <TextBlock Text="an existing root class " Margin="0,0,5,0" IsEnabled="{Binding RootsSelectionEnabled}"/>
+                                <ComboBox ItemsSource="{Binding Path=PossibleRoots}" DisplayMemberPath="Name" SelectedValue="{Binding SelectedRootClass}" IsEnabled="{Binding RootsSelectionEnabled}"/>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </StackPanel.Resources>
+                <ListBox x:Name="List" ItemTemplate="{StaticResource selectorTemplate}"/>
+            </StackPanel>
+			<Button Height="23" VerticalAlignment="Center" Name="bOK" Width="60" IsDefault="True" Click="bOK_Click" Margin="5,10,0,5">OK</Button>
+        </StackPanel>
+	</ScrollViewer>
+</Window>

@@ -1,0 +1,38 @@
+﻿<Grid x:Class="XCase.View.Controls.PSM_AttributeContainerTemplate"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:c="clr-namespace:XCase.View.Controls"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    Height="Auto" Width="Auto" MinHeight="20" MinWidth="40">
+    <Grid.Resources>
+        <ResourceDictionary Source="pack://application:,,,/View;component/ControlTemplates.xaml" />
+    </Grid.Resources>
+    <Rectangle Name="ACBorder" Fill="BlanchedAlmond" Opacity="0.8" Stroke="Black" StrokeDashCap="Square" StrokeThickness="1">
+        <!--<Rectangle.StrokeDashArray>
+            <sys:Double>5</sys:Double>
+        </Rectangle.StrokeDashArray>-->
+        <!--<Rectangle.Triggers>
+                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                               To="20"
+                               Duration="0:0:5"
+                               RepeatBehavior="Forever"
+                               By="2"
+                               Storyboard.TargetProperty="StrokeDashOffset" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Rectangle.Triggers>-->
+    </Rectangle>
+    <StackPanel Name="ACStackPanel">
+        <!--<Label>Neviditelný</Label>-->
+    </StackPanel>
+    <!--<Control Name="ResizeDecorator"
+                 Visibility="Collapsed"
+                 Template="{StaticResource ResizeDecoratorTemplate}"/>-->
+    <Control Name="ConnectorDecorator"
+                 Visibility="Visible"
+                 Template="{StaticResource ConnectorDecoratorTemplate}"/>
+</Grid>

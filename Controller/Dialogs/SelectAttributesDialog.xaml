@@ -1,0 +1,40 @@
+﻿<Window x:Class="XCase.Controller.Dialogs.SelectAttributesDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Dialogs="clr-namespace:XCase.Controller.Dialogs"
+	Title="Select attributes" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" Loaded="Window_Loaded" 
+    ResizeMode="NoResize" Icon="/Controller;component/Dialogs/question_mark.png" ShowInTaskbar="False" Topmost="True">
+	<ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+		<StackPanel Margin="10" Name="stackPanel1">
+			<StackPanel.Resources>
+				<DataTemplate x:Key="attributeTemplate">
+					<StackPanel Orientation="Horizontal">
+						<CheckBox Name="cb" FontWeight="Bold" IsChecked="False" VerticalAlignment="Center" Margin="0,0,4,0" MinWidth="50">
+							<Binding Path="."></Binding>
+						</CheckBox>
+						<Label VerticalAlignment="Center">Alias:</Label>
+						<Dialogs:RememberingTextBox x:Name="tbAlias" Width="125" VerticalAlignment="Center" />
+						<Label Name="lbAlias" Visibility="Hidden" VerticalAlignment="Center"></Label>
+					</StackPanel>
+				</DataTemplate>
+			</StackPanel.Resources>
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="40" />
+					<ColumnDefinition Width="Auto" />
+				</Grid.ColumnDefinitions>
+				<Image Name="image1" Stretch="Fill"  Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Width="40" Source="question_mark.png" />
+				<Label Name="textBlock1" Content="Select element's attributes" Margin="5" FontWeight="bold" Grid.Column="1" VerticalContentAlignment="Center" />
+			</Grid>
+
+				
+			
+			<Label Name="lbMessage" Height="30" Width="auto" Content="Select element's attributes you wish to include in the diagram: " VerticalContentAlignment="Bottom" Margin="0,0,0,10"/>
+			<ListBox  VerticalAlignment="Top" x:Name="lbAttributes" ItemTemplate="{StaticResource attributeTemplate}" BorderThickness="0" />
+			<StackPanel Orientation="Horizontal" Name="canvas1" HorizontalAlignment="Center" Margin="5,10,0,5">
+				<Button Height="23" Name="bOK" Width="60" Margin="0,0,5,0" IsDefault="True" Click="bOK_Click">OK</Button>
+				<Button Height="23" Width="60" Name="bCancel" IsCancel="True" Click="bCancel_Click">Cancel</Button>
+			</StackPanel>
+		</StackPanel>
+	</ScrollViewer>
+</Window>

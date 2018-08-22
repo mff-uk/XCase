@@ -1,0 +1,51 @@
+﻿<Window x:Class="XCase.Controller.Dialogs.SelectPIMPathDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Dialogs="clr-namespace:XCase.Controller.Dialogs"
+	Title="Select children" WindowStartupLocation="CenterScreen" 
+    MinHeight="300" MinWidth="400"
+    ResizeMode="CanResize" ShowInTaskbar="False" Icon="/Controller;component/Dialogs/question_mark.png" Topmost="True" SizeToContent="WidthAndHeight" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" d:DesignHeight="300" d:DesignWidth="400">
+		<Grid Margin="10" Name="stackPanel1">
+			<Image Name="image1" Stretch="Fill"  Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Width="40" Source="question_mark.png" />
+			<Label Name="textBlock1" Content="Select PIM path to children" Margin="48,0,0,0" FontWeight="bold" VerticalContentAlignment="Center" Height="40" VerticalAlignment="Top" />
+			
+			<Label Name="label" Width="auto" Content="Select children or PIM paths to children you whish to add:" VerticalContentAlignment="Bottom" Margin="0,33,0,0" Height="32" VerticalAlignment="Top" />
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Margin="0,68,0,41">
+            <TreeView Name="treeView"
+                      TreeViewItem.Expanded="treeView_Expanded" TreeViewItem.Selected="treeView_Selected">
+                <TreeView.Resources>
+                    <HierarchicalDataTemplate DataType="{x:Type Dialogs:TreeClasses}"
+                                  ItemsSource="{Binding Path=Children}">
+                        <Border>
+                            <StackPanel Orientation="Horizontal">
+                                <CheckBox IsChecked="{Binding selected}" Width="20" Height="20"/>
+                                <TextBlock Text="{Binding PIMClass.Name}" FontWeight="Bold" ToolTip="Class name">
+                                    <TextBlock.ContextMenu>
+                                        <ContextMenu>
+                                            <MenuItem Header="Select all children" DataContext="{Binding Path=.}" Click="SelectAllClick"/>
+                                            <MenuItem Header="Deselect all children" DataContext="{Binding Path=.}" Click="DeselectAllClick"/>
+                                        </ContextMenu>
+                                    </TextBlock.ContextMenu>
+                                </TextBlock>
+                                <TextBlock Text="{Binding Association.Name}" Margin="10,0,0,0" ToolTip="Association name"/>
+                                <TextBlock Text="{Binding Lower}" Margin="10,0,0,0" ToolTip="Lower multiplicity"/>
+                                <TextBlock Text=".."/>
+                                <TextBlock Text="{Binding Upper}" ToolTip="Upper multiplicity"/>
+                            </StackPanel>
+                        </Border>
+                    </HierarchicalDataTemplate>
+                </TreeView.Resources>
+                <!--<TreeViewItem ItemsSource="{Binding Path=Children}" Header="{Binding PIMClass.Name}" ToolTip="Parent class name" IsExpanded="True">
+                    <TreeViewItem.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="Select all children" DataContext="{Binding Path=Children}" Click="SelectAllClick"/>
+                            <MenuItem Header="Deselect all children" DataContext="{Binding Path=Children}" Click="DeselectAllClick"/>
+                        </ContextMenu>
+                    </TreeViewItem.ContextMenu>
+                </TreeViewItem>-->
+            </TreeView>
+        </ScrollViewer>
+		<Button Height="23" Name="bOK" Width="87" Margin="85,0,0,12" IsDefault="True" Click="bOK_Click" VerticalAlignment="Bottom" HorizontalAlignment="Left">OK</Button>
+		<Button Height="23" Width="102" Name="bCancel" IsCancel="True" Margin="0,0,66,12" VerticalAlignment="Bottom" HorizontalAlignment="Right">Cancel</Button>
+    </Grid>
+</Window>

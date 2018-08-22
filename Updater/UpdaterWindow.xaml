@@ -1,0 +1,16 @@
+﻿<Window x:Class="XCase.Updater.UpdaterWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Icon="xcase.ico"
+    Title="XCase Updater" Height="216" Width="409" Visibility="Visible" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+    <Canvas>
+        <Button Canvas.Left="12" Canvas.Top="143" Height="23" Name="bCheck" Width="140" Click="bCheck_Click" IsEnabled="True" IsDefault="False">Check for new version</Button>
+        <Label Canvas.Left="12" Canvas.Top="12" Height="Auto" Name="label1" Width="Auto">New version is available</Label>
+        <Button Canvas.Left="158" Canvas.Top="143" Height="23" Name="bDownload" Width="137" Click="bDownload_Click" IsEnabled="False" IsDefault="True">Download new version</Button>
+        <Button Canvas.Left="301" Canvas.Top="143" Height="23" Name="bClose" Width="74" Click="bClose_Click" IsCancel="True">Close</Button>
+        <Label Canvas.Left="12" Canvas.Top="75" Height="Auto" Name="lblProgress" Width="Auto"></Label>
+        <Label Canvas.Left="12" Canvas.Top="43" Height="Auto" Name="lFile" Width="Auto"></Label>
+        <ProgressBar Canvas.Left="46" Canvas.Top="102" Height="23" Name="prgDownload" Width="220" Visibility="Hidden" />
+        <Button Canvas.Left="272" Canvas.Top="102" Height="23" Name="bCancel" Width="66" Click="bCancel_Click" Visibility="Hidden">Cancel</Button>
+    </Canvas>
+</Window>

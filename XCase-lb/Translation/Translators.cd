@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="XCase.Translation.DiagramTranslator&lt;Context, TypeIdentifier&gt;">
+    <Position X="1" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAhIAAgAAAgQEAAAAAAAgAAAAAoAAEAAAAAAA=</HashCode>
+      <FileName>DiagramTranslator.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Diagram" />
+      <Property Name="Log" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="XCase.Translation.XmlSchema.XmlSchemaTranslator" Collapsed="true">
+    <Position X="4.75" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAABhAIggABKgAAgABAAABJAgBAAoAAMAIAABAA=</HashCode>
+      <FileName>XmlSchema\ClassTranslationData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Translation.TranslationLog" Collapsed="true">
+    <Position X="5.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIEAAAAAAAAAAAAAAAAAAIBgAAA=</HashCode>
+      <FileName>TranslationLog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.Model.PSMDiagram" Collapsed="true">
+    <Position X="5.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

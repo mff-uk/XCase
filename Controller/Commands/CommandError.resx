@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CMDERR_DELETE_NONEXISTING" xml:space="preserve">
+    <value>Cannot delete element "{0}" because it is not present in the diagram.</value>
+  </data>
+  <data name="CMDERR_CARDINALITY_FORMAT" xml:space="preserve">
+    <value>Bad cardinality format: </value>
+  </data>
+  <data name="CMDERR_MODELELEMENT_DUPLICITY" xml:space="preserve">
+    <value>ModelElementAttribute can be used only once. Found more usages in class {0}</value>
+  </data>
+  <data name="CMDERR_MODELELEMENT_NOT_FOUND" xml:space="preserve">
+    <value>ModelElement attribute can used only on types supporting INotifyPropertyChanged interface.</value>
+  </data>
+  <data name="CMDERR_DUPLICATE_ATTRIBUTE" xml:space="preserve">
+    <value>Found more of attribute "{1}" usages in class "{0}".</value>
+  </data>
+  <data name="CMDERR_COMMAND_NUMBER_ALTERED" xml:space="preserve">
+    <value>CommandNumber should be assigned only once.</value>
+  </data>
+  <data name="CMDERR_RESULT_ARGUMENT_NULL" xml:space="preserve">
+    <value>Result attribute "{0}" was not set during execution of the command {1}.</value>
+  </data>
+  <data name="CMDERR_MANDATORY_ARGUMENT_NOT_INITIALIZED_2" xml:space="preserve">
+    <value>Command "{0}" was not correctly initialized, field "{1}" must be defined before execution.</value>
+  </data>
+  <data name="CMDERR_PARAMETER_NOT_ILIST" xml:space="preserve">
+    <value>parameters must be of type IList.</value>
+  </data>
+  <data name="CMDERR_STACK_INCONSISTENT" xml:space="preserve">
+    <value>Error in command stack consistency.</value>
+  </data>
+  <data name="CMDERR_DOES_NOT_IMPLEMENT_ICOPIEDCOMMAND" xml:space="preserve">
+    <value>If command should copy on stack (CopyOnStack returns true), command must implement ICopiedCommand interface.</value>
+  </data>
+  <data name="CMDERR_MISSIING_NONPARAMETRIC_CONSTRUCTOR" xml:space="preserve">
+    <value>The type "{0}" must declare an empty constructor (the constructor may be private, internal,  protected, protected internal, or public).</value>
+  </data>
+  <data name="CMDERR_MISSING_ASSOCIATED_CLASSES" xml:space="preserve">
+    <value>Must set associatiated classes.</value>
+  </data>
+  <data name="CMDERR_MULTIPLICITY_BAD_BOUNDS" xml:space="preserve">
+    <value>Lower bound cannot be greater than upper bound.</value>
+  </data>
+  <data name="CMDERR_COMMENT_ANNOTATED_ELEMENT_MISSING" xml:space="preserve">
+    <value>Missing annotated element for new comment.</value>
+  </data>
+  <data name="CMDERR_ADDING_PRESENT" xml:space="preserve">
+    <value>Element "{0}" is alreadyPresent.</value>
+    <comment>0: element</comment>
+  </data>
+  <data name="CMDERR_ADD_BEFORE_STARTPOINT" xml:space="preserve">
+    <value>Cannot add point with index 0 which is reserved for start point, only inner points can be added.</value>
+  </data>
+  <data name="CMDERR_ADD_BEHIND_ENDPOINT" xml:space="preserve">
+    <value>Cannot add points behind end point, only inner points can be added.</value>
+  </data>
+  <data name="CMDERR_COMMAND_ACTION_MISSING" xml:space="preserve">
+    <value>Action must be selected.</value>
+  </data>
+  <data name="CMDERR_MISSING_POINTMOVEDATACOLLECTION" xml:space="preserve">
+    <value>Must use PointMoveDataCollection when Action is EJunctionPointAction.MovePoints</value>
+  </data>
+  <data name="CMDERR_POINT_COLLECTION_MISSING" xml:space="preserve">
+    <value>ViewHelperPointCollection must be set for action "{0}".</value>
+    <comment>0: action</comment>
+  </data>
+  <data name="CMDERR_REMOVE_ENDPOINT" xml:space="preserve">
+    <value>First and last point cannot be removed from a junction, only inner points can be removed.</value>
+  </data>
+  <data name="CMDERR_UNKNOWN_ACTION" xml:space="preserve">
+    <value>Unknown action "{0}".</value>
+    <comment>0: action</comment>
+  </data>
+  <data name="CMDERR_INCLUDE_ELEMENT" xml:space="preserve">
+    <value>Cannot include element "{0}" in the collection because it is already a  member of another collection</value>
+    <comment>0: name</comment>
+  </data>
+  <data name="CMDERR_NAME_NOT_UNIQUE" xml:space="preserve">
+    <value>Name "{0}" cannot be used because it is already used in the collection. </value>
+    <comment>0: name</comment>
+  </data>
+  <data name="CMDERR_REMOVING_DETACHED_ATTRIBUTE" xml:space="preserve">
+    <value>Cannot remove attribute which is not included in any element's attrributes. </value>
+  </data>
+  <data name="CMDERR_REMOVING_DETACHED_OPERATION" xml:space="preserve">
+    <value>Cannot remove operation which is not included in any element's operation.</value>
+  </data>
+  <data name="CMDERR_REMOVED_ELEMENT_BEING_USED" xml:space="preserve">
+    <value>Cannot delete from model, element is being used. </value>
+  </data>
+  <data name="CMDERR_DELETE_MODEL" xml:space="preserve">
+    <value>Cannot delete root package. </value>
+  </data>
+  <data name="CMDERR_EXCLUDED_ATTRIBUTES_INCONSISTENCE" xml:space="preserve">
+    <value>Excluded attributes come from a different class.</value>
+  </data>
+  <data name="CMDERR_INCLUDED_ATTRIBUTES_INCONSISTENCE" xml:space="preserve">
+    <value>Included attributes come from a different class.</value>
+  </data>
+  <data name="CMDERR_INDEX_OUT_OF_RANGE" xml:space="preserve">
+    <value>Index is out of range.</value>
+  </data>
+  <data name="CMDERR_INDICES_NOT_SPECIFIED" xml:space="preserve">
+    <value>Index of a moved item and new index for the moved item must be specified.</value>
+  </data>
+  <data name="CMDERR_DELETE_PSM_DEPENDENT_CLASS" xml:space="preserve">
+    <value>Cannot delete PIM class "{0}". It has some PSM dependencies: {1}</value>
+    <comment>0: name, 1: classes</comment>
+  </data>
+  <data name="CMDERR_DELETE_PSM_DEPENDENT_ATTRIBUTE" xml:space="preserve">
+    <value>Cannot delete PIM attribute "{0}". It has some PSM dependencies.</value>
+    <comment>0: name</comment>
+  </data>
+  <data name="CMDERR_NULL_ON_UNDO" xml:space="preserve">
+    <value>UndoOperation's element is null.</value>
+  </data>
+  <data name="CMDERR_NOT_FOUND" xml:space="preserve">
+    <value>Element "{0}" not found.</value>
+    <comment>0: name</comment>
+  </data>
+  <data name="CMDERR_CYCLIC_INHERITANCE" xml:space="preserve">
+    <value>Cannot create generalization, it would create cyclic inheritance.</value>
+  </data>
+  <data name="CMDERR_DELETE_PSM_DEPENDENT_ASSOCIATION" xml:space="preserve">
+    <value>Cannot delete association "{0}". It has some PSM dependencies: {1}</value>
+  </data>
+  <data name="CMDERR_GROUP_BY_ALREADYGROUPED" xml:space="preserve">
+    <value>Selected path to {0} is already a part of another grouping.</value>
+    <comment>0:name</comment>
+  </data>
+  <data name="CMDERR_GROUP_BY_NOTROOT" xml:space="preserve">
+    <value>The selected class cannot be grouped since it is not a root of the PSM tree!</value>
+  </data>
+  <data name="CMDERR_GROUP_BY_NOTSET" xml:space="preserve">
+    <value>Grouped class or grouping classes are not set!</value>
+  </data>
+  <data name="BAD_REMOVED_ASSOCIATION_END" xml:space="preserve">
+    <value>Removed end does not belong to the association. </value>
+  </data>
+  <data name="DIAMOND_REQUIRED" xml:space="preserve">
+    <value>Associations that have more then 2 ends must use association diamond. </value>
+  </data>
+  <data name="CANNOT_REMOVE_END_FROM_BINARY_ASSOCIATION" xml:space="preserve">
+    <value>This association has only two ends. No ends can be removed. </value>
+  </data>
+  <data name="CMDERR_ROOT_CLASS_WRONG_DIAGRAM" xml:space="preserve">
+    <value>Root class belongs to another diagram.</value>
+  </data>
+  <data name="CMDERR_DIAGRAM_NOT_IN_PROJECT" xml:space="preserve">
+    <value>Diagram '{0}' cannot be deleted, it is not part of the project. </value>
+    <comment>0: diagram caption</comment>
+  </data>
+  <data name="CMDERR_PIMLESS_NAME" xml:space="preserve">
+    <value>PIM-less attribute must have a name specified.</value>
+  </data>
+  <data name="CMDERR_REPRESENTING_ATTRIBUTES_CAN_NOT_BE_UPDATED" xml:space="preserve">
+    <value>Attribute representing PIM attribute can not change its datatype and name. </value>
+  </data>
+	<data name="NOT_PSM_DIAGRAM">
+		<value xml:space="preserve">Only for PSM diagrams.</value>
+	</data>
+</root>

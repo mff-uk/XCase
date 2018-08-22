@@ -1,0 +1,96 @@
+﻿<Gui:XCaseGridBase
+    x:Class="XCase.Gui.NestingJoinsGrid"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Model="clr-namespace:XCase.Model;assembly=Model"
+    xmlns:Gui="clr-namespace:XCase.Gui" >
+    <StackPanel Name="stackPanel">
+        <StackPanel.Resources>
+            <Gui:CutStringConverter x:Key="cutStringConverter"/>
+            <!-- Nesting Joins template -->
+            <HierarchicalDataTemplate x:Key="contextTemplate" DataType="{x:Type Model:PIMPath}">
+                <Grid Focusable="False" Margin="0,0,0,0" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Name="column1"  Width="60" MaxWidth="60"/>
+                        <ColumnDefinition Name="column2"  MinWidth="62" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Context -->
+                    <TextBox Grid.Row="0" Grid.Column="0" IsReadOnly="True" Focusable="False"
+                             HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                             HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                        Context
+                    </TextBox>
+                    <TextBox Name="contextBox" Grid.Row="0" Grid.Column="1"
+                             Text="{Binding Converter={StaticResource cutStringConverter},Mode=OneWay}"
+                             VerticalContentAlignment="Stretch"
+                             Padding="1,0,0,1"
+                             IsReadOnly="True"/>
+                </Grid>
+            </HierarchicalDataTemplate>
+            <HierarchicalDataTemplate x:Key="nestingJoinsTemplate" DataType="{x:Type Model:NestingJoin}" ItemsSource="{Binding Path=NestingJoins}">
+                <Grid Focusable="False" Margin="0,0,0,10" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition ></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Name="column1"  Width="60" MaxWidth="60"/>
+                        <ColumnDefinition Name="column2"  MinWidth="62" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.ColumnSpan="2">Nesting Join</Label>
+
+                    <!-- Parent -->
+                    <TextBox Grid.Row="1" Grid.Column="0" IsReadOnly="True" Focusable="False"
+                             HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                             HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                        Parent
+                    </TextBox>
+                    <TextBox Name="parentBox" Grid.Row="1" Grid.Column="1" 
+                             Text="{Binding Path=Parent,Converter={StaticResource cutStringConverter},Mode=OneWay}"
+                             VerticalContentAlignment="Stretch"
+                             Padding="1,0,0,1"
+                             IsReadOnly="True"/>
+
+                    <!-- Child -->
+                    <TextBox Grid.Row="2" Grid.Column="0" IsReadOnly="True" Focusable="False"
+                             HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                             HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                        Child
+                    </TextBox>
+                    <TextBox Name="childBox" Grid.Row="2" Grid.Column="1"
+                             VerticalContentAlignment="Stretch"
+                             Padding="1,0,0,1"
+                             Text="{Binding Path=Child,Converter={StaticResource cutStringConverter},Mode=OneWay}"
+                             IsReadOnly="True"/>
+                    <ListView Name="contextBox" Focusable="False" Grid.Row="3" Grid.ColumnSpan="2" 
+                      SelectionChanged="ListView_SelectionChanged"
+                      ItemTemplate ="{StaticResource contextTemplate}"
+                      HorizontalContentAlignment="Stretch"
+                      BorderThickness="0"
+                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                      ItemsSource="{Binding Context}"
+                      Padding="0" Margin="-3,0,-1,0"          
+                      KeyDown="KeyPressed_Down" Opacity="1" Background="Transparent">
+                    </ListView>
+                </Grid>
+            </HierarchicalDataTemplate>
+        </StackPanel.Resources>
+        <ListView Name="njsBox" Focusable="False"
+                      SelectionChanged="ListView_SelectionChanged"
+                      ItemTemplate ="{StaticResource nestingJoinsTemplate}"
+                      HorizontalContentAlignment="Stretch"
+                      BorderThickness="0"
+                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                      ItemsSource="{Binding}"
+                      Padding="0" Margin="0,0,-1,0"  
+                      KeyDown="KeyPressed_Down" Opacity="1" Background="Transparent">
+            </ListView>
+    </StackPanel>
+</Gui:XCaseGridBase>

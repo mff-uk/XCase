@@ -1,0 +1,60 @@
+﻿<Gui:XCaseGridBase
+    x:Class="XCase.Gui.PSMAssociationGrid"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Gui="clr-namespace:XCase.Gui" 
+    HorizontalAlignment="Stretch"
+    SizeChanged="ClassGridBase_SizeChanged"
+    ScrollViewer.HorizontalScrollBarVisibility="Auto"
+>
+    <ScrollViewer  Name="scrollViewer" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                          ScrollViewer.VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="0,0,0,10">
+            <Grid Name="grid" Margin="5,0,5,0">
+                <Grid.Resources>
+                    <Gui:ChangePSMLowerConverter x:Key="changePSMLowerConverter"/>
+                    <Gui:ChangePSMUpperConverter x:Key="changePSMUpperConverter"/>
+                </Grid.Resources>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="20"  />
+                    <RowDefinition Height="20"  />
+                    <RowDefinition Height="Auto"  />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60" MaxWidth="60"/>
+                    <ColumnDefinition MinWidth="62" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Content Container -->
+                <Label Name="mainLabel" Grid.Row="0" Grid.ColumnSpan="2" Focusable="True">
+                   PSM Association
+                </Label> 
+
+                    <TextBox Grid.Row="1"  Grid.Column="0" IsReadOnly="True" Focusable="False">
+                        Lower
+                    </TextBox>
+                    <TextBox Name="lowerBox" Grid.Row="1" Grid.Column="1" 
+                     Text="{Binding Path=Lower, Converter={StaticResource changePSMLowerConverter}}" 
+                     LostFocus="CheckCorrectMultiplicity"
+                     KeyUp="KeyPressed_Up"    
+                     KeyDown="KeyPressed_Down" 
+                     />
+                    <!-- X -->
+                    <TextBox Grid.Row="2"  Grid.Column="0" IsReadOnly="True" Focusable="False">
+                        Upper
+                    </TextBox>
+                    <TextBox Name="upperBox" Grid.Row="2" Grid.Column="1"  
+                     Text="{Binding Path=Upper, Converter={StaticResource changePSMUpperConverter}}" 
+                     LostFocus="CheckCorrectMultiplicity"
+                     KeyUp="KeyPressed_Up"                     
+                     KeyDown="KeyPressed_Down"
+                      />
+
+                <Gui:NestingJoinsGrid Grid.Row="3" Margin="-3,0,0,0" Grid.ColumnSpan="2" x:Name="njGrid" HorizontalAlignment="Left" />
+
+
+            </Grid>
+        </StackPanel>
+    </ScrollViewer>
+</Gui:XCaseGridBase>

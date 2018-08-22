@@ -1,0 +1,35 @@
+﻿<Window x:Class="XCase.Gui.Windows.EvolutionChangesWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Dialogs="clr-namespace:XCase.Controller.Dialogs;assembly=Controller" xmlns:Evolution="clr-namespace:XCase.Evolution;assembly=Evolution" Title="EvolutionChangesWindow" 
+        Height="Auto" MaxHeight="800px" Width="1000px">
+    <DockPanel>
+        <DataGrid 
+			Name="gridChanges" 
+			CanUserAddRows="True" 
+            CanUserDeleteRows="False" 
+			SelectionMode="Single"
+			Dialogs:AccessKeyScoper.IsAccessKeyScope="True"
+			AutoGenerateColumns="False" 
+            AlternatingRowBackground="Beige" 
+            Background="Cornsilk" 
+            BorderBrush="LightGray" 
+            HorizontalGridLinesBrush="LightGray" 
+            VerticalGridLinesBrush="LightGray" 
+            RowBackground="Cornsilk" 
+            CanUserReorderColumns="False" 
+            IsReadOnly="True" 
+            SelectionChanged="gridChanges_SelectionChanged"
+            DataGridRow.MouseDoubleClick="GridChanges_OnMouseDoubleClick"
+            >
+        
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="#" />
+                <DataGridTextColumn Header="Location" Binding="{Binding Element.XPath, FallbackValue=undefined, Mode=OneWay}" />
+                <DataGridTextColumn Header="Scope" Binding="{Binding Scope, Mode=OneWay}" />
+                <DataGridTextColumn Header="Type" Binding="{Binding ChangeType, Mode=OneWay}" x:Name="colType" />
+                <DataGridTextColumn Header="Description" Width="*" Binding="{Binding ., Mode=OneWay}" />
+            </DataGrid.Columns>
+            
+        </DataGrid>
+    </DockPanel>
+</Window>

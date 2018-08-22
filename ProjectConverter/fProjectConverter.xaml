@@ -1,0 +1,20 @@
+﻿<Window x:Class="ProjectConverter.fProjectConverter"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
+    Title="XCase Project Converter" Height="266" Width="512" 
+    ResizeMode="CanMinimize">
+    <Canvas>
+        <TextBlock Text="This tool upgrades XCase project files (*.XCase) for XCase version 2" TextWrapping="Wrap" Height="34" Width="207" Canvas.Left="21" Canvas.Top="12"></TextBlock>
+        <Label Canvas.Left="20" Canvas.Top="59" Height="28" Name="label1" Width="341">Select a project file or update all project files in a directory</Label>
+        <RadioButton Canvas.Left="26" Canvas.Top="101" Height="16" Name="rbProject" Width="120" Checked="rbProject_Checked" IsChecked="True">Project path:</RadioButton>
+        <RadioButton Canvas.Left="26" Canvas.Top="130" Height="16" Name="rbDir" Width="120" Checked="rbDir_Checked" IsEnabled="True">Directory:</RadioButton>
+        <CheckBox Canvas.Left="25" Canvas.Top="159" Height="16" Name="cbSubdirectories" Width="142">include subdirectories</CheckBox>
+        <CheckBox Canvas.Left="173" Canvas.Top="159" Height="16" Name="cbBackup" Width="120">backup files</CheckBox>
+        <TextBox Canvas.Left="120" Canvas.Top="97" Height="23" Name="tbProject" Width="311"></TextBox>
+        <TextBox Canvas.Left="120" Canvas.Top="126" Height="23" Name="tbDirectory" Width="311" IsEnabled="False"></TextBox>
+        <Button Canvas.Left="437" Canvas.Top="96.48" Height="23" Name="bOpenFile" Width="36" Click="bOpenFile_Click">...</Button>
+        <Button Canvas.Left="437" Canvas.Top="126" Height="23" Name="bOpenDir" Width="36" Click="bOpenDir_Click" IsEnabled="False">...</Button>
+        <Button Canvas.Left="173" Canvas.Top="193" Height="23" Name="bUpgrade" Width="75" IsDefault="True" Click="bUpgrade_Click">Upgrade</Button>
+        <Button Canvas.Left="254" Canvas.Top="193" Height="23" Name="bClose" Width="75" IsCancel="True" Click="bClose_Click">Close</Button>
+    </Canvas>
+</Window>

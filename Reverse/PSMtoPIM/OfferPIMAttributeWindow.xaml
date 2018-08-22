@@ -1,0 +1,25 @@
+﻿<Window x:Class="XCase.Reverse.OfferPIMAttributeWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="PSM Attribute mapping" Height="359" Width="632" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Height="26" Name="lblLabel" VerticalAlignment="Top">Offers:</Label>
+        <ScrollViewer Name="scrollViewer1" Margin="0,40,0,50" VerticalAlignment="Top">
+            <ListBox Name="lbxOffer" SelectedValuePath="Key" ItemsSource="{Binding}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="{Binding Value}" MinWidth="50" FontWeight="Bold" />
+                            <Label Content="{Binding Key.Class.Name}" Padding="5,5,0,5"/>
+                            <Label Content="." Padding="0,5,0,5" />
+                            <Label Content="{Binding Key.Name}" Padding="0,5,0,5" FontWeight="Bold" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </ScrollViewer>
+        <Button Height="23" HorizontalAlignment="Left" Margin="137,0,0,6" Name="btnAccept" VerticalAlignment="Bottom" Width="75" IsDefault="True" Click="btnAccept_Click">Accept</Button>
+        <Button Height="23" Margin="244,0,0,6" Name="btnNew" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="75" Click="btnNew_Click">Create new</Button>
+        <Button Height="23" HorizontalAlignment="Right" Margin="0,0,109,6" Name="button1" VerticalAlignment="Bottom" Width="75" IsCancel="True">Cancel</Button>
+    </Grid>
+</Window>

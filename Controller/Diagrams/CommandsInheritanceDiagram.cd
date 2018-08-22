@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="XCase.UMLController.Commands.CommandBase" Collapsed="true">
+    <Position X="3.25" Y="0.5" Width="2.75" />
+    <NestedTypes>
+      <Enum Name="XCase.UMLController.Commands.CommandBase.OperationResult" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Commands\Base\CommandBase.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>ACAQgAAgAAAiCAQOAEQAAAgAAAAAAAEACAAgAAAAEAg=</HashCode>
+      <FileName>Commands\Base\CommandBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.UMLController.Commands.StackedCommandBase&lt;ControllerType&gt;" Collapsed="true">
+    <Position X="3.25" Y="1.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAgAQAAAgQAAAAAAAAAAAAAAgAAIAAAAAAAAAA=</HashCode>
+      <FileName>Commands\Base\StackedCommandBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.UMLController.Commands.ModelCommandBase" Collapsed="true">
+    <Position X="1" Y="2.75" Width="2.75" />
+    <InheritanceLine Type="XCase.UMLController.Commands.StackedCommandBase&lt;ControllerType&gt;" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.625" Y="2.191" />
+        <Point X="4.625" Y="3.125" />
+        <Point X="3.75" Y="3.125" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Commands\Base\ModelCommandBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.UMLController.Commands.DiagramCommandBase" Collapsed="true">
+    <Position X="1" Y="3.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\Base\DiagramCommandBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XCase.UMLController.Commands.MacroCommand&lt;ControllerType&gt;" Collapsed="true">
+    <Position X="5.75" Y="2.75" Width="2.75" />
+    <NestedTypes>
+      <Enum Name="XCase.UMLController.Commands.MacroCommand&lt;ControllerType&gt;.EComandsDependency" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Commands\CommandsCommon\MacroCommand.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <InheritanceLine Type="XCase.UMLController.Commands.StackedCommandBase&lt;ControllerType&gt;" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.625" Y="2.191" />
+        <Point X="4.625" Y="3.125" />
+        <Point X="5.75" Y="3.125" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAIAAACCAMAEAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\CommandsCommon\MacroCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.UMLController.Commands.RedoCommand" Collapsed="true">
+    <Position X="7" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAQAAAAACAAQAAEAAAAACAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Commands\RedoCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="XCase.UMLController.Commands.UndoCommand" Collapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAEAAAKAAQAAEAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\UndoCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
